@@ -1,0 +1,26 @@
+/* pages/main/userInfo/Index/index.wxss */
+page {
+    background: #F7F7F7;
+}
+
+.avatar_container{
+    display: flex;
+    align-items: center;
+
+    font-size:30rpx;
+    font-weight:400;
+    color: #27313E;
+}
+
+.font{
+    font-size:30rpx;
+    font-weight:400;
+    color: #27313E;
+}
+
+
+.feed_button{
+    padding: 0;
+    text-align: left;
+    border-radius: 0;
+}

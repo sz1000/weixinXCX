@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText":"修改名片信息",
+  "usingComponents": {
+    "i-input":"/dist/input/index",
+    "i-panel":"/dist/panel/index",
+    "i-cell-group": "/dist/cell-group/index",
+    "i-cell": "/dist/cell/index",
+    "global-select":"/component/global-select/index"
+  }
+}

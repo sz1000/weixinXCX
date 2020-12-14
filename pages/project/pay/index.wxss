@@ -1,0 +1,102 @@
+page {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #F5F5F5;
+}
+
+.price-container {
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  height: 185rpx;
+  flex-shrink: 0;
+  border: 1rpx solid #eeeeee;
+}
+.price-container view{
+  text-align: center;
+}
+.price-container view:first-child{
+  margin-top: 46rpx;
+  font-size: 24rpx;
+  color: #747474;
+}
+.price-container view:last-child{
+  margin-top: 10rpx;
+  font-size: 50rpx;
+  font-weight: bold;
+  color: #333333;
+}
+.order-container {
+  background-color: #ffffff;
+}
+.project-container{
+  width: 100%;
+  height: 90rpx;
+  line-height: 90rpx;
+  display: flex;
+
+}
+.project-img{
+  margin:14rpx 10rpx 14rpx 20rpx;
+  width:65rpx;
+  height:65rpx;
+
+}
+.project-name{
+  width: 60%;
+  height: 90rpx;
+  font-size: 28rpx;
+  line-height: 90rpx;
+  color: #333333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.project-price{
+  position: absolute;
+  right: 30rpx;
+
+  font-size: 24rpx;
+  color: #EB4436;
+}
+
+.payWay-title{
+  margin-left: 29rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  color: #727178;
+  font-size: 22rpx;
+}
+.payWay-container{
+  background-color: #ffffff;
+  width: 100%;
+  height: 80rpx;
+  line-height: 80rpx;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.icon-wx{
+  margin: 26rpx 26rpx 27rpx 30rpx;
+  width: 46rpx;
+  height: 37rpx;
+}
+.button-container{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.payBtn{
+  height: 90rpx;
+  line-height: 90rpx;
+  background-color: #09BB07;
+  border-radius: 0;
+  font-size: 30rpx;
+  letter-spacing: 2rpx;
+  color: #ffffff;
+}

@@ -1,0 +1,62 @@
+<!-- 收益明细页面 -->
+<view class="head">
+	<picker
+	 class=""
+	 mode="date"
+	 value="{{timeValue}}"
+	 fields="month"
+	 bindchange="handleChangeTime"
+	>
+		<view class="time-select">{{timeValue}}
+			<i-icon type="unfold" />
+		</view>
+	</picker>
+  <!-- 交易类型 -->
+   <view class="transaction_wrap"  bindtap="handtotype">
+   <view class="transaction">交易类型</view>
+   	<i-icon type="unfold" />
+   </view>
+      <!-- 弹框交易类型 -->
+   <view class="trade_wrap" wx:if="{{ visible }}">
+     <view class="rewards">分销奖励</view>
+     <view class="salesup">业绩提成</view>
+     <view class="management">管理奖</view>
+     <view class="month_bonus">月度分红</view>
+     <view class="year_bonus">年度分红</view>
+   </view>
+
+	<view class="count-container">
+		<view class="count-item">
+			<view>¥{{count.canWithDraw / 100}}</view>
+			<view>未结算</view>
+		</view>
+		<view class="parting-line" />
+		<view class="count-item">
+			<view>¥{{count.cantWithDraw / 100}}</view>
+			<view>已结算</view>
+		</view>
+		<view class="parting-line" />
+		<view class="count-item">
+			<view>¥{{count.withDraw / 100}}</view>
+			<view>累计</view>
+		</view>
+    </view>
+	</view>
+
+
+<view class="list-container">
+	<view class="list-content">
+    <view class="list-top">
+      <view class="order-id">ID:WYQU78292</view>
+      <view class="no-pay">未结算</view>
+    </view>
+		<view class="list-bottom">
+      <view class="order-type">类型：2738392992
+        <view class="price">+200元</view>
+      </view>
+      <view class="order-num">订单号：1728392729029</view>
+      <view class="time">2019.09.18 11:28:09</view>
+    </view>
+	</view>
+</view>
+

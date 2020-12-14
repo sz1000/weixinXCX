@@ -1,0 +1,86 @@
+page {
+  background-color: rgb(245, 245, 245);
+}
+
+span{
+  padding-left: 30rpx;
+}
+
+.personInfo,
+.hospital,
+.chooseCover {
+  border: 1rpx solid #eee;
+  background-color: #fff;
+  width: 99%;
+  height: 130rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* line-height: 130rpx; */
+  font-size: 28rpx;
+  color: #273e31;
+  /* padding-left: 0; */
+  /* padding-left: 30rpx; */
+}
+
+text {
+  margin-left: 30rpx;
+}
+
+.hospital {
+  height: 100rpx;
+  border-top: none;
+  border-bottom: none;
+  line-height: 100rpx;
+  margin-bottom: 30rpx;
+}
+
+/* .hospital .toRight,
+.chooseCover .toRight {
+  padding-top: 40rpx;
+} */
+
+.chooseCover {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: none;
+}
+
+.willSeeCard {
+  height: 100rpx;
+  line-height: 100rpx;
+  border-top: none;
+  border-bottom: none;
+}
+
+.headerImg {
+  width: 98rpx;
+  height: 98rpx;
+  float: right;
+  margin-right: 70rpx;
+  margin-top: 8px;
+  border-radius: 100%;
+}
+
+.txtToRight {
+  float: right;
+  padding-right: 70rpx;
+  font-size: 28rpx;
+}
+
+.inputStyle {
+  text-align: right;
+}
+.saveBtn{
+  position: fixed;
+  bottom: 35rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 451rpx;
+  height: 85rpx;
+  background-color: #5297FC;
+  border-radius: 43rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+}

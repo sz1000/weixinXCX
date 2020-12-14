@@ -1,0 +1,21 @@
+<view class="contentBox">
+  <view class="userName">Hi，{{nickName}}</view>
+  <view class="line"></view>
+  <view class="guess">
+    <text>猜你问题</text>
+    <view class="replace">
+      换一批
+      <image src="/static/img/Shape.png" />
+    </view>
+  </view>
+  <view>
+    <view class="question" wx:for="{{question}}" wx:key="{{item.id}}" value="{{item.name}}">
+      {{item.name}}
+    </view>
+  </view>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+  <text decode='true'>&lt;</text>
+  返回首页
+</view>

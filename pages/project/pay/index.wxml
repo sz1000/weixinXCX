@@ -1,0 +1,29 @@
+<view class="price-container">
+  
+  <view>需要支付金额：</view>
+  <view wx:if="{{order.type == 0}}">￥{{order.price/100}}</view>
+  <view wx:else>￥{{order.payPrice/100}}</view>
+</view>
+<view class="order-container">
+  <view class="project-container">
+    <image src="{{order.projectCoverImgUrl}}" class="project-img" mode="aspectFill"></image>
+    <view class="project-name">{{order.projectName}}</view>
+    <view class="project-price" wx:if="{{order.type == 0}}">￥{{order.price/100}}</view>
+    <view class="project-price" wx:else>￥{{order.payPrice/100}}</view>
+  </view>
+</view>
+<view class="payWay-title">默认支付方式</view>
+<view class="payWay-container">
+    <image src="../../../static/img/icon-wx.png"  class="icon-wx"/>
+    <text>微信</text>
+</view>
+
+<view class="button-container">
+  <button bindtap="pay" class="payBtn">确认支付</button>
+</view>
+
+
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>

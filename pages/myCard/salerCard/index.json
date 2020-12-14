@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "销售名片管理",
+  "disableScroll": true,
+  "usingComponents": {
+    "i-modal": "../../../dist/modal/index"
+  }
+}

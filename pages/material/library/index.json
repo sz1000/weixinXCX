@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "素材库",
+  "usingComponents": {
+    "i-tabs": "../../../dist/tabs/index",
+    "i-load-more": "../../../dist/load-more/index",
+    "i-tab": "../../../dist/tab/index",
+    "i-spin": "../../../dist/spin/index",
+    "global-article-card":"../../../component/global-article-card/index"
+  }
+}

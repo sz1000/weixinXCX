@@ -1,0 +1,130 @@
+<!-- 排序部分 -->
+<view style="position: relative; z-index: 199;">
+  <!-- 滑动部分 -->
+  <scroll-view class="edit_row_holder" scroll-y="{{scrolly}}" scrollTop='{{scrollTop}}' style="height: {{scrollH}}px; background-color:#f5f5f5;" bindscroll="bindscroll">
+    <view class="stay_top">
+      <input type="text" value="{{titleContent.titleText}}" placeholder="请输入标题" class="bigTitle" placeholder-class="phTitleColor" bindinput="fatherTitleInput" />
+      <!-- 卷首语 -->
+      <view class="contentBox">
+        <view class="boxImg" style="width:100%">
+          <image mode="aspectFill" class="uplodImg" data-id='title' bindtap="addImg" src="{{titleContent.content.img == null ? '/static/img/addNew.png': titleContent.content.img}}"></image>
+          <!-- <view class="uplodImg" style="background-image:url({{titleContent.content.img}});" data-id='title' bindtap="addImg"></view> -->
+          <text bind:tap="inputPage" data-type='title' data-id="{{title}}" type="text" class="innerTitle" placeholder-class="phcolor" maxlength="22">
+            {{titleContent.content.text == null ? imgTitle : titleContent.content.text}}
+          </text>
+          <view class="countTxt">{{titleContent.content.text == null ? 0 : titleContent.num}}/40</view>
+        </view>
+      </view>
+    </view>
+    <!-- 覆盖图层 -->
+    <!-- 遮罩 -->
+    <view class="floatView" wx:if='{{floatViewShow}}' style="height:{{moveH}}px;width:{{floatViewW}}">
+      <view class="move" style="top:{{moveIngY}}px" wx:if='{{moveShow}}'>
+        <template is="{{moveData.type == 'img' ? 'img' : 'text'}}" data="{{moveData}}" />
+      </view>
+    </view>
+    <!-- 滑动区域 -->
+    <view class='moveIng' style="height:{{moveH}}px" bind:touchstart="moveStart" bind:touchcancel="moveCancel" bind:touchmove="moveIng" bind:touchend="moveEnd"></view>
+    <!-- 内容 -->
+    <movable-area class='moveContentArea' style="height:{{moveH + 500}}px" >
+      <movable-view class="moveContentView" disabled='false' direction="all" damping='60' style="opacity:{{startPoint == index ? 0 : 100}}" animation='{{animation}}' y="{{optionsListData[index].y}}" wx:for="{{optionsListData}}" wx:key="item">
+        <view class=" {{item.selectClass}}">
+          <template is="{{item.type == 'img' ? 'addImgTemp' : 'addTextTemp'}}" data="{{item,disabled,showTaxis}}" />
+        </view>
+      </movable-view>
+      <!-- 添加、排序 -->
+      <view class="actionView" style="top:{{moveH}}px">
+        <button class="addBtn" disabled='{{disabled}}' bindtap="choose">+ 添加</button>
+        <button class="orderBtn {{orderBtnActive}}" disabled="{{isCompositor}}" bindtap='compositor'>排序</button>
+      </view>
+      <view class="placeholder"></view>
+    </movable-area>
+  </scroll-view>
+  <!-- 底部button -->
+  <view class='foot_btn'>
+    <button class='lookBtn' bindtap='lookBtnNow'>预览</button>
+    <button class='saveBtn' bindtap='lookBtn' form-type="submit">下一步</button>
+  </view>
+  <!-- 返回首页 -->
+  <view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+      <image src="/static/icons/backHome.png"></image>
+
+  </view>
+</view>
+<!-- 选择新建的素材类型 -->
+<view class="mask" bindtap="preventTouchMove" wx:if="{{showModal}}"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="menuBtn" bindtap="go" data-text="文字">
+    <image data-text="文字" src="/static/img/chooseText.png" mode="aspectFill" />
+    文字
+  </view>
+  <view class="menuBtn" bindtap="go" data-text="图片">
+    <image data-text="图片" src="/static/img/chooseImg.png" mode="aspectFill" />
+    图片
+  </view>
+  <!-- <view class="menuBtn" bindtap="go" data-text="产品">
+    <image data-text="产品" src="/static/img/chooseProduct.png" style="height:42rpx;" mode="aspectFill" />
+    产品
+  </view> -->
+</view>
+<!-- 图片素材模版 -->
+<template name="addImgTemp">
+  <view class="contentBox" >
+    <!-- 删除小圆点 -->
+    <view class="edit_col1" wx:if="{{showTaxis}}" data-seccode="{{item.id}}" capture-catch:touchstart='deleteOption'>
+      <view class="ico_delete"></view>
+    </view>
+    <view class="boxImg" wx:if="{{item.type == 'img'}}">
+      <image class="uplodImg" mode="aspectFill" data-seccode="{{item.id}}" src="{{item.content.imgUrl}}" bindtap="addImg"></image>
+      <text type="img" placeholder="请输图片简介" bindtap='inputPage' data-type='{{item.type}}' data-seccode="{{item.id}}" class="innerTitle" fixed='true' placeholder-class="phcolor" bindinput="userInput" bindblur="bindTextAreaBlur" maxlength="22">
+        {{item.content.text == null ? '请输入图片简介' : item.content.text}}
+      </text>
+      <view class="countTxt">{{item.num}}/40</view>
+    </view>
+    <!-- 移动BTN -->
+    <view class="edit_col4" wx:if="{{showTaxis}}" data-seccode="{{item.id}}">
+      <view class="ico_drag"></view>
+    </view>
+  </view>
+</template>
+<!-- 文字素材模版 -->
+<template name="addTextTemp">
+  <view class="contentBox" >
+    <!-- 删除圆点 -->
+    <view class="edit_col1" wx:if="{{showTaxis}}" data-seccode="{{item.id}}" capture-catch:touchstart='deleteOption'>
+      <view class="ico_delete"></view>
+    </view>
+    <view class="boxImg" wx:if="{{item.type == 'text'}}">
+      <text type="text" style="width:90%;padding-left:50rpx" placeholder="请输图片简介" bindtap='inputPage' data-seccode="{{item.id}}" data-type='{{item.type}}' data-id='{{item.id}}' value="{{item.content.text}}" class="innerTitle" fixed='true' placeholder-class="phcolor" bindinput="userInput" bindblur="bindTextAreaBlur" maxlength="22">
+        {{item.content.text}}
+      </text>
+      <view class="countTxt">{{item.num}}/40</view>
+    </view>
+    <!-- 移动目标 -->
+    <view class="edit_col4" wx:if="{{showTaxis}}" data-seccode="{{item.id}}">
+      <view class="ico_drag"></view>
+    </view>
+  </view>
+</template>
+<!-- 添加图片类型模板   wx:if="{{movableViewPosition.data}} == 'img' ? fales  : true " -->
+<template name="img">
+  <view class="boxImg" >
+    <image mode="aspectFill" class="uplodImg" data-seccode="{{item.id}}" src="{{moveData.content.imgUrl}}" bindtap="addImg"></image>
+    <!-- <view class="uplodImg" data-seccode="{{item.id}}" style="background-image:url({{moveData.content.imgUrl}})" bindtap="addImg"></view> -->
+    <text type="img" style="width:90%;padding-left:50rpx" class="innerTitle" placeholder="请输图片简介" maxlength="22">
+      {{moveData.content.text}}
+    </text>
+    <view class="countTxt">{{item.num}}/122</view>
+  </view>
+</template>
+<!-- 添加文字类型 -->
+<template name="text">
+  <view class="contentBox">
+    <view class="boxImg">
+      <text type="text" style="width:90%;padding-left:50rpx" placeholder="请输图片简介" bindtap='inputPage' data-seccode="{{item.id}}" data-type='{{item.type}}' data-id='{{item.id}}' value="{{item.content.text}}" class="innerTitle" fixed='true' placeholder-class="phcolor" bindinput="userInput" bindblur="bindTextAreaBlur" maxlength="22">
+        {{moveData.content.text}}
+      </text>
+      <view class="countTxt">{{moveData.num}}/122</view>
+    </view>
+  </view>
+</template>

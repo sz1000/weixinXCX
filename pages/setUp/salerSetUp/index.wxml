@@ -1,0 +1,20 @@
+<view class="infoBox" bindtap="showInfo">
+	<image src="{{avatarUrl}}" class="headImg" />
+	<view>个人信息</view>
+	<image class="toRight" src="/static/img/toRight.png" />
+</view>
+<view class="contentBox">
+	<view data-page='commonProblem' bindtap="switchToPage">
+		<view>常见问题</view>
+		<image src="/static/img/toRight.png" />
+	</view>
+	<view data-page='suggestion' bindtap="switchToPage">
+		<view>意见反馈</view>
+		<image src="/static/img/toRight.png" />
+	</view>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+	<image src="/static/icons/backHome.png" />
+</view>
+

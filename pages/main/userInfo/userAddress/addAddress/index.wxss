@@ -1,0 +1,16 @@
+/* pages/main/userInfo/userAddress/addAddress/index.wxss */
+page{
+    background-color: #F7F7F7;
+}
+
+.must{
+    color: #FF3E24;
+}
+
+.switch{
+    zoom: 0.7;
+}
+
+input{
+    width: 70vw;
+}

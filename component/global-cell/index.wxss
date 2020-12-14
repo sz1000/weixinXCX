@@ -1,0 +1,30 @@
+/* component/global-cell/index.wxss */
+
+.cell{
+    display: flex;
+    /* padding: 7px 0px; */
+    align-items: center;
+    margin-left: 15px;
+    border: 0px solid #e9eaec;
+    border-bottom-width: 0.5px;
+    line-height: 1.6;
+    padding: 4px 0;
+    min-height: 38px;
+    height: auto;
+    font-size: 14px;
+}
+
+.cell-title{
+    color: #495060;
+    min-width: 65px;
+    padding-right: 10px;
+    line-height: 1.4;
+    font-size: 14px;
+}
+
+.cell-content{
+    width: 100%;
+    /* color: rgb(135, 135, 135); */
+    font-size: 14px;
+    position: relative;
+}

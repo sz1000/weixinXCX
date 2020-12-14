@@ -1,0 +1,74 @@
+<!-- 素材库 -->
+<!-- <view class="tabTop">
+  <i-tabs current="{{ current }}" bindchange="handleChange">
+    <i-tab key="myDiary" title="我的日记"></i-tab>
+    <i-tab key="collectedDiary" title="我的收藏"></i-tab>
+  </i-tabs>
+</view> -->
+<scroll-view class='scrollBox' scroll-top='{{scrollTop}}' scroll-y='true' bindscrolltoupper='refreshData'
+  bindscrolltolower='loadMoreData'>
+  <view class="contentBox">
+    <!-- 暂无数据 -->
+    <view class="noDataBox" wx:if="{{showingData.length == 0}}">{{noDataContent}}</view>
+    <!-- <template is="{{item.template}}" wx:for-index="index" wx:for="{{showingData}}" wx:key="item"
+      data-index="{{item.articleId}}" data="{{item,deleteDialog,currentDeleteId,deleteId,index}}" /> -->
+      <view wx:for="{{showingData}}" wx:key="{{showingData.id}}">
+      <global-article-card bindmyevent="onMyEvent" item="{{showingData[index]}}" add="{{true}}" addBind="{{true}}"></global-article-card>
+    </view>
+      <!-- <global-article-card  bindmyevent="onMyEvent" item="{{showingData}}" add="{{true}}" addBind="{{true}}"></global-article-card> -->
+  </view>
+  <i-load-more wx:if="{{loadMoreTip}}" />
+  <i-load-more wx:if="{{lastLoad}}" tip="已经到底了" loading="{{ false }}" />
+</scroll-view>
+<!-- 遮罩层 -->
+<view class="commodity_screen" bindtap="closeModal" wx:if="{{showModalStatus}}"></view>
+<!-- 分享弹出层 -->
+<view class="shareModal" wx:if="{{showModalStatus}}">
+  <view class="shareBox">
+    <button bindtap="sharePic" class="Wx">
+      <image src="/static/img/finishShare.png" class="finishWx"></image>
+      <view>分享朋友圈</view>
+    </button>
+    <button open-type="share" class="Wx">
+      <image src="/static/img/finishWx.png" class="finishWx"></image>
+      <view>分享好友</view>
+    </button>
+  </view>
+  <view class="cancle" bindtap="closeModal">取消</view>
+</view>
+<!-- 选择新建素材的类型 -->
+<view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap="closeShowModal"></view>
+<view class="modalDlg" wx:if="{{showModal}}">
+  <view class="menuBtn" bindtap="goEdit" data-text="图文">
+    <image data-text="图文" src="/static/img/chooseText.png" mode="aspectFill" />
+    图文素材
+  </view>
+  <view class="menuBtn" bindtap="goEdit" data-text="图册">
+    <image data-text="图册" src="/static/img/chooseImg.png" mode="aspectFill" />
+    图册素材
+  </view>
+</view>
+<view class="addBtn" bindtap='addBtn'>新建素材</view>
+<!-- 用户第一次登陆 显示的内容 -->
+<view wx:if="{{hintShow}}">
+  <view class="mask" wx:if="{{showFirstBox}}"></view>
+  <view class="firstShowBox" wx:if="{{showFirstBox}}">
+    <view class="fTitle">每天就用五分钟</view>
+    <view class="blueUnderLine"></view>
+    <image src="https://img.vstsa.xyz/one.png" class="imgTipOne" />
+    <view class="tipBox">
+      <view class="blueBox"></view>
+      <view>Tip1: 加入名片,让你的素材活跃在名片上</view>
+    </view>
+    <image src="https://img.vstsa.xyz/two.png" class="imgTipTwo" />
+    <view class="tipBox">
+      <view class="blueBox"></view>
+      <view>Tip2: 对图文绑定项目，分享的图片加上项目二维码</view>
+    </view>
+    <view class="tryBtn" bindtap="tryBtn">我来试试</view>
+  </view>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>

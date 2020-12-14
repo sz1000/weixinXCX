@@ -1,0 +1,30 @@
+<!--pages/project/projectDetail/components/group-buying-price/index.wxml-->
+<view class="group-buying-price">
+	<view class="price-container">
+		<view class="price-people">{{value.group_people_num}}人团</view>
+		<view class="price-buy">
+			<i class="">
+				¥
+			</i>
+			{{value.group_price / 100}}
+		</view>
+		<view class="price-line">
+			¥{{value.pay_price / 100}}
+		</view>
+	</view>
+
+	<view class="countdown-container">
+		<view class="countdown-container-text">
+			距结束:
+		</view>
+		<i-count-down
+		 secondType="{{true}}"
+		 countdown-class="count-style"
+		 target="{{value.time_to_close}}"
+		 format="{{format}}"
+		 show-day="{{true}}"
+		 clear-timer="{{false}}"
+		/>
+	</view>
+</view>
+

@@ -1,0 +1,18 @@
+<!--component/global-doctor-card/index.wxml-->
+<view class="container" bind:tap="toDoctorDetails">
+  <view class="imgBox">
+    <image src='{{item.avatar}}'></image >
+  </view>
+  <view class="content">
+    <view>
+      <span class="name">{{item.name}}</span>
+      <span class="title">{{item.title}}</span>
+    </view>
+    <view class="hospital">
+      {{item.addrss}}
+    </view>
+    <view class="tagBox">
+      <span wx:for="{{item.tags}}" wx:key="{{index}}">{{item}}</span>
+    </view>
+  </view>
+</view>

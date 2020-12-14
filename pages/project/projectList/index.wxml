@@ -1,0 +1,141 @@
+<view class="topBox">
+	<view class="searchBarBox">
+		<image class="searchIcon" mode="aspectFill" src="../../../static/imgChange/Shape@2x.png" />
+		<input
+		 class="searchBar"
+		 bindinput="getInputValue"
+		 placeholder="请输入要查询的商品"
+		 value='{{inputValue}}'
+		/>
+		<view bindtap="cancelInput" style="width:50rpx;height: 100%;display: flex;justify-content: center;align-items: center;">
+			<image
+			 wx:if="{{inputValue.length != 0}}"
+			 class="cancelIcon"
+			 mode="aspectFill"
+			 src="../../../static/imgChange/system-closea@2x.png"
+			/>
+		</view>
+	</view>
+	<view class="titleBar">
+		<view class="titleContent {{titleSaler ? 'itemColor' : ''}}" bind:tap="showSelectProjects">
+			<span>商家精选</span>
+		</view>
+		<view class="titleContent {{titleContentLeft == null ? '' : 'itemColor'}}" bind:tap="showProject">
+			<span>{{titleContentLeft == null ? '全部项目' : titleContentLeft}}</span>
+			<image src="../../../static/imgChange/Shape_icon.png" class="titleIcon" />
+		</view>
+		<view class="titleContent {{titleContentRight == null ? '' : 'itemColor'}}" bind:tap="showRecommd">
+			<span>{{titleContentRight == null ? '智能排序' : titleContentRight}}</span>
+			<image src="../../../static/imgChange/Shape_icon.png" class="titleIcon" />
+		</view>
+	</view>
+</view>
+<view style="width:100%;overflow-x:hidden">
+	<view class="mask" wx:if="{{showMask}}" bind:tap="closeModal">
+		<template is="{{template}}" data="{{levelTwoAll,levelOneAll,titleContentRight,currentLevelTwo,currentId,categoryLevelOne,categoryLevelTwo,projectData,noDataContent}}" />
+	</view>
+	<template is="projectList" data="{{screenHeight,projectData,noDataContent}}" />
+
+</view>
+<!-- 商品类目模板 -->
+<template name="category">
+	<view class="categoryBox titleBarBottom">
+		<scroll-view style="height:680rpx;width:220rpx" scroll-top="0" scroll-y="true">
+			<view class="leftBar">
+				<view bindtap="changeTab" data-project="{{levelOneAll}}" class="item {{!currentId ? 'active' : ''}}">
+					全部项目
+				</view>
+				<view
+				 wx:for="{{categoryLevelOne}}"
+				 wx:key="item.id"
+				 catchtap="changeTab"
+				 data-project="{{item}}"
+				 wx:for-item="item"
+				 class="{{item.id == currentId ? 'active' : 'item'}}"
+				>
+					{{item.name}}
+				</view>
+			</view>
+		</scroll-view>
+		<scroll-view style="height:680rpx;width:530rpx" scroll-y="true">
+			<view class="rightBar">
+				<view class="noCategory" wx:if="{{categoryLevelTwo.length == 0}}">{{noDataContent}}</view>
+				<view
+				 bindtap="changeTab"
+				 data-project="{{levelTwoAll}}"
+				 wx:if="{{currentId && categoryLevelTwo.length != 0}}"
+				 class="item {{!currentLevelTwo ? 'itemColor' : ''}}"
+				>
+					全部{{levelTwoAll.namedata}}
+				</view>
+				<view
+				 wx:for="{{categoryLevelTwo}}"
+				 wx:key="item.id"
+				 bindtap="changeTab"
+				 data-project="{{item}}"
+				 wx:for-item="item"
+				>
+					<view class="{{item.id == currentLevelTwo ? 'activeLevelTwo' : 'item'}}" wx:if="{{currentId == item.parentId}}">
+						{{item.name}}
+					</view>
+				</view>
+			</view>
+		</scroll-view>
+	</view>
+</template>
+<!-- 推荐模板 -->
+<template name="recommd">
+	<view class="recommdBox titleBarBottom" style="margin-top:140rpx;">
+		<scroll-view style="height: 680rpx;width:100%" scroll-y="true">
+			<view class="topLine" data-type='智能排序' bindtap="projectOrder">
+				<view class="recommdItem {{titleContentRight == '智能排序' ? 'itemColor' : ''}}">
+					智能排序
+				</view>
+				<image src="{{titleContentRight == '智能排序' ? '../../../static/imgChange/Shape_fill_icon.png' : ''}}" class="recommdIcon" />
+			</view>
+			<view class="topLine" data-type='价格最高' bindtap="projectOrder">
+				<view class="recommdItem {{titleContentRight == '价格最高' ? 'itemColor' : ''}}">
+					价格最高
+				</view>
+				<image src="{{titleContentRight == '价格最高' ? '../../../static/imgChange/Shape_fill_icon.png' : ''}}" class="recommdIcon" />
+			</view>
+			<view class="topLine" data-type='价格最低' bindtap="projectOrder">
+				<view class="recommdItem {{titleContentRight == '价格最低' ? 'itemColor' : ''}}">
+					价格最低
+				</view>
+				<image src="{{titleContentRight == '价格最低' ? '../../../static/imgChange/Shape_fill_icon.png' : ''}}" class="recommdIcon" />
+			</view>
+			<view class="topLine" data-type='销量最高' bindtap="projectOrder">
+				<view class="recommdItem {{titleContentRight == '销量最高' ? 'itemColor' : ''}}">
+					销量最高
+				</view>
+				<image src="{{titleContentRight == '销量最高' ? '../../../static/imgChange/Shape_fill_icon.png' : ''}}" class="recommdIcon" />
+			</view>
+		</scroll-view>
+	</view>
+</template>
+<!-- 商品列表模板 -->
+<template name="projectList">
+	<view class="projectListBox">
+		<scroll-view
+		 style="height:{{screenHeight*2}}rpx;"
+		 scroll-y="true"
+		 bindscrolltolower='loadMoreData'
+		 bindscrolltoupper='refreshData'
+		>
+			<view class="projectBox" wx:for="{{projectData}}" wx:key="{{index}}">
+				<global-prodact-card actInfo="{{item.actInfo ? item.actInfo : null }}" item="{{item}}" />
+			</view>
+			<i-load-more class="i-load" wx:if="{{loadMoreTip}}" />
+			<i-load-more
+			 class="i-load"
+			 wx:if="{{lastLoad}}"
+			 tip="已经到底了"
+			 loading="{{ false }}"
+			/>
+			<view class="noListData" wx:if="{{projectData.length == 0}}">{{noDataContent}}</view>
+
+		</scroll-view>
+	</view>
+</template>
+

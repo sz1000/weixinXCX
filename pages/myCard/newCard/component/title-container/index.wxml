@@ -1,0 +1,20 @@
+<!--pages/myCard/newCard/component/title-container/index.wxml-->
+<view class="container">
+  <view class="title">
+    <view class="title-start">
+      <view class="icon"></view>
+      <view class="titleText">{{title}}</view>
+    </view>
+    <view bindtap="toTarget" wx:if="{{subhead}}" class="more">
+      <span>
+        {{subhead}}
+      </span>
+      <span>
+        <image class="iconPath" src="/static/icons/Path.png"></image>
+      </span>
+    </view>
+  </view>
+  <view class="content"> 
+     <slot> </slot>
+  </view>
+</view>

@@ -1,0 +1,35 @@
+<view class="container">
+    
+  <view class="title">亲~长按识别二维码，你可以通过这张小小的卡片认识我~你最贴心的美丽顾问!!!</view>
+<view class="imgBox" wx:if="{{multiMode}}">
+  <!-- <scroll-view scroll-y="true"> -->
+    <image src="{{imgUrl}}"   class="img"  bindtap="img" mode="widthFix" />
+  <!-- </scroll-view> -->
+</view>
+<!-- <view class="picture-selector" wx:if="{{multiMode}}">
+  <view class="picture-container" wx:for="{{shareImgArray}}" wx:key="*this" wx:for-item="imgUrl" wx:for-index="index">
+    <image src="{{imgUrl}}" data-item="{{imgUrl}}" bindtap="img" mode="aspectFill"></image>
+  </view>
+</view> -->
+<!-- <view style="margin: 80rpx auto 0 auto"> -->
+  <cover-view class="saveBtn" bindtap="saveBtn">保存图片并复制文案!!!</cover-view>
+  <view class="centerView">
+    <!-- <view class="tip">保存图片并复制精品文案发布在朋友圈</view> -->
+    <!-- <view class="tip">用过的小伙伴们都表示吸引力更强哦</view> -->
+  </view>
+<!-- </view> -->
+<!-- <canvas canvas-id="sharePage" style="width:800px;height:{{height}};position:absolute;left:-800px;" />
+<canvas canvas-id="qrCanvas" style="width:200px;height:200px;position:absolute;left:-200px;right:-200px;"></canvas> -->
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+
+</view>
+<button style="width:100rpx;height:80rpx" bindtap="openSetting" >打开设置页</button>
+
+<canvas canvas-id="materialShareCanvas" class="materialShareCanvas"></canvas>
+
+
+
+
+</view>

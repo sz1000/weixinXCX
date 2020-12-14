@@ -1,0 +1,8 @@
+<!-- <text class="countdown-class">{{ time }}</text> -->
+
+<view class="countdown-detaile countdown-class">
+	<view class="{{index % 2 === 0 ? 'count-class' : 'symbol-class'}}" wx:for="{{timeArr}}" wx:key="{{index}}">
+		{{item}}
+	</view>
+</view>
+

@@ -1,0 +1,90 @@
+<wxs src="../../../filter/filter.wxs" module="filter" />
+<i-tabs current="{{ currentTabs }}" class="tabs-container" bindchange="handleChangeTabs">
+	<i-tab key="all" title="全部" />
+	<i-tab key="0" title="待支付" />
+	<i-tab key="1" title="已支付" />
+	<i-tab key="3" title="已核销" />
+	<i-tab key="4" title="退款" />
+</i-tabs>
+<view class="list-container" wx:if="{{listData.length > 0}}">
+	<view class="content-item" wx:for="{{listData}}" wx:key="{{index}}">
+		<view class="head">
+			<view class="head-left">订单号：{{item.order_num}}</view>
+			<view class="head-right">
+				<span>{{filter.orderStatus(item.status)}}</span>
+				<span wx:if="{{item.status === 1 && item.act_id}}">-{{filter.groupBuyingStatus(item.resCode).status}}</span>
+			</view>
+		</view>
+		<view class="content" id="{{item.id}}" bind:tap="handleToDetail">
+			<view class="content-left">
+				<image
+				 class="content-left"
+				 src="{{item.productInfo.cover_img}}"
+				 mode="aspectFit"
+				 lazy-load="true"
+				/>
+			</view>
+			<view class="content-right">
+				<view class="content-right-text">
+					<view class="content-right-title">{{item.productInfo.name}}</view>
+					<view class="content-right-time">下单时间：{{item.created_at}}</view>
+				</view>
+				<view class="content-right-price">¥{{item.pay_price / 100}}</view>
+			</view>
+		</view>
+		<view class="bottom">
+			<view class="bottom-left">
+				<span wx:if="{{item.act_id ? item.resCode == 'SUCCESS' : item.status === 1 }}">核销码：{{item.secret_key}}</span>
+				<span wx:if="{{item.status === 3}}" class="lose">核销码：{{item.secret_key}}</span>
+				<span wx:if="{{item.status === 4}}" style="color:#F55F52">退款将按原路返回</span>
+			</view>
+			<view class="bottom-right">
+				<button
+				 class="primaryBut"
+				 id="{{item.id}}"
+				 bind:tap="handleOrderCancel"
+				 wx:if="{{item.status === 0}}"
+				>取消订单
+				</button>
+				<button
+				 class="primaryBut-full"
+				 bind:tap="handleOrderPay"
+				 id="{{item.id}}"
+				 wx:if="{{item.status === 0}}"
+				>支付订单
+				</button>
+				<picker
+				 id="{{item.id}}"
+				 mode="selector"
+				 range="{{rangeRefund}}"
+				 bindchange="handleChangeRefund"
+				 style="padding:0 28rpx;"
+				 class="primaryBut-full"
+				 wx:if="{{item.act_id ? item.resCode == 'SUCCESS' : item.status === 1}}"
+				>申请退款
+				</picker>
+				<button
+				 class="primaryBut-full"
+				 id="{{item.group_id}}"
+				 data-share-img="{{item.productInfo.cover_img}}"
+				 open-type="share"
+				 wx:if="{{item.act_id && item.resCode == 'JOINING_PAID'}}"
+				>邀请好友参团
+				</button>
+				<button
+				 class="primaryBut-full"
+				 id="{{item.id}}"
+				 bind:tap="handleDeleteOrder"
+				 wx:if="{{item.status === 2}}"
+				>删除订单
+				</button>
+			</view>
+		</view>
+	</view>
+</view>
+<view wx:else class="list-container notData">
+	暂无数据
+</view>
+
+<global-return/>
+

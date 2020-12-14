@@ -1,0 +1,59 @@
+<!--pages/main/userInfo/userAddress/addAddress/index.wxml-->
+<form bindsubmit="handleSubmit">
+	<i-cell-group>
+		<i-cell title="收件人">
+			<input
+			 type="text"
+			 slot="footer"
+			 name="reciver"
+			 value="{{submitData.reciver}}"
+			 placeholder="请输入收件人"
+			/>
+		</i-cell>
+		<i-cell title="联系电话">
+			<input
+			 type="number"
+			 slot="footer"
+			 name="tel"
+			 value="{{submitData.tel}}"
+			 placeholder="请输入联系电话"
+			/>
+		</i-cell>
+	</i-cell-group>
+
+	<view style="height:10px;" />
+
+	<i-cell-group>
+		<i-cell title="请设置默认地址">
+			<switch
+			 class="switch"
+			 slot="footer"
+			 color="#E6C4A6"
+			 bindchange="switch1Change"
+			 name="status"
+			 checked="{{submitData.status}}"
+			/>
+		</i-cell>
+		<i-cell title="所在省市区" is-link>
+			<picker mode="region" slot="footer" bindchange="bindRegionChange">
+				<view class="picker" style="{{submitData.address ? '' : 'color:#969696'}}">
+					{{submitData.address || '请选择'}}
+				</view>
+			</picker>
+		</i-cell>
+		<i-cell title="详细地址">
+			<textarea
+			 placeholder="请输入详细地址"
+			 style="width:70vw;height:40px"
+			 slot="footer"
+			 name="detail_address"
+			 value="{{submitData.detail_address}}"
+			/>
+			</i-cell>
+	</i-cell-group>
+	<button class="button_fill" form-type="submit" style="margin:28rpx">
+		保存
+	</button>
+</form>
+<i-message id="message" />
+

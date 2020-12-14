@@ -1,0 +1,8 @@
+{
+  "usingComponents": {
+    "global-article-card":"/component/global-article-card/index",
+    "global-doctor-card":"/component/global-doctor-card/index",
+    "global-prodact-card":"/component/global-prodact-card/index"
+  },
+  "navigationBarTitleText":"我的预约" 
+}

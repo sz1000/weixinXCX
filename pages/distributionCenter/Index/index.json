@@ -1,0 +1,13 @@
+{
+  "navigationBarTitleText": "分销中心",
+  "disableScroll":true,
+  "usingComponents": {
+    "i-load-more": "../../../dist/load-more/index",
+    "i-sticky": "../../../dist/sticky/index",
+    "i-sticky-item": "../../../dist/sticky-item/index",
+    "i-spin": "../../../dist/spin/index",
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index",
+    "i-progress": "../../dist/progress/index"
+  }
+}

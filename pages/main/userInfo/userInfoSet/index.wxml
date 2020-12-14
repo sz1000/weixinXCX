@@ -1,0 +1,95 @@
+<!-- pages/main/userInfo/userInfoSet/index.wxml -->
+<i-cell-group>
+	<i-cell>
+		<view class="avatar_container">
+			<image
+			 class="avatar"
+			 src="{{userData.avatar}}"
+			 mode="aspectFit"
+			 lazy-load="false"
+			/>
+			<view class="">头像</view>
+		</view>
+	</i-cell>
+	<i-cell title="昵称" value="{{userData.nick_name}}" />
+	<i-cell title="性别">
+		<view slot="footer">
+			{{userData.gender == 1 ? "男":'女'}}
+		</view>
+	</i-cell>
+	<i-cell title="加入时间" value="{{userData.created_at}}" />
+	<i-cell title="联系电话">
+		<view class="tel_container" slot="footer" bind:tap="handleShowVerifyPhone">
+			<text decode="{{true}}" space="{{true}}">{{userData.tel}}&nbsp;</text>
+			<view class="updata_button">
+				<view> 更改</view>
+				<i-icon type="enter" />
+			</view>
+		</view>
+	</i-cell>
+</i-cell-group>
+<view style="height:10px;" />
+<form bindsubmit="formSubmit" bindreset="formReset">
+	<i-cell-group>
+		<i-cell title="姓名">
+			<view class="must" slot="icon">*</view>
+			<input
+			 type="text"
+			 slot="footer"
+			 name="name"
+			 value="{{userData.name}}"
+			 placeholder="请输入姓名"
+			/>
+		</i-cell>
+		<view wx:if="{{isSaler}}">
+			<i-cell title="微信号">
+				<input
+				 type="text"
+				 slot="footer"
+				 value="{{userData.wxid}}"
+				 name="wxid"
+				 placeholder="请输入微信号"
+				/>
+			</i-cell>
+			<i-cell title="通讯地址">
+				<textarea
+				 type="text"
+				 slot="footer"
+				 name="address"
+				 style="width:70vw;height:40px;"
+				 placeholder="请输入通信地址"
+				 value="{{userData.address}}"
+				/>
+				</i-cell>
+	        <i-cell title="请选择您的工作状态" is-link>
+		        <picker 
+		           bindchange="handleExperienceChange" 
+		           slot="footer"
+				   value="{{userData.identity}}"
+		           range="{{identityList}}">
+		        	<view style="{{userData.identity ? '' : 'color:#969696'}}">
+		        		{{userData.identity || userData.identity == 0 ? identityList[userData.identity] : '请选择' }}
+		        	</view>
+		        	<input type="text" name="identity" style="display:none"  placeholder="请选择" value="{{userData.identity}}"  disabled/>
+		        </picker>
+	        </i-cell>
+	        <i-cell title="是否有微商经验" is-link>
+	        	<picker bindchange="bindPickerChange" slot="footer" value="{{userData.experience}}" range="{{experienceList}}">
+	        		<view style="{{userData.experience ? '' : 'color:#969696'}}">
+	        			{{userData.experience ? '是' : userData.experience == 0 ? '否' : '请选择'}}
+	        		</view>
+	        		<input type="text" style="display:none" name="experience" placeholder="请选择" value="{{userData.experience}}"  disabled/>
+	        	</picker>
+	        </i-cell>
+		</view>
+		
+</i-cell-group>
+
+<button form-type="submit" class="button_fill" style="margin: 22rpx 28rpx;">保存</button>
+
+</form>
+
+<verifyPhoen bind:hide="handleHideVerifyPhone" wx:if="{{verifyPhoneShow}}" button="button" button_fill="button_fill"  />
+
+<i-message id="message" />
+

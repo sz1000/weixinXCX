@@ -1,0 +1,59 @@
+/* component/global-share/index.wxss */
+.share-msk{
+  position:fixed;
+  top: 0px;
+  z-index: 10000;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.3)
+}
+
+button::after {
+  border: none;
+}
+
+.share-container {
+  width: 100vw;
+  height: 389rpx;
+  background: #ffffff;
+  position: fixed;
+  z-index: 10001;
+  bottom: 0px;
+}
+
+.share-content {
+  width: 100%;
+  height: 279rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.share-itembox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  font-size: 12px;
+  padding: 0;
+  margin: 0;
+  color: #000;
+}
+
+.share-itembox image {
+  width: 79rpx;
+  height: 79rpx;
+  border-radius: 50%;
+}
+
+.share-cancel {
+  width: 100vw;
+  height: 111rpx;
+  border-top: 1px solid #F5F5F5;
+  text-align: center;
+  letter-spacing: 10rpx;
+  font-size: 30rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 111rpx;
+}

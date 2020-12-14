@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "提交订单",
+  "usingComponents": {
+    "vst-picker":"../../../component/vst-picker/index",
+    "i-input": "../../../dist/input/index",
+    "global-prodact-card":"../../../component/global-prodact-card/index"
+  }
+}

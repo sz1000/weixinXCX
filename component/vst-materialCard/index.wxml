@@ -1,0 +1,34 @@
+<view class="showAreaTw">
+  <view class="titleBox">
+    <view>
+      {{input.title}}
+    </view>
+    <p>
+      {{input.content}}
+    </p>
+  </view>
+  <vst-imgList imgArrayData="{{input.imgArray}}"></vst-imgList>
+  <view class="userInfo">
+    <image class="avatarUrl" src='{{input.userInfo.userAvatar}}'></image >
+    <p>{{input.userInfo.userName}}</p>
+  </view>
+  <view class="menu">
+      <view class="menuItem"  data-index="{{item.isCard}}" bindtap="toTop">
+          <image  class="imgAdd" src="/static/img/icon_card{{item.isCard ? '_fill.png' : '.png'}}" />
+          加入名片
+      </view>
+      <view class="line">|</view>
+      <view class="menuItem" data-url="{{item.refreshtoUrl}}" bindtap="showModal">
+          <image class="imgShare" src="/static/img/icon_share.png" />
+          分享
+      </view>
+      <view class="line">|</view>
+      <view class="menuItem" bindtap="delete" data-did="{{item.articleId}}">
+          <image class="imgDelete"  src="/static/img/icon_delete.png" />
+          删除
+      </view>
+  </view>
+  
+
+  <view>{{item}}</view>
+</view>

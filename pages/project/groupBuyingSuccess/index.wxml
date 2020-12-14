@@ -1,0 +1,16 @@
+<!--pages/project/groupBuyingSuccess/index.wxml-->
+<view class="success-container">
+	<i-icon type="success_fill" size="130" color="#5297FC" />
+	<view class="success-text">
+		支付成功
+	</view>
+	<view class="success-detaile">
+		<span style="color:#FF3B30">{{count}}s</span>
+		结束后跳转到拼团详情页面
+	</view>
+</view>
+
+<view class="botton" bind:tap="handleToDetaile">
+	查看拼团详情
+</view>
+

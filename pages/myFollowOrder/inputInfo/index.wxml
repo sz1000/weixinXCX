@@ -1,0 +1,14 @@
+<!--page/order-inputInfo/index.wxml-->
+    <view class="infoItems">
+        <view class="infoItem">
+            客户姓名<input type="text" bindinput="getValue" data-name="consumeName" placeholder-style="color:#999999" placeholder="请输入客户姓名" />
+        </view>
+        <view class="infoItem">
+            联系方式<input type="number" maxlength="11" bindinput="getValue" data-name="contact" placeholder-style="color:#999999" placeholder="请输入联系方式" />
+        </view>
+        <view class="infoItem">
+            就诊地点<input type="text"  bindinput="orgName" disabled placeholder-style="color:#999999" placeholder="上海市仁爱医院" />
+        </view>
+    </view>
+<i-message id="message" bind:cick=""handleWarning/>
+<view bindtap="submitInfo"><button>确认</button></view>

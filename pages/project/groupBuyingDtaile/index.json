@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "group-buying-card":"./components/group-buying-card/index",
+    "group-buying-peopel":"./components/group-buying-peopel/index",
+    "global-top-bar":"/component/global-top-bar/index",
+    "rule-flow":"./components/rule-flow/index",
+    "vst-login":"../../../component/vst-login/index",
+    "vst-register":"../../../component/vst-register/index",
+    "global-returnIndex":"../../../component/global-returnIndex/index"
+  },
+  "navigationBarTitleText":"拼团详情"
+}

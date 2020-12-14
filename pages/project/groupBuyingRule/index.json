@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "rule-flow":"../groupBuyingDtaile/components/rule-flow/index",
+    "global-top-bar":"/component/global-top-bar/index"
+  },
+  "navigationBarTitleText":"拼团规则"
+}

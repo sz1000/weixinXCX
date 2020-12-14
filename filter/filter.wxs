@@ -1,0 +1,80 @@
+var filter = {
+  //订单状态
+  orderStatus:function(status){
+    var text = ''
+    switch (status) {
+      case -1:
+        text = '订单支付异常'
+        break
+      case 0:
+        text = '待支付'
+        break
+      case 1:
+        text = '已支付'
+        break
+      case 2:
+        text = '已取消'
+        break
+      case 3:
+        text = '已核销'
+        break
+      case 4:
+        text = '退款'
+        break
+      default:
+        break;
+    }
+    return text
+  },
+  appointType:function (params) {
+    switch (params) {
+      case 0:
+          return "待服务"
+
+      case 1:
+          return "已超时"
+
+      case 2:
+          return "已服务"
+
+      case 3:
+          return "已取消"
+
+    
+      default:
+        console.log(params)
+        return
+
+    }
+  },
+  groupBuyingStatus:function(status){
+  console.log("TCL: status", status)
+    
+    switch (status) {
+      case 'SUCCESS':
+        return {status:'拼团成功',subText:'已满足条件'}
+      case 'FINISH':
+        return {status:'拼团成功',subText:'已核销'}
+      case 'FAIL':
+        return {status:'拼团失败',subText:'人员未满足，退款将按原路返回'}
+      case 'SUCCESS_REFUND':
+        return {status:'拼团成功',subText:'用户发起退款，退款将按原路返回'}
+      case  'JOINING_PAID':
+        return {status:'拼团进行中',subText:'支付成功,邀请好友拼团'}
+      case  'JOINING_NOPAY':
+        return {status:'拼团进行中',subText:'立即支付,即可参团成功'}
+      case 'OPENING':
+        return {status:'正在开团',subText:'立即支付,即可开团成功'}
+      case 'CLOSE':
+        return {status:'拼团关闭',subText:'未支付,已取消订单'}
+      case 'ABNORMAL':
+        return {status:'订单异常',subText:''}
+    
+      default:
+        break;
+    }
+  }
+}
+
+module.exports = filter
+

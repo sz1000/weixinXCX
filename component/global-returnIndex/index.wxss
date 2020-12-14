@@ -1,0 +1,9 @@
+/* component/global.returnIndex/index.wxss */
+.returnIndex{
+  width: 87rpx;
+  height: 87rpx;
+  position: fixed;
+  z-index: 9999;
+  bottom: 400rpx;
+  right: 15rpx;
+}

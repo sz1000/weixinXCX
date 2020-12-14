@@ -1,0 +1,54 @@
+<!--pages/project/projectDetail/components/group-buying/index.wxml-->
+<view class="group">
+	<view class="title">
+		<view wx:if="{{listData.total}}">
+			<span style="color:#000;font-size:32rpx">{{listData.total}}</span>
+			人正在拼团，可直接参与
+		</view>
+		<view wx:else>
+			快来参与拼团
+		</view>
+		<view bind:tap="handleToRule">
+			拼团规则
+			<i-icon type="enter" size="13" />
+		</view>
+	</view>
+	<!-- animation="{{animationData}}" -->
+	<!-- bind:tap="handleAnimationIn" -->
+	<view class="listBox" wx:if="{{listData.total}}">
+		<view class="list-container" style="animation-name:{{animationName ? 'in' : 'out'}}" bind:animationend="animationEnd">
+			<view class="list" wx:for="{{listData.groups}}" wx:key="{{index}}">
+				<view class="user-info">
+					<image class="user-headimg" src="{{item.leaderInfo.avatar}}" mode="aspectFit|aspectFill|widthFix" />
+					<view class="user-name">{{item.leaderInfo.nick_name}}</view>
+				</view>
+				<view class="content">
+					<view class="content-text">
+						<view style="color:#333333">还差{{item.remainCount}}人成团</view>
+						<view class="countdown-container">
+							剩余:
+							<i-count-down
+							 data-inex="{{index}}"
+							 secondType="{{true}}"
+							 showDay="{{true}}"
+							 target="{{item.time_to_close}}"
+							 countdown-class="countdown"
+							 format="{{format}}"
+							/>
+						</view>
+					</view>
+					<view
+					 id="{{item.id}}"
+					 data-valid="{{item.timeToClose === 0 || item.leaderInfo.id === userId ? false : true}}"
+					 bind:tap="toGroupBuyingDtaile"
+					 class="{{item.timeToClose === 0 || item.leaderInfo.id === userId ? 'bottom invalid' : 'bottom'}}"
+					>去参团
+					</view>
+				</view>
+
+			</view>
+		</view>
+	</view>
+
+</view>
+

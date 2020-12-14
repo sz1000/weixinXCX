@@ -1,0 +1,12 @@
+{
+  "usingComponents": {
+    "i-radio-group": "../../../dist/radio-group/index",
+    "i-radio": "../../../dist/radio/index",
+    "i-panel":"../../../dist/panel/index",
+    "i-cell-group": "../../../dist/cell-group/index",
+    "i-cell": "../../../dist/cell/index",
+    "global-cell":"../../../component/global-cell/index",
+    "unit-questions":"./components/questions/index"
+  },
+  "navigationBarTitleText":"问诊卡"
+}

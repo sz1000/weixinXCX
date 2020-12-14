@@ -1,0 +1,55 @@
+<!-- 弹出层   -->
+<view class="commodity_screen" wx:if="{{isShow}}" catchtouchmove='handleStopMove' />
+<view class="commodity_container" wx:if="{{isShow}}">
+	<form bindsubmit="submit" class="registerBox {{onlyShowTel ? 'editTelBoxClass' : ''}}">
+		<view wx:if="{{!onlyShowTel}}">
+			<view class="hello">您好</view>
+			<view class="tip">检测到您第一次登录，请完善个人信息。</view>
+			<view class="input-container">
+				<view class="title-name">姓名</view>
+				<input
+				 placeholder="请输入姓名"
+				 bindblur="handleGetName"
+				 placeholder-class="phClass"
+				 name="name"
+				/>
+			</view>
+		</view>
+		<view class="input-container">
+			<view class="title-name">手机号</view>
+			<view class="tel">+86</view>
+			<input
+			 maxlength="11"
+			 type="number"
+			 placeholder-class="phClass"
+			 name="tel"
+			 placeholder="请输入手机号"
+			 bindblur="handleGetTel"
+			/>
+		</view>
+		<view class="input-container">
+			<view class="title-name">验证码</view>
+			<input
+			 class="codeInput"
+			 type="number"
+			 placeholder="请输入验证码"
+			 placeholder-class="phClass"
+			 name="checkCode"
+			 bindblur="handleGetCode"
+			/>
+			<button disabled="{{sendCodeDis}}" class="sendCode" bindtap="getCodeNumber">{{codeInputText}}</button>
+		</view>
+		<button class="submit" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+			提交
+		</button>
+	</form>
+	<i-icon
+	 type="close"
+	 style="margin-top:20px;"
+	 color="#fff"
+	 size="28"
+	 bindtap="closeModal"
+	/>
+</view>
+<!-- <vst-login/> -->
+

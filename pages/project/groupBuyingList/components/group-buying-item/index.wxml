@@ -1,0 +1,32 @@
+<!--pages/project/groupBuyingList/components/group-buying-item/index.wxml-->
+<view class="item-container" data-product-id="{{value.productInfo.id}}" bind:tap="handleToProductDtaile">
+	<view class="img-container">
+		<image
+		 class="main-img"
+		 src="{{value.act_pic}}"
+		 mode="aspectFit|aspectFill|widthFix"
+		 lazy-load="true"
+		/>
+		<view class="countdown">
+			活动剩余时间：
+			<i-count-down
+			 format="{{['天',':',':',' ']}}"
+			 target="{{value.time_to_close}}"
+			 show-day="{{true}}"
+			 secondType="{{true}}"
+			/>
+		</view>
+	</view>
+	<view class="item-title">
+		{{value.name}}
+	</view>
+	<view class="price-container">
+		<span class="peopel">{{value.group_people_num}}人团</span>
+		<span class="price">¥{{value.group_price / 100}}</span>
+		<span class="price-through">¥{{value.productInfo.price / 100}}</span>
+	</view>
+	<view class="peopel-count">
+		已有{{value.view}}个人参与
+	</view>
+</view>
+

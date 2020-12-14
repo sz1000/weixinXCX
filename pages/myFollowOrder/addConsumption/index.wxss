@@ -1,0 +1,107 @@
+/* page/order-addPay/index.wxss */
+.addItem{
+  height: 88rpx;
+  width: 750rpx;
+  border-top:2rpx #E5E5E5 solid;
+  display:flex;
+  flex-direction:row;
+  font-size: 32rpx;
+  margin-left:32rpx;
+  align-items:center;
+}
+input{
+  font-size:28rpx;
+  padding-left:56rpx;
+}
+.addPay{
+  width:100%;
+  height:1500rpx;
+  background-color: #F4F4F4
+}
+.addItems{
+  height:264rpx;
+  width:100%;
+  background-color: #FFFFFF;
+}
+.addItems .addItem:nth-child(1){
+  border-top: none;
+}
+image{
+  width:180rpx;
+  height:180rpx;
+  margin:30rpx 0 30rpx 28rpx;
+}
+.addImg{
+  height:240rpx;
+  width:100%;
+  background-color:#FFFFFF
+}
+button{
+  width: 452rpx;
+  height: 86rpx;
+  border-radius: 42rpx;
+  background-color: #5783FA;
+  font-size:30rpx;
+  color:#FFFFFF;
+  margin-top:28rpx; 
+  position: absolute;
+  bottom: 116rpx;
+  margin-left:20%;
+}
+/*图片样式*/
+.weui-uploader__bd {
+margin-bottom: -4px;
+margin-right: -9px;
+overflow: hidden
+}
+
+.weui-uploader__file {
+float: left;
+margin-right: 9px;
+margin-bottom: 9px
+}
+
+.weui-uploader__img {
+display: block;
+max-width:100%;
+max-height:100%
+}
+
+.weui-uploader__file_status {
+position: relative
+}
+
+.weui-uploader__file_status:before {
+content: " ";
+position: absolute;
+top: 0;
+right: 0;
+bottom: 0;
+left: 0;
+background-color: rgba(0,0,0,.5)
+}
+
+.weui-uploader__file-content {
+position: absolute;
+top: 50%;
+left: 50%;
+-webkit-transform: translate(-50%,-50%);
+transform: translate(-50%,-50%);
+color: #fff
+}
+
+.weui-uploader__input-box {
+  background-image: url(https://lg-9nsrlgpu-1257369666.cos.ap-shanghai.myqcloud.com/添加图片@2x.png);
+  background-size: 100%;
+  float: left;
+position: relative;
+margin-right: 9px;
+margin-bottom: 9px;
+width: 105px;
+height: 105px;
+
+} 
+.imgBox{
+  width: 100%;
+  margin: 40rpx auto;
+}

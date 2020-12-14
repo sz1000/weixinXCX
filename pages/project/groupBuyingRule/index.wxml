@@ -1,0 +1,34 @@
+<!--pages/project/groupBuyingRule/index.wxml-->
+<view class="">
+	<rule-flow/>
+	<global-top-bar title="发起拼团玩法" />
+	<view class="text-container">
+		<text class="">参与条件：所有用户 
+		玩法说明：
+        用户进入商详页，点击“发起拼团”，并成功支付后用户作为团长开团成功。通过分享团链接邀请好友参团，或者其他用户在商详页加入推荐的拼团，成团人数至少为拼团指定人数。开团者在自己开的团未结束前不能再开团，只可参加其他人的团。
+    </text>
+	</view>
+
+	<global-top-bar title="如何查看拼团进度" />
+	<view class="text-container">
+		<text class="">发起拼团后可在【账户】—【我的订单】里查看拼团进度。</text>
+	</view>
+
+	<global-top-bar title="拼团限购" />
+	<view class="text-container">
+		<text class="" wx:if="{{actInfo.act_limit != 0}}">每人限购{{actInfo.act_limit}}次，超过该次数，不可开团和参团。</text>
+		<text class="" wx:else>每人不限购次数</text>
+	</view>
+
+	<global-top-bar title="拼团成功" />
+	<view class="text-container">
+		<text class="">开团{{actInfo.valid_time || 'xx'}}小时内达到规定的成团人数，即拼团成功，成功下单。</text>
+	</view>
+
+	<global-top-bar title="拼团结束" />
+	<view class="text-container">
+		<text class="">开团{{actInfo.valid_time || 'xx'}}小时内未达到规定的成团人数，即拼团失败，系统自动退款。</text>
+	</view>
+
+</view>
+

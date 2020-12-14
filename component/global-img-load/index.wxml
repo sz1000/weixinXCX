@@ -1,0 +1,12 @@
+<!--component/global-img-load/index.wxml-->
+<view class="img-container {{  active ? '' : 'img-loading' }}">
+	<image
+	 class="img-default"
+	 src="{{src}}"
+	 mode="{{mode}}"
+	 lazy-load="{{lazyLoad}}"
+	 binderror=""
+	 bindload="handleLoad"
+	/>
+</view>
+

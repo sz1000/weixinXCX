@@ -1,0 +1,63 @@
+<!-- pages/main/inquiry/components/questions/index.wxml -->
+<view class="question-container">
+	<view class="questions">{{value.title}}</view>
+	<view
+	 class="answer"
+	 wx:if="{{value.type}}"
+	>
+		<template
+		 is="{{value.type}}"
+		 data="{{value,current,currentCheckbox,text}}"
+		/>
+	</view>
+	<view
+	 class="button"
+	 bindtap="handConfirm"
+	>
+		确定
+	</view>
+</view>
+
+<template name="1">
+	<view style="width:100%">
+		<i-radio-group
+		 current="{{current}}"
+		 bindchange="handleRadioChange"
+		>
+			<i-radio
+			 wx:for="{{value.optionsArr}}"
+			 position="left"
+			 wx:key="{{index}}"
+			 value="{{item}}"
+			/>
+		</i-radio-group>
+	</view>
+</template>
+
+<template name="2">
+	<view style="width:100%">
+		<i-checkbox-group
+		 current="{{currentCheckbox}}"
+		 bindchange="handleCheckboxChange"
+		>
+			<i-checkbox
+			 wx:for="{{value.optionsArr}}"
+			 position="left"
+			 wx:key="{{index}}"
+			 value="{{item}}"
+			/>
+		</i-checkbox-group>
+	</view>
+</template>
+
+<template name="3">
+	<view style="width:100%">
+		<textarea
+		 class="textarea"
+		 bindinput="handInputTextarea"
+		 placeholder="{{value.text}}"
+		 value="{{text}}"
+		/>
+	</view>
+</template>
+

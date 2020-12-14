@@ -1,0 +1,8 @@
+{
+  "component": true,
+  "usingComponents": {
+    "vst-login": "../vst-login/index",
+    "i-message": "../../dist/message/index"
+  }
+
+}

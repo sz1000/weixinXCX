@@ -1,0 +1,79 @@
+.showAreaTw,
+.showAreaRadio {
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  width: 100%;
+  margin-bottom: 30rpx;
+  padding: 0px 18rpx;
+}
+
+.titleBox {
+  width: 95%;
+}
+
+.titleBox view {
+  font-size: 18px;
+  color: #000;
+  letter-spacing: 2rpx;
+  font-weight: 600;
+  padding: 12px 0;
+  overflow: hidden;
+}
+
+.titleBox p {
+  width: 100%;
+  font-size: 13px;
+  color: #717171;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: clip;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+}
+
+.avatarUrl {
+  border-radius: 100%;
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+  margin-right: 14rpx;
+}
+
+.userInfo {
+  margin-top: 21rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  color: #717171;
+  font-size: 24rpx;
+}
+
+.menu{
+  border-top:1rpx solid #eeeeee;
+  margin: 0 auto;
+  height: 90rpx;
+  background-color: #ffffff;
+  width: 100%;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.menuItem{
+  width: 33%; 
+  color:#333333;
+  font-size: 24rpx;
+}
+
+.imgAdd,
+.imgShare,
+.imgDelete{
+    width: 40rpx;
+    height: 36rpx;
+    vertical-align: middle;
+    margin-right: 8rpx;
+}

@@ -1,0 +1,13 @@
+<view class="loginText">
+    <text>欢迎</text>
+    <text>您好，</text>
+    <text>在使用小程序之前，</text>
+    <text>请先登陆。</text>
+
+</view>
+<!-- 需要使用 button 来授权登录 -->
+<button class="loginButton"  open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">
+    <image src='/static/img/wxicon.png'></image >
+    授权登录
+</button>
+

@@ -1,0 +1,52 @@
+<!--pages/main/userInfo/userBankCard/index.wxml-->
+<form bindsubmit="handleSubmit">
+	<i-cell-group>
+		<i-cell title="银行卡号">
+			<view class="must" slot="icon">*</view>
+			<input
+			 type="number"
+			 slot="footer"
+			 name="bankCode"
+			 value="{{submitData.bankCode}}"
+			 placeholder="请输入银行卡号"
+			/>
+		</i-cell>
+		<i-cell title="结算银行">
+			<view class="must" slot="icon">*</view>
+			<input
+			 type="text"
+			 slot="footer"
+			 name="bank"
+			 value="{{submitData.bank}}"
+			 placeholder="请输入结算银行"
+			/>
+		</i-cell>
+		<i-cell title="开户行所在地" is-link>
+			<picker mode="region" slot="footer" bindchange="bindRegionChange">
+				<view class="picker" wx:if="{{submitData.bankAddr}}">
+					{{submitData.bankAddr[0]}}-{{submitData.bankAddr[1]}}-{{submitData.bankAddr[2]}}
+				</view>
+				<view wx:else class="">
+					请选择
+				</view>
+			</picker>
+		</i-cell>
+		<i-cell title="支行名称">
+			<input
+			 type="text"
+			 slot="footer"
+			 name="subBank"
+			 value="{{submitData.subBank}}"
+			 placeholder="请输入支行名称"
+			/>
+		</i-cell>
+	</i-cell-group>
+	<view class="must tip">
+		*为保证资金能够快速到账，建议填写开户行信息
+	</view>
+	<button class="button_fill" form-type="submit" style="margin:28rpx">
+		保存
+	</button>
+</form>
+<i-message id="message" />
+

@@ -1,0 +1,90 @@
+/* pages/main/userInfo/userAddress/Index/index.wxss */
+
+page{
+    background-color: #FFF;
+    color: #27313E;
+}
+.content{
+    width: 100%;
+    background: #fff;
+    overflow: hidden;
+    border-top: 1px solid #F5F5F5;
+}
+
+input{
+    width: 70vw;
+}
+
+.must{
+    color: #FF3E24;
+}
+
+.tag{
+    font-size:22rpx;
+    padding: 3rpx 12rpx;
+    margin-top: 16rpx;
+
+    display: inline-block;
+}
+
+.container{
+    background: #ffffff;
+    margin: 28rpx 33rpx;
+    border-bottom: 1px solid #F5F5F5;
+
+    display: flex;
+}
+
+.container_left{
+    width: 130rpx;
+    font-size:30rpx;
+}
+
+.container_right{
+    width: 600rpx;
+}
+.container_center{
+   /* width: 500rpx; */
+   height: 100rpx;
+   line-height: 100rpx;
+   text-align: center;
+   margin: 0 auto;
+  border-bottom: 18rpx solid #eeeeee;
+  box-shadow: -1px 0px 15px #33333316;
+   
+}
+
+.item_title{
+    font-size: 28rpx;
+    margin-bottom: 16rpx;
+}
+
+.item_content{
+    font-size:26rpx;
+    color: #909399;
+}
+
+.item_footer{
+    display: flex;
+    justify-content:flex-end;
+    margin-top: 16rpx;
+    margin-bottom: 26rpx;
+}
+.item_footer_item{
+    margin-right: 30rpx;
+    color: #C9A880;
+    
+    display: flex;
+    align-items: center;
+}
+
+.addAddress{
+    border-radius: 0;
+    position: fixed;
+    font-size:32rpx;
+    width: 100vw;
+    bottom: 0;
+    left: 0;
+    padding: 32rpx 0;
+    padding-bottom: 42rpx;
+}

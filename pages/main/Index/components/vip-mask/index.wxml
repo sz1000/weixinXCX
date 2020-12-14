@@ -1,0 +1,31 @@
+<!--pages/main/Index/components/vip-mask/index.wxml-->
+<view class="vip-container" catchtouchmove="move">
+
+	<view class="vip-card">
+		<view class="vip-price">
+			<span>¥</span>
+			{{member_price / 100}}
+		</view>
+		<view class="vip-gift">
+			赠价值2000元黄金大礼包
+		</view>
+		<image
+		 class="vip-card"
+		 src="../../../../../static/img/vip-card.png"
+		 mode="aspectFit|aspectFill|widthFix"
+		 lazy-load="true"
+		/>
+	</view>
+
+	<view class="button" bind:tap="handleToVipDetails">
+		立即加入
+	</view>
+
+	<i-icon
+	 bindtap="handleChangeShow"
+	 type="close"
+	 size="32"
+	 color="#ffffff"
+	/>
+</view>
+

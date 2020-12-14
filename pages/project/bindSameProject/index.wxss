@@ -1,0 +1,88 @@
+.titleBox{
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30rpx;
+  color: #222222;
+  margin-bottom: 13rpx;
+
+
+}
+.blueBox{
+  background-color: rgb(40, 120, 255);
+  width: 6rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+  margin-top: 8rpx;
+}
+.cardBox{
+  border:1px solid transparent;
+  box-shadow: #cccccc 0px 0px 10px;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 716rpx;
+  height: 240rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cardBox:last-child{
+  margin-bottom: 180rpx;
+}
+.radio{
+  margin-top:40px;
+  color: transparent;
+}
+.itemImg{
+  margin-top: 35rpx;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.contentBox{
+  margin: 35rpx 30rpx 0rpx 20rpx;
+  height: 170rpx;
+  width: 417rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title{
+  font-size: 24rpx;
+  color: #222222;
+  text-align: left !important;
+  line-height: 15px ;
+  margin-top:0!important;
+}
+
+.hospital{
+  margin-top: 20rpx;
+  font-size: 20rpx;
+  color: #999999;
+}
+.price{
+  /* margin-top: 10rpx; */
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #F55F52;
+}
+
+.saveBtn{
+  position: fixed;
+  bottom: 59rpx;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: #5297FC;
+  border-radius: 43rpx;
+  width: 451rpx;
+  height: 85rpx;
+  text-align: center;
+  line-height: 85rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+}
+

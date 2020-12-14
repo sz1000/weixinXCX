@@ -1,0 +1,3 @@
+<view class="imgBox">
+  <image class="imgStyle" wx:for="{{imgArrayData}}"  wx:key='item' mode="aspectFill" src="{{item}}"></image >
+</view>

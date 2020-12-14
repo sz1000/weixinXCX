@@ -1,0 +1,28 @@
+<!--pages/main/vipDetails/index.wxml-->
+<view class="vip-details" hover-class="none" hover-stop-propagation="false">
+	<view class="name-text">
+		{{cardId ? '会员编号 ' + cardId : "立即开通加入会员体系"}}
+	</view>
+	<view class="price">
+		¥{{member_price/100}}
+	</view>
+	<image class="details-img" src="../../../static/img/vip-details.png" mode="widthFix" />
+	<view
+	 class="join-button"
+	 bind:tap="handleAddVip"
+	 hover-class="none"
+	 hover-stop-propagation="false"
+	 wx:if="{{!isSaler}}"
+	>
+		立即加入
+	</view>
+</view>
+
+<i-message id="message" />
+
+<global-returnIndex/>
+
+<vst-login bind:change="handleGetLogin" show="{{loginShow}}" />
+
+<vst-register bind:change="handleRegist" openCode="{{openCode}}" isShow="{{registShow}}" />
+

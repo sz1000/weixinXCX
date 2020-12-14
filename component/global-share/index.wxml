@@ -1,0 +1,16 @@
+<!-- component/global-share/index.wxml -->
+<view class="share-msk">
+<view class="share-container">
+  <view class="share-content">
+    <view class="share-itembox" bindtap="shareFriends">
+      <image src='/static/img/finishShare.png'></image>
+      分享朋友圈
+    </view>
+    <button  open-type="share" style="margin-top:8px" class="share-itembox" bind:tap="shareFriend">
+      <image style="margin-bottom:-8px" src='/static/img/finishWx.png'></image>
+      分享好友
+    </button>
+  </view>
+  <view bindtap="cancel" class="share-cancel">取消</view>
+</view>
+</view>

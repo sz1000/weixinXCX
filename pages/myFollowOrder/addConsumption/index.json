@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "添加消费",
+  "usingComponents": {
+      "i-message": "../../../dist/message/index"
+  }
+}

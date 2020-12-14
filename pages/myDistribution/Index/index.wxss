@@ -1,0 +1,298 @@
+
+page{
+  background-color: #f5f5f5;
+}
+.page-content{
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.tabTop{
+  position:fixed;
+  width: 100%;
+  top:0;
+  z-index: 999;
+}
+.scrollStyle{
+  position:absolute;
+  top:42px;
+}
+
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+.swiper-tab{
+  width: 100%;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  font-family: "PingFang-SC-Medium";
+  margin-bottom: 20px;
+  position: fixed;
+  left:0;
+  top: 0;
+  background-color: #ffffff;
+  z-index: 9999;
+
+
+}
+.swiper-tab-item{
+  display: inline-block;
+  width: 50%;
+  color:#888888;
+  font-size: 15px;
+}
+
+.active{
+  color:#5297FC;
+  border-bottom: 4rpx solid #5297FC;
+}
+
+
+swiper{
+  height: 1100rpx;
+  padding-top: 45px;
+  overflow: scroll;
+}
+.numBox{
+  background-color: #fff;
+  width: 100%;
+  height: 130px;
+  display: flex;
+  justify-content: space-around;
+
+}
+.numItem{
+  margin-top: 40px;
+  height: 50px;
+  font-size: 15px;
+  color: #333333;
+  text-align: center;
+}
+.numItem view{
+  margin-bottom: 4px;
+}
+.numItem text{
+  font-size: 24px;
+  color: #5295FC;
+}
+.greyLine{
+  margin-top: 45px;
+  background-color: #eeeeee;
+  width: 1px;
+  height: 40px;
+}
+.greyBox{
+  background-color: #f3f3f3;
+  width: 100%;
+  height: 6px;
+}
+.getMoreMoney{
+  background-color: #fff;
+  width: 100%;
+  height:150px;
+  display: flex;
+  justify-content: space-between;
+}
+.backImg{
+  background-image: url(https://lg-9nsrlgpu-1257369666.cos.ap-shanghai.myqcloud.com/我的分销_02.png);
+ background-size: 100% 100%;
+ background-repeat: no-repeat;
+ margin-top: 13px;
+  width: 375px;
+  height: 124px;
+  margin: 0 auto;
+  margin-top: 13px;
+}
+
+.btn{
+  position: fixed;
+  bottom: 30rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  background: linear-gradient(to right,#5B6FF9, #5297FC);
+  border-radius: 21px;
+  width: 226px;
+  height: 43px;
+  line-height: 43px;
+  text-align: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "PingFang-SC-Medium";
+  letter-spacing: 1px;
+
+
+}
+
+.tipBox{
+  background-color: #fff;
+  width: 100%;
+}
+.marginLeftBox{
+  margin-left: 30px;
+}
+.tipTitle,
+.lookmore{
+  margin-top: 40rpx;
+  padding-bottom: 10rpx;
+  width: 250rpx;
+  height: 37rpx;
+  font-weight: bold;
+  font-size: 26rpx;
+  color: #F55F52;
+  display: flex;
+  justify-content: flex-start
+
+}
+.tipTitle image{
+  margin-right: 20rpx;
+  width:35rpx;
+  height: 35rpx;
+
+}
+.tipContent{
+  font-size: 26rpx;
+  color: RGBA(0, 0, 0, 0.4);
+  margin-top: 20rpx;
+}
+.tipContent:last-child{
+  margin-bottom: 40px;
+}
+.iconBox{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.lookmore{
+  margin-top: 50rpx;
+  color: #5295FC;
+  font-size: 23rpx;
+  font-family: "PingFang-SC-Medium";
+  letter-spacing: 1px;
+}
+
+.lookmore image{
+  margin-top: 2px;
+  margin-left: 4rpx;
+  width:8px;
+  height: 12px;
+
+}
+
+
+/* 待审核 */
+.time{
+  width: 100%;
+  height: 35px;
+  line-height: 35px;
+  font-size: 13px;
+  color: #999999;
+}
+.time text{
+  margin-left: 15px;
+}
+.itemBox{
+  background-color: #fff;
+  width: 100%;
+  height:169px ;
+}
+.itemBox:last-child{
+  margin-top: 5px;
+}
+.contentBox{
+  border-bottom: 1px solid #eeeeee;
+  width: 100%;
+  height:74px ;
+  display: flex;
+  justify-content: space-between;
+  background: #fff;
+}
+
+.btnBox{
+  width: 100%;
+  height: 57px;
+  display: flex;
+  justify-content: flex-end;
+}
+.btnBox view{
+  margin-top: 16.5px;
+  margin-right: 20px;
+  border: 1px solid #5297FC;
+  border-radius: 12px;
+  width:70px;
+  height: 24px;
+  line-height: 24px;
+  text-align: center;
+  color: #5297FC;
+}
+.headImg{
+  background-size: 100% ;
+  background-repeat: no-repeat;
+  margin: 17px 0  21px 15px;
+  width: 71px;
+  height: 71px;
+}
+.infoBox{
+  margin-top: 17px;
+  width: 268px;
+  height: 65px;
+  font-size: 13px;
+  color: #838383;
+}
+.sexImg{
+  width: 12px;
+  height: 15px;
+  margin-right: 8px;
+}
+.infoName{
+  font-size: 15px;
+  color: #222222;
+  margin-bottom: 10px;
+}
+.traning{
+  margin-top: 7px;
+  display: flex;
+  justify-content: space-between;
+}
+.traning view{
+  margin-right: 10px;
+}
+.teamItemBox{
+  border-bottom: 1px solid #eeeeee;
+  background-color: #fff;
+  width: 100%;
+  height: 64px;
+}
+.teamItemBox .contentBox{
+  margin-top: 0px;
+  justify-content: flex-start;
+}
+.teamItemBox  .headImg{
+  margin: 11px 12px 10px 15px;
+  width: 43px;
+  height: 43px;
+}
+.teamItemBox .infoName{
+  margin-bottom: 5px;
+}
+.teamItemBox .infoBox{
+  margin-top: 14px;
+  margin-left: 0px;
+  height: 45px;
+  font-size: 12px;
+}
+.getEarning{
+  color: #F53A2F;
+}
+.noDataBox{
+  width: 100%;
+  height: 130px;
+  line-height: 250rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #454545;
+}

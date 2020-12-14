@@ -1,0 +1,100 @@
+<view  style="overflow:hidden;width:100%">
+  <!-- <view class="orderInfoBox">
+    <image src="{{productImgUrl}}"></image>
+    <view class="orderContent">
+        <view class="productName ellipsisTwo">{{productName}}</view>
+        <view class="productPrice"> <span>￥</span> {{payPrice/100}} </view>
+    </view>
+  </view> -->
+  <!-- <view style="overflow:hidden;width:100%">
+    <view class="address_left">
+      <view class="name">张三</view>
+      <view class="default">默认</view>
+    </view>
+    <view class="address_right">
+      <view class="mobile">13967891234</view>
+      <view tyle="overflow:hidden;width:100%">
+        <view class="detail_address">上海市黄埔区东方明珠大厦</view>
+        <view class="icon-arrowright">
+          <i-cell-group>
+            <i-cell title="" i-class="font" is-link url="/pages/main/userInfo/userAddress/Index/index" />
+          </i-cell-group>
+        </view>
+      </view>
+    </view>
+  </view> -->
+
+  <view  class="content" style="width:100%;" wx:for="{{1}}" wx:key="{{item.id}}">
+    <view class="container" wx:if="{{!noAddress}}" bind:tap="handleTouserAddress">
+      <view class="container_left">
+        <view >{{addressList[0].reciver}}</view>
+        <view class="button tag" wx:if="{{addressList[0].status}}">默认</view>
+      </view>
+      <view class="container_right">
+        <view class="item_title">{{addressList[0].tel}}</view>
+        <view wx:if="{{addressList.length}}" style="overflow:hidden;">
+          <view class="item_content">{{addressList[0].address[0]}},{{addressList[0].address[1]}},{{addressList[0].address[2]}} {{addressList[0].detail_address}}</view>
+          <view class="icon-arrowright">
+            <i-cell-group>
+              <i-cell title="" i-class="font" is-link url="/pages/main/userInfo/userAddress/Index/index" />
+            </i-cell-group>
+          </view>
+        </view>
+      </view>
+    </view>
+
+    <view style="overflow:hidden;" wx:if="{{noAddress}}" catch:tap="handleTouserAddress">
+      <view class="item_content" style="margin-left:30rpx;line-height:120rpx;">不需要收货地址</view>
+      <view>
+        <i-cell-group class="arrow_right">
+          <i-cell i-class="font" is-link />
+        </i-cell-group>
+      </view>
+    </view>
+    <view style="overflow:hidden;"  wx:if="{{!addressList.length}}" catch:tap="handleTouserAddress">
+      <view class="item_content" style="margin-left:30rpx;">请选择收货地址</view>
+      <view class="content">
+        <i-cell-group>
+          <i-cell i-class="font" is-link/>
+        </i-cell-group>
+      </view>
+    </view>
+
+  </view>
+
+  <view class="orderInfoBox">
+    <global-prodact-card disable="{{true}}" item="{{product}}"></global-prodact-card>
+  </view>
+
+  <view class="priceBox">
+    <view class="priceItem">
+      <view>{{type == 0 ? '商品价格' : '预约金'}}</view>
+      <span>￥{{product.pay_price/100}}</span>
+    </view>
+    <view class="priceItem" wx:if="{{type == 1}}">
+      <view>尾款(到院再付)</view>
+      <span>￥{{(product.price-product.pay_price)/100}}</span>
+    </view>
+    <view class="priceItem" wx:if="{{type == 2}}">
+      <view>尾款(到院再付)</view>
+      <span>实际沟通为准</span>
+    </view>
+    <!-- <view class="priceItem">
+        <view>优惠券</view>
+        <span>无可用优惠券</span>
+    </view> -->
+    <view class="needPay">需付款:
+      <span>￥{{product.pay_price/100}}</span>
+    </view>
+  </view>
+
+  <view class="bottomBox">
+    <view class="totalPrice">合计:
+      <span>￥{{product.pay_price/100}}</span>
+    </view>
+    <view class="orderBtn" bind:tap="submitOrder">提交订单</view>
+  </view>
+</view>
+
+<!-- 消息提示 -->
+<i-message id="message" />

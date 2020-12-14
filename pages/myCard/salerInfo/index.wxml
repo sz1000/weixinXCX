@@ -1,0 +1,42 @@
+<!-- 个人信息 -->
+<view class="personInfo">
+  <span>头像</span>
+  <image class="headerImg" bind:tap="chooseAvatar" src="{{avatarUrl}}"></image>
+</view>
+<view class="hospital">
+  <span>所属机构</span>
+  <view class="txtToRight" style="color:#666">杭州安歆医美</view>
+</view>
+<view class="chooseCover">
+  <span>昵称</span>
+  <view class="txtToRight" >{{nickName}}</view>
+  <!-- <view class="txtToRight" style="color:#666">{{name}}</view> -->
+</view>
+<view class="chooseCover">
+  <span>姓名</span>
+  <input class="txtToRight inputStyle" bind:tap="input"  bindblur="change" data-type='name' data-index="{{name}}" style="color:{{inputStyle=='name' ? '#000' : '#666'}}" value='{{name}}'></input>
+  <!-- <view class="txtToRight" style="color:#666">{{name}}</view> -->
+</view>
+<view class="chooseCover" >
+  <span>性别</span>
+  <input class="txtToRight inputStyle" bind:tap="input" bindblur='change' data-type='gender' data-index='{{gender}}' style="color:{{inputStyle=='gender' ? '#000' : '#666'}}" value='{{gender}}'></input>
+  <!-- <view class="txtToRight" style="color:#666">{{gender}}</view> -->
+</view>
+<view class="chooseCover" bindtap="showTelBox">
+  <span>联系方式</span>
+  <view class="txtToRight inputStyle" bind:tap="input" bindblur='change' data-type='telephone' data-index='{{telephone}}' style="color:{{inputStyle=='telephone' ? '#000' : '#666'}};margin-top:0" >{{telephone}}</view>
+  <!-- <view class="txtToRight" style="color:#666">{{telephone}}</view> -->
+</view>
+<view class="chooseCover">
+  <span>加入时间</span>
+  <view class="txtToRight" style="color:#666">{{birthTime}}</view>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>
+<button  class="saveBtn" bindtap="saveBtn" wx:if="{{showSaveBtn}}">保存</button>
+
+
+<regist-model is-show="{{showRegisterBox}}" bind:close='freshData' only-show-tel="{{true}}"></regist-model>
+<i-message id='message'></i-message>

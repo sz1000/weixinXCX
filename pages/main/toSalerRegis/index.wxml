@@ -1,0 +1,10 @@
+<view class="backImgOne" style="{{url ? 'background-image:url(' + url + '20190415183516.png' + ')' : ''}}">
+  <view class="partnerBtn" bindtap="switchTo"></view>
+</view>
+<!-- <view class="backImgTwo" style="{{url ? 'background-image:url(' + url + '20181109175918.png' + ')' :''}}"></view> -->
+<view class="backImgThree" style="{{url ? 'background-image:url(' + url + '20190415183520.png' + ')' : ''}}"></view>
+<view class="whiteBox"></view>
+<view class="btnBox" wx:if="{{showBtn}}">
+  <view class="leftBtn">每天五分钟,轻松赚到钱</view>
+  <view class="rightBtn" bindtap="switchTo">戳我申请</view>
+</view>

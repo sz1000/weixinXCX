@@ -1,0 +1,12 @@
+<view class="back" style="background-image:url(https://img.kodin.cn/20180926163625.png)">
+    <view class="contentBox">
+        <view class="sao">扫描下方二维码加入我们吧</view>
+        <image src="{{qrCode}}" />
+    </view>
+    <!-- <view class="shareBtn">分享给好友</view> -->
+    <button class="shareBtn" open-type="share">分享给好友</button>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+        <image src="/static/icons/backHome.png"></image>
+</view>

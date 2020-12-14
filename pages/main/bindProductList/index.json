@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "i-radio-group": "/dist/radio-group/index",
+    "i-radio": "/dist/radio/index",
+    "global-prodact-card":"/component/global-prodact-card/index",
+    "global-doctor-card":"/component/global-doctor-card/index",
+    "global-article-card":"/component/global-article-card/index"
+  }
+}

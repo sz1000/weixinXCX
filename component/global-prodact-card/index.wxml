@@ -1,0 +1,38 @@
+<!-- component/global-prodact-card/index.wxml -->
+<view class="projectBox" data-id="{{item.id}}" bind:tap="toProjectDetail">
+	<view class="leftImg">
+		<image src="{{item.cover_img}}" alt="" mode="aspectFill" />
+	</view>
+	<view class="rightContentBox">
+		<view class="projectTitle titleBold ellipsisTwo">{{item.name}}</view>
+		<template is="{{actInfo ? 'groupBuying': 'product'}}" data="{{actInfo,item}}" />
+	</view>
+</view>
+
+<template name="product">
+	<view class="porjectPriceBox" wx:if="{{item.type == 0 || item.type == 1}}">
+		<view class="priceBox">
+			<view class="onSalePrice">￥{{item.type === 0 ? item.pay_price/100 : item.price/100}}</view>
+			<view class="oriPrice">￥{{item.ori_price / 100}}</view>
+			<view class="onSale">限时特惠</view>
+		</view>
+		<span class="saleNum" wx:if="{{item.type != 1}}">已售{{item.count}}</span>
+	</view>
+	<view wx:if="{{item.type == 1 || item.type == 2}}" class="appointPriceBox verticalGlobal">
+		<view class="appointPrice ">
+			预约金:￥{{item.pay_price/100}}</view>
+		<span>已售{{item.count}}</span>
+	</view>
+</template>
+
+<template name="groupBuying">
+	<view class="groupBuying-container">
+		<view class="groupBuying-icon">{{actInfo.group_people_num}}人团</view>
+		<view class="groupBuying-pay-price">
+			<span style="font-size:24rpx">¥</span>
+			{{actInfo.group_price / 100}}
+		</view>
+		<view class="groupBuying-buy-price">（单买价:¥{{item.pay_price / 100}}）</view>
+	</view>
+</template>
+

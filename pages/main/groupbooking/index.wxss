@@ -1,0 +1,55 @@
+/* pages/main/groupbooking/index.wxss */
+.header{
+  height: 240rpx;
+}
+.main{
+  min-height: cac(100vh-480rpx);
+  padding: 20rpx;
+}
+.container_wrap{
+  height:200rpx;
+  background:rgba(255,255,255,1);
+  border-radius:8rpx;
+  display: flex;
+  flex-direction: row;
+}
+.container_img{
+  width: 40%;
+  padding: 20rpx;
+  /* background: #ccc; */
+}
+.container_text{
+  width: 55%;
+  display: flex;
+  flex-direction: column;
+}
+.container_title{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color:rgba(51,51,51,1);
+  margin: 0rpx 0rpx 20rpx 0rpx;
+}
+.container_describe{
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 24rpx;
+  background:linear-gradient(133deg,rgba(231,191,156,1) 0%,rgba(228,196,172,1) 100%);
+  border-radius:4px;
+  color:rgba(120,72,46,1);
+  text-align: center;
+  padding: 10rpx;
+}
+.rushprice_wrap{
+  display: flex;
+  flex-direction: row;
+  margin: 20rpx 0rpx 20rpx 0rpx;
+}
+.rush{
+
+  margin-right: 20rpx;
+}
+.price{
+  color: #FF3B30;
+}

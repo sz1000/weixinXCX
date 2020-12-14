@@ -1,0 +1,59 @@
+<!--pages/distributionCenter/distributionaward/index.wxml-->
+<view class="heard">
+<view class="state_wrap">
+分销比例说明
+<!-- 图标 -->
+<i-icon type="prompt_fill" size="20"  />
+</view>
+<view class="rank_wrap">
+<view class="direct">
+直接分销：40%
+</view>
+<view class="level">
+二级分销：16%
+</view>
+<view class="team" bindtap="handtomycustomer">
+我的客户：70人
+<i-icon type="enter"  />
+</view>
+</view>
+
+</view>
+
+<view class="main">
+
+<view class="container_warp">
+<view class="container">
+<view class="container_number">127</view>
+<view class="container_time">今日</view>
+</view>
+
+<view class="container">
+<view class="container_number">36</view>
+<view class="container_time">昨天</view>
+</view>
+
+<view class="container">
+<view class="container_number">237</view>
+<view class="container_time">本周</view>
+</view>
+
+<view class="container">
+<view class="container_number" style="text-align:center">327</view>
+<view class="container_time">累计分销奖励</view>
+</view>
+
+</view>
+
+<view class="context_warp">
+<view class="context_left">
+<view class="context_title">未结算佣金</view>
+<view class="context_num">￥4742</view>
+</view>
+<view class="context_right">
+<view class="context_title">已结算佣金</view>
+<view class="context_num">￥30182</view>
+
+</view>
+</view>
+</view>

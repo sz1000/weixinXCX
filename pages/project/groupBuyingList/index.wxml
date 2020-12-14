@@ -1,0 +1,11 @@
+<!-- pages/project/groupBuyingList/index.wxml -->
+<image class="banner" src="/static/icons/group-buying-banner.png" mode="aspectFit|aspectFill|widthFix" />
+<view class="list-container">
+	<group-buying-item
+	 value="{{item}}"
+	 class="list-item"
+	 wx:for="{{listData}}"
+	 wx:key="index"
+	/>
+</view>
+

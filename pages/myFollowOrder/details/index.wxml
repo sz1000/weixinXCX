@@ -1,0 +1,69 @@
+<!-- page/order-followDetailsPage/index.wxml -->
+<scroll-view scroll-y="{{true}}">
+    <view class="cusInfo">
+        <view style="margin-left:30rpx;">
+            <view class="infoItem">
+                <text>客户姓名：</text>
+                {{userInfo.name}}
+            </view>
+            <view class="infoItem">
+                <text>联系电话：</text>
+                {{userInfo.tel}}
+            </view>
+            <view class="infoItem">
+                <text>就诊机构：</text>
+                杭州安歆医美
+            </view>
+        </view>
+        <view style="margin:48rpx 0 22rpx 30rpx;font-size: 26rpx;">消费记录:</view>
+
+        <view class="showNull" wx:if="{{orderData.consumerInfo.length == 0}}">暂无消费记录</view>
+
+        <view class="content" wx:for="{{orderData.consumerInfo}}" wx:key="index"
+            wx:for-item="item">
+            <!-- <view wx:if="{{item.status == 0}}"  style="position: absolute;top:24rpx;right:28rpx;color:#f53a2f;font-size: 24rpx;">待确认</view>
+        <view wx:elif="{{item.status == 1}}"  style="position: absolute;top:24rpx;right:28rpx;color:#f53a2f;font-size: 24rpx;">已确认</view>
+        <view wx:else  style="position: absolute;top:24rpx;right:28rpx;color:#f53a2f;font-size: 24rpx;">被机构驳回</view> -->
+
+            <view class="confirm">
+                <span></span>
+                <text>项目名称：</text>
+                {{item.project}}
+            </view>
+            <view class="confirm">
+                <span></span>
+                <text>项目金额：</text>
+                {{item.price/100}}
+            </view>
+            <view class="confirm">
+                <span></span>
+                <text>就诊时间：</text>
+                {{item.visit_time}}
+            </view>
+            <view class="confirm" style="height:120rpx; display:flex;justify-content:space-between;padding:0 20rpx;">
+                <image style="width:120rpx;max-height:100%;display:flex;flex-direction:row;" wx:key="index" wx:for="{{item.cert_imgs}}"
+                    wx:for-item="imgData" src="{{imgData}}" />
+            </view>
+            <view class="tags" style="margin-top:6rpx;">
+                <view class="tag" wx:if="{{item.status == 0}}">
+                    <i-tag class="i-tags" my-class="my-class" color="blue">待确认</i-tag>
+                </view>
+                <view class="tag" wx:elif="{{item.status == 1}}">
+                    <i-tag class="i-tags" my-class="my-class" color="blue">已确认</i-tag>
+                </view>
+                <view class="tag" wx:else="{{item.status == 2}}">
+                    <i-tag class="i-tags" my-class="my-class" color="blue">被机构驳回</i-tag>
+                </view>
+                <view class="tag" wx:if="{{item.user_type == 0}}">
+                    <i-tag class="i-tags" my-class="my-class" color="red">医院添加</i-tag>
+                </view>
+                <view class="tag" wx:else="{{item.user_type == 1}}">
+                    <i-tag class="i-tags" my-class="my-class" color="red">销售添加</i-tag>
+                </view>
+            </view>
+        </view>
+    </view>
+    <view bindtap="toAddPay" data-id="{{id}}">
+        <button>添加消费记录</button>
+    </view>
+</scroll-view>

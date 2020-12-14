@@ -1,0 +1,118 @@
+<view class="container">
+  <view class="content">
+    <view class="infoContainer">
+      <image
+        class="infoHeadImg"
+        mode="aspectFit"
+        src="{{cardData.avatar}}"
+      ></image>
+      <view class="infoName">
+        <view class="infoNameContainer">
+          <view class="infoNameText">{{cardData.name}}</view>
+          <view class="infoNameDecoration"></view>
+        </view>
+        <view style="font-size:26rpx;color:rgba(87,87,87,1);line-height:60rpx;"
+          >{{cardData.title}}</view
+        >
+      </view>
+      <view class="textIcon" style="margin-top:78rpx;">
+        <span>
+          <image
+            class="iconSize"
+            mode="aspectFit"
+            src="/static/icons/hospital.png"
+          ></image>
+        </span>
+        <span class="text1">
+            {{cardData.org}}
+        </span>
+      </view>
+      <view class="infoContact">
+        <view class="textIcon" style="margin-right:57rpx">
+          <span>
+            <image
+              class="iconSize"
+              mode="aspectFit"
+              src="/static/icons/phone.png"
+            ></image>
+          </span>
+          <span class="text1">
+            {{cardData.tel}}
+          </span>
+        </view>
+        <view class="textIcon">
+          <span>
+            <image
+              class="iconSize"
+              mode="aspectFit"
+              src="/static/icons/wx.png"
+            ></image>
+          </span>
+          <span class="text1">
+            {{cardData.wxid}}
+          </span>
+        </view>
+      </view>
+      <view class="textIcon">
+          <span>
+            <image
+              class="iconSize"
+              mode="aspectFit"
+              src="/static/icons/addr.png"
+            ></image>
+          </span>
+          <span class="text1">
+              {{cardData.address}}
+          </span>
+        </view>
+    </view>
+    <view style="padding-bottom:100rpx">
+      <title-container title="简介">
+        <view class="introContent">
+            {{cardData.intro}}
+        </view>
+        <view class="browseInfo">
+          <view class="imageBox">
+            <image src='{{item.avatar}}' wx:for="{{cardData.lastestViewer}}" wx:key="{{index}}"></image >
+          </view>
+          <view class="likeClick" bindtap="likeCunt">
+           <image src="{{cardData.isLike ? '/static/icons/topIcon.png' : '/static/icons/topIconNo.png'}}"></image>
+           <view>赞 {{cardData.likeCount}}</view>
+          </view>
+        </view>
+      </title-container>
+      <!-- subhead="查看我所有素材" type="switchTab" url="/pages/main/Index/index" -->
+      <title-container title="推荐素材">
+        <global-article-card  item="{{cardData.articleInfo}}" add="{{false}}"></global-article-card>
+      </title-container>
+
+      <title-container title="推荐商品">
+        <global-prodact-card item="{{cardData.productInfo}}"></global-prodact-card >
+      </title-container>
+
+      <title-container title="推荐医生">
+        <global-doctor-card item="{{cardData.doctorInfo}}"></global-doctor-card >
+      </title-container>
+    </view>
+    
+  </view>
+  <view class="bottmBar" wx:if="{{self}}">
+    <view class="updataCardInfo" bindtap="toCardInfo" >修改名片信息</view>
+    <view style="width:230rpx;">
+      <button class="shareCard" bind:tap="shareChange">分享名片</button>
+    </view>
+  </view>
+  
+  <image wx:if="{{self}}" bindtap="toCropCardImg" class="camera" src='/static/icons/camera.png'></image >
+  
+  
+
+  <view class="bgImg">
+    <image mode="aspectFill" src='{{cardData.bg_img}}'></image >
+  </view>
+</view>
+
+
+<global-return></global-return>
+
+<global-share wx:if="{{shareShow}}" bindshowchange="shareChange" path="{{cardData.card_img}}"></global-share>

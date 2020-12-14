@@ -1,0 +1,28 @@
+<view class="hearder">
+<view class="manager_wrap">
+  <view class="manager_title">管理奖比例说明
+  <i-icon type="prompt_fill" size="20"/>
+  </view>
+  <view class="manager_one">
+  一级收入比例：10%
+  </view>
+  <view class="manager_two">
+  二级收入比例：10%
+  </view>
+</view>
+</view>
+<view class="main">
+<view class="container_wrap">
+<view class="container_title">
+<view class="container_title_money">总收入¥273000
+</view>
+<view class="container_title_btn">
+<text style="color:#fff; font-size:26rpx">已达标</text>
+
+</view>
+</view>
+<view class="container_text">达标¥3000000可称为常务董事</view>
+
+</view>
+
+</view>

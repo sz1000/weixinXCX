@@ -1,0 +1,308 @@
+{
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"enhance": false,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": false,
+		"autoAudits": false,
+		"uglifyFileName": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.8.3",
+	"appid": "wx34328a7cf672263d",
+	"projectname": "vst_com_rebirth",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"scripts": {
+		"beforeCompile": "",
+		"beforePreview": "",
+		"beforeUpload": ""
+	},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": 34,
+			"list": [
+				{
+					"id": 0,
+					"name": "城市合伙人进入",
+					"pathName": "pages/main/Index/index",
+					"query": "registSaler=true",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "查看编辑文章",
+					"pathName": "pages/main/h5Webview/index",
+					"query": "id=1&withEdit=1",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "注册下级销售",
+					"pathName": "pages/main/Index/index",
+					"query": "parentId=4&registSaler=true",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "从分享商品进来",
+					"pathName": "pages/project/projectDetail/index",
+					"query": "sharerId=6&projectId=9",
+					"scene": null
+				},
+				{
+					"id": 4,
+					"name": "h5webview",
+					"pathName": "pages/main/h5Webview/index",
+					"query": "id=8&salerId=4&isShare=true4",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "名片进入",
+					"pathName": "pages/myCard/newCard/index",
+					"query": "id=11&self=true",
+					"scene": null
+				},
+				{
+					"id": 6,
+					"name": " 生成分享名片",
+					"pathName": "pages/myCard/shareToFriend/index",
+					"query": "id=11",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "医生详情",
+					"pathName": "pages/shop/doctorDetail/index",
+					"query": "doctorId=17",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "问证卡",
+					"pathName": "pages/main/inquiry/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "我的素材",
+					"pathName": "pages/material/myMaterial/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约列表",
+					"pathName": "pages/appointment/list/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 11,
+					"name": "商品详情页",
+					"pathName": "pages/project/projectDetail/index",
+					"query": "productId=48",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品列表",
+					"pathName": "pages/project/projectList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 13,
+					"name": "拼团详情页",
+					"pathName": "pages/project/groupBuyingDtaile/index",
+					"query": "type=details&groupId=48",
+					"scene": null
+				},
+				{
+					"id": 14,
+					"name": "拼团详列表",
+					"pathName": "pages/project/groupBuyingList/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "拼团规则页",
+					"pathName": "pages/project/groupBuyingRule/index",
+					"query": "productId=79",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "拼团成功",
+					"pathName": "pages/project/groupBuyingSuccess/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "订单列表",
+					"pathName": "pages/order/Index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 18,
+					"name": "订单详情",
+					"pathName": "pages/order/orderDetail/index",
+					"query": "orderId=328",
+					"scene": null
+				},
+				{
+					"id": 19,
+					"name": "vip详情",
+					"pathName": "pages/main/vipDetails/index",
+					"query": "sharerId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/main/homePage/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/main/Index/index",
+					"pathName": "pages/main/Index/index",
+					"query": "sharerId=1",
+					"scene": null
+				},
+				{
+					"id": 22,
+					"name": "模拟下次跟新",
+					"pathName": "pages/main/Index/index",
+					"query": "sharerId=1",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "成功页面",
+					"pathName": "pages/successPage/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "医院详情",
+					"pathName": "pages/shop/Index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 25,
+					"name": "我的收益",
+					"pathName": "pages/myProfit/Index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收益详情",
+					"pathName": "pages/myProfit/detail/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "预约详情",
+					"pathName": "pages/appointment/detaileAppointment/index",
+					"query": "id=28",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息设置",
+					"pathName": "pages/main/userInfo/Index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "信息设置",
+					"pathName": "pages/main/userInfo/userInfoSet/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "银行卡",
+					"pathName": "pages/main/userInfo/userBankCard/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "注册销售",
+					"pathName": "pages/main/salerRegis/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "实名认证",
+					"pathName": "pages/main/userInfo/userVerify/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收货地址管理",
+					"pathName": "pages/main/userInfo/userAddress/Index/index",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "添加收货地址",
+					"pathName": "pages/main/userInfo/userAddress/addAddress/index",
+					"scene": null
+				}
+			]
+		}
+	}
+}

@@ -1,0 +1,46 @@
+<!--pages/distributionCenter/CustomerDetailOne/index.wxml-->
+<!-- 个人信息 -->
+<view class="header">
+<view class="Title_wrap">
+ <view class="portrait">
+ <!-- 图片暂时是写死的，后面从接口字段中获取 -->
+<image src="../../../static/img/group_booking_background.png" style="width:150rpx;height:150rpx;border-radius:50%;"></image>
+ </view>
+
+ </view>
+
+<view class="userInfo_wrap">
+<view class="grade_name_wrap">
+ <view class="name">林俊杰</view>
+  <view class="dial">一键拨号</view>
+</view>
+<view class="userInfo_box">
+     <view class="wachat">微信号：27282939</view>
+     <view class="tel"> 手机号：18227399283</view>
+     <view class="join_time"> 加入时间：2019.09.18</view>
+</view>
+</view>
+</view>
+<!-- 带来的收益 -->
+<view class="performance_container">
+<view class="title_wrap">
+<view class="Title_icon"></view>
+<view class="Total_performance">带来的收益</view>
+</view>
+<view class="performance_price_wrap">
+<text style="font-size:26rpx; diaplay:inline;">￥</text>
+<view class="performance_price">7389.4</view>
+</view>
+</view>
+<!-- 更多信息 -->
+<view class="more_warp">
+  <view class="title_wrap">
+<view class="Title_icon"></view>
+<view class="more_message">更多信息</view>
+</view>
+<view class="order_number">订单数量：10个</view>
+<view class="order_total">订单总额：72829元</view>
+<view class="customer_number">客户数量：8人</view>
+<view class="customer_total">客户订单总额：17283939元</view>
+</view>
+

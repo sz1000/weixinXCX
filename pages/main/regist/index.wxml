@@ -1,0 +1,32 @@
+<!-- 弹出层 -->
+<view class="commodity_screen" wx:if="{{!onlyShowTel}}" bindtap="closeModal"></view>
+<view class="registerBox {{onlyShowTel ? 'editTelBoxClass' : ''}}" wx:if="{{true}}">
+  <view wx:if="{{!onlyShowTel}}">
+    <view class="hello">您好</view>
+    <view class="tip">检测到您第一次登录，请完善个人信息。</view>
+    <view>
+      <view class="title-name">姓名</view>
+      <view class="inputView">
+        <input class="nameInput" placeholder="请输入" placeholder-class="phClass" bindinput="getName" />
+      </view>
+    </view>
+  </view>
+  <view>
+    <view class="title-name">电话</view>
+    <view class="inputView">
+      <view class="tel">+86</view>
+      <input maxlength="11" type="number" placeholder-class="phClass" bindinput="getTel" />
+    </view>
+  </view>
+  <view>
+    <view class="title-name">验证码</view>
+    <view class="codeBox">
+      <input class="codeInput" type="number" placeholder-class="phClass" bindinput="setCode" />
+      <view class="sendCode" bindtap="getCode">{{codeInputText}}</view>
+    </view>
+  </view>
+  <!-- <view  bindtap="submit"> -->
+  <button class="submit" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">提交</button>
+  <!-- </view> -->
+</view>
+<i-message id="message"></i-message>

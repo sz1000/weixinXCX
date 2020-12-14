@@ -1,0 +1,21 @@
+<!--pages/project/groupBuyingDtaile/components/group-buying-card/index.wxml-->
+<view class="group-buying-card">
+	<image class="content-img" src="{{value.productInfo.cover_img}}" mode="aspectFit|aspectFill|widthFix" />
+	<view class="content-container">
+		<view class="content-title">
+			{{value.productInfo.name}}
+		</view>
+		<view class="container-price">
+			<view class="price-people">{{value.group_people_num}}人团</view>
+			<view class="price-buy">
+				<i class="">
+					¥{{value.group_price / 100}}
+				</i>
+			</view>
+			<view class="price-line">
+				¥{{value.productInfo.pay_price / 100}}
+			</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,61 @@
+<view class="page-container">
+  <view class="input-box title">
+    <input placeholder="请输入标题" value="{{title}}" placeholder-class="input-placeholder" maxlength="20" bindblur="getTitle" />
+  </view>
+  <view class="input-box">
+    <textarea style='font-size:16px;' value="{{content}}" name="" id="" cols="1" rows="1" placeholder="请输入朋友圈文字..." placeholder-class="input-placeholder" bindblur="bindTextAreaBlur"></textarea>
+  </view>
+  <scroll-view class="picture-selector" scroll-y="true">
+    <view class="picture-container" wx:for="{{files}}" wx:key="index" wx:for-item="item" wx:for-index="index">
+      <image data-index="{{index}}" class="closeImg" src="/static/img/deleteImg.png" mode="aspectFill" wx:if="{{showDeleteImg}}" catch:tap="deleteImg" />
+      <image src="{{item}}" mode="aspectFill"></image>
+    </view>
+    <view class="picture-container" bindtap="chooseImage" wx:if="{{files.length <= 8}}">
+      <image src="https://lg-9nsrlgpu-1257369666.cos.ap-shanghai.myqcloud.com/添加图片@2x.png" mode="aspectFill"></image>
+    </view>
+  </scroll-view>
+  <view class="editBtn {{clicked ? 'active':''}}" bindtap="edit"></view>
+  <view class="btn-group">
+    <button bindtap="preview">预览</button>
+    <button bindtap="save" class="blue">下一步</button>
+  </view>
+</view>
+<!-- <view class="titleBox">
+    <input placeholder="请输入标题" value="{{title}}" placeholder-class="input-placeholder" maxlength="20"  bindblur="getTitle"/>
+</view>
+<view class="contentBox">
+    <textarea  value="{{content}}" name="" id="" cols="1" rows="1" placeholder="请输入朋友圈文字..." placeholder-class="input-placeholder" bindblur="bindTextAreaBlur"></textarea>
+</view>
+<scroll-view scroll-y='true'>
+<view class="imgBox">
+  <view class="pic-container" wx:for="{{files}}" wx:key="*this" wx:for-item="item">
+    <image class="pic-delete-button" src="/static/img/deleteImg.png" mode="aspectFill" wx:if="{{showDeleteImg}}" catch:tap="deleteImg"></image>
+    <image class="pic" src="{{item}}" mode="aspectFill" />
+  </view>
+  <view class="pic-container" bindtap="chooseImage" wx:if="{{show}}">
+    <image class="pic" src="https://lg-9nsrlgpu-1257369666.cos.ap-shanghai.myqcloud.com/添加图片@2x.png" mode="aspectFill" />
+  </view>
+    <view class="weui-uploader__bd">
+        <view class="weui-uploader__files" id="uploaderFiles">
+            <block wx:for="{{files}}" wx:key="*this">
+                <view class="weui-uploader__file" bindtap="previewImage" id="{{item}}">
+                    <image data-index="{{index}}" class="closeImg" src="/static/img/deleteImg.png" mode="aspectFill" wx:if="{{showDeleteImg}}" catch:tap="deleteImg"/>
+                    <image class="weui-uploader__img" src="{{item}}" mode="aspectFill" />
+                </view>
+            </block>
+        </view>
+        <view class="weui-uploader__input-box" bindtap="chooseImage" wx:if="{{show}}">
+        </view>
+    </view>
+</view>
+<view class="editBtn {{clicked ? 'active':''}}" bindtap="edit"></view>
+</scroll-view>
+<view class="btnBox">
+    <view class="preview" bindtap="preview">预览</view>
+    <view class="save" bindtap="save">保存</view>
+</view> -->
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+
+</view>

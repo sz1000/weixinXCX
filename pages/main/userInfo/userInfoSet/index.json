@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "verifyPhoen":"./components/verifyPhone/index"
+  },
+  "navigationBarTitleText":"个人信息"
+}

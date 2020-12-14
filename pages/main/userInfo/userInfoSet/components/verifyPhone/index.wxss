@@ -1,0 +1,59 @@
+/* pages/main/userInfo/userInfoSet/components/verifyPhone/index.wxss */
+
+.mask{
+    position: absolute;
+    z-index: 1000;
+    width: 100vw;
+    height: 100vh;
+    
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 28rpx;
+}
+
+input{
+    width: 40vw;
+}
+
+.verify_container{
+    position: relative;
+    width: 70vw;
+    height: 40vw;
+    background-color: #ffffff;
+    border-radius: 4px;
+
+    padding: 20px;
+    margin-top: -30vw;
+}
+
+.input_item{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding: 10rpx 0;
+}
+
+input{
+    text-align: right;
+}
+
+.button-container{
+    margin-top: 20rpx;
+    display: flex;
+    justify-content: space-between;
+}
+
+.button-container view {
+    width: 48%;
+    text-align: center;
+    height: 30rpx;
+    line-height: 30rpx;
+    padding: 12rpx 0;
+}
+

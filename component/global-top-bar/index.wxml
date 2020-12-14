@@ -1,0 +1,14 @@
+<!--component/global-top-bar/index.wxml-->
+<view class="topbar-container" bindtap="handToUrl">
+	<view class="topbar-item">
+		<view class="title-icon" />
+		<view class="title">{{title}}</view>
+	</view>
+	<view class="topbar-item">
+		<view class="sub-title">{{subTitle}}</view>
+		<view wx:if="{{subTitle}}">
+			<i-icon type="enter" />
+		</view>
+	</view>
+</view>
+

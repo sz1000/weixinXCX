@@ -1,0 +1,24 @@
+<!-- <view class="titleBox">
+    <view class="blueBox"></view>
+    <view>体验卡</view>
+</view> -->
+
+<i-panel >
+    <i-radio-group current="{{current}}" bindchange="handleCardChange">
+     <view wx:for="{{projectList}}" wx:key="item" class="cardBox" style='opacity:{{current == item.id ? 1 : 0.5}};'>
+           <i-radio  position="left" value="{{item.id}}"  i-class="radio"> </i-radio>
+           <image src="{{item.coverImgUrl}}"  class="itemImg" mode="aspectFill"/>
+          <view class="contentBox">
+              <view class="title">{{item.name}}</view>
+              <view class="hospital">{{item.orgName}}</view>
+              <view class="price">¥ {{item.price}}</view>
+          </view>
+      </view>
+    </i-radio-group>
+</i-panel>
+
+<view class="saveBtn" bindtap="save">保存</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+        <image src="/static/icons/backHome.png"></image>
+</view>

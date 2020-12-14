@@ -1,0 +1,125 @@
+<view style="width:100%;overflow-x:hidden">
+	<vst-picker
+	 title="请选择您的工作状态"
+	 placeholder="点击选择"
+	 bind:getValue='selectWorkStatus'
+	 value='{{userWorkStatus}}'
+	 range="{{workstatus}}"
+	/>
+	<vst-picker
+	 title="是否有微商经验"
+	 placeholder="点击选择"
+	 bind:getValue='selectTraning'
+	 value='{{showTrain}}'
+	 range="{{traning}}"
+	/>
+	<view class="divideLine">
+		<view class="optionsBox">
+			姓名
+			<input
+			 placeholder="请填写姓名"
+			 disabled
+			 value="{{userInfo.name}}"
+			 data-type="name"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+	<view class="divideLine">
+		<view class="optionsBox">
+			联系电话
+			<input
+			 placeholder="请填写手机号"
+			 disabled
+			 value="{{userInfo.tel}}"
+			 data-type="tel"
+			 type="number"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+	<view class="divideLine">
+		<span>上传身份证照片</span>
+		<view class="idCardImgBox">
+			<view class="frontSide">
+				<image src="{{idImgUrlFront.length == 0 ? '/static/img/id_card_front.png' : idImgUrlFront}}" mode="aspectFill" />
+				<view class="frontText" data-type="front" bind:tap="chooseIdentifyImg">上传正面</view>
+			</view>
+			<view class="reverseSide">
+				<image src="{{idImgUrlReverse.length == 0 ? '/static/img/id_card_verso.png' : idImgUrlReverse}}" mode="aspectFill" />
+				<view class="reverseText" data-type="reverse" bind:tap="chooseIdentifyImg">上传反面</view>
+			</view>
+		</view>
+	</view>
+	<view class="divideLine">
+		<view class="optionsBox">
+			通讯地址
+			<input
+			 placeholder="请填写地址"
+			 value="{{address}}"
+			 data-type="address"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+	<view class="divideLine">
+		<view class="optionsBox">
+			银行账号
+			<input
+			 placeholder="请填写银行账号"
+			 type="number"
+			 value="{{bankCode}}"
+			 data-type="bankCode"
+			 bindblur="checkBankCode"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+	<view class="divideLine">
+		<view class="optionsBox">
+			结算银行
+			<input
+			 placeholder="请填写结算银行"
+			 value="{{bankCount}}"
+			 disabled="{{isChecked}}"
+			 data-type="bankCount"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+	<!-- <vst-picker title="结算银行" placeholder="点击选择银行" bind:getValue='selectBank' range="{{bank}}" value="{{bankCount}}"> -->
+	<!-- </vst-picker> -->
+	<vst-picker
+	 class="locations"
+	 title="开户行所在地"
+	 placeholder="点击选择地区"
+	 mode="region"
+	 bind:getValue='selectBankLocation'
+	 value="{{bankLocation}}"
+	/>
+	<view class="divideLine">
+		<view class="optionsBox">
+			支行名称
+			<input
+			 placeholder="请填写支行名称"
+			 value="{{bankBranchName}}"
+			 data-type="bankBranchName"
+			 bindinput="getValue"
+			/>
+		</view>
+	</view>
+
+	<view class="agreeBox">
+		<view class="{{circleStatus ? 'circleFill' : 'cirleAgree'}}" bindtap="agreeKodin" />
+		点击同意
+		<text>《Kodin合作协议》</text>
+	</view>
+	<view class="submit" bindtap="submit">提交申请</view>
+</view>
+
+<i-message id='message' />
+<i-modal visible="{{ hintVisible }}" bind:ok="hintClose" bind:cancel="hintClose">
+	<view>提交失败！</view>
+	<view>请稍后再试，或联系管理员</view>
+</i-modal>
+

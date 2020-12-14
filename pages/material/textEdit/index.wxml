@@ -1,0 +1,2 @@
+<textarea class="edit" bindblur="back" placeholder-class='editcss' value="{{text}}" auto-focus='true' name="" id="" cols="30" rows="10" maxlength='40' bindconfirm="back" bindinput='num' auto-focus='true'></textarea>
+<view class="countTxt">{{num}}/40</view>

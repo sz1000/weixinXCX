@@ -1,0 +1,163 @@
+/* 遮罩层样式 */
+.commodity_screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000000;
+  opacity: 0.7;
+  overflow: hidden;
+  z-index: 2000
+}
+.commodity_container{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2001;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+/* 弹出层样式 */
+.registerBox {
+  /* margin-top: -120rpx; */
+  width: 90%;
+  background-color: #fff;
+  padding-top: 120rpx;
+  border-radius: 6rpx;
+}
+
+.closeBtn {
+  position: absolute;
+  right: 32rpx;
+  top: 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.hello {
+  margin: 15rpx 0rpx 24rpx 76rpx;
+  font-size: 23px;
+  color: #222222;
+  font-family: "HiraginoSansGB-W3";
+}
+
+.tip {
+  margin-left: 76rpx;
+  font-size: 26rpx;
+  color: #484848;
+
+}
+.input-container{
+  display: flex;
+  align-items: center;
+  margin: 30rpx 76rpx;
+  height: 100rpx;
+}
+.input-container view{
+  white-space: nowrap;
+}
+.input-container input{
+    margin-left: 12rpx;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+.title-name {
+
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
+.inputView {
+  margin-top: 10rpx;
+  border-bottom: 1rpx solid#555555;
+  display: flex;
+  flex-direction: row;
+}
+
+.nameInput {
+  width: 100%;
+  margin-bottom: 10rpx;
+  font-size: 28rpx;
+
+}
+
+.phClass {
+  font-size: 30rpx;
+  color: #CCCCCC;
+}
+
+
+.tel {
+  margin-right: 10rpx;
+  background-color: #5297FC;
+  width: 86rpx;
+  height: 50rpx;
+  color: #fff;
+  font-size: 28rpx;
+  text-align: center;
+  line-height: 50rpx;
+}
+
+.codeBox {
+  margin-top: 10rpx;
+  margin-left: 76rpx;
+  width: 80%;
+  border-bottom: 1rpx solid#555555;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.codeInput {
+  width: 314rpx;
+  margin-top: 10rpx;
+  font-size: 28rpx;
+
+}
+
+.sendCode {
+  display:block;
+  width: 236rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 28rpx;
+  color: #333333;
+  background: #fff;
+  padding: 0;
+}
+
+.submit {
+  display:block;
+  margin: 80rpx auto;
+  width: 500rpx;
+  height: 90rpx;
+  background-color: #5297FC;
+  border-radius: 46rpx;
+  font-size: 30rpx;
+  font-family: "HiraginoSansGB-W3";
+  color: #fff;
+  letter-spacing: 2rpx;
+  text-align: center;
+  line-height: 90rpx;
+  z-index: 999;
+}
+
+.editTelBoxClass {
+  top: 80rpx;
+  bottom: 0;
+  height: fit-content;
+  margin: 10px auto;
+}
+
+button[disabled] {
+  color: #666666 !important;
+  background: #fff !important;
+  /* border-color: #46b8da !important; */
+}

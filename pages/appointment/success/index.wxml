@@ -1,0 +1,10 @@
+<!-- pages/appointment/success/index.wxml -->
+<view class="container">
+	<i-icon size="65" color="#5297FC" type="success_fill" />
+	<view>{{text}}成功</view>
+</view>
+
+<view class="button" bindtap="handToList">
+	查看预约详情
+</view>
+

@@ -1,0 +1,60 @@
+/* component/global-select-time/index.wxss */
+
+.time-msk{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #00000042;
+  top: 0;
+  left: 0;
+  position: absolute;
+  z-index: 999;
+}
+
+
+.select-time{
+  width: 100vw;
+  height: 200px;
+  background: #fff;
+  position:fixed;
+  z-index: 1000;
+  bottom: 0;
+  left: 0;
+  box-shadow: 0 0 4px 2px #33333305;
+}
+.time-value{
+  font-size: 28rpx;
+  font-weight: 400;
+  color:rgba(153,153,153,1);
+}
+.select-time-item{
+  text-align: center;
+  line-height: 30px;
+  font-size: 30rpx;
+}
+
+.pickerBottonBox{
+  position: absolute;
+  z-index: 1001;
+  width: 100%;
+  height: 38px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+}
+
+.pickerBottonBox view{
+  width: 55px;
+  height: 26px;
+  border: 1px solid #33333310;
+  text-align: center;
+  line-height: 26px;
+  border-radius: 4px;
+}
+
+.confirm-borrom{
+  background: rgba(82,151,252,1);
+  color: #fff;
+  margin-right: 10px;
+}

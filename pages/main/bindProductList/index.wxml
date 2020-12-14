@@ -1,0 +1,18 @@
+<!-- pages/main/selectProductList/index.wxml -->
+<i-panel>
+    <radio-group current="{{current}}" bindchange="handleCardChange">
+        <view wx:for="{{projectList}}" wx:key="item" class="cardBox" style='opacity:{{current == item.id ? 1 : 0.5}};'>
+            <view class="radioBox">
+                <radio position="left" value="{{item.id}}" i-class="radio"></radio>
+            </view>
+            <view class="item-centent">
+                <image class="radio-img" src="{{item.head_img}}"></image >
+                <view class="item-centent-text">
+                    <view class="centent-title ellipsisTwo">{{item.title}}</view>
+                    <view class="content-subtitle">作者：{{item.author_name}}</view>
+                </view>
+            </view>
+        </view>
+    </radio-group>
+</i-panel>
+<view class="saveBtn" bindtap="save">保存</view>

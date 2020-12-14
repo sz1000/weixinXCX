@@ -1,0 +1,86 @@
+/* pages/appointment/list/index.wxss */
+page{
+  background: #EEEEEE;
+}
+
+.tabs-container{
+  position: fixed;
+  top:0px;
+  background: #fff;
+  width: 100vw;
+}
+
+.newAppointment{
+  width: 87rpx;
+  height: 87rpx;
+  position: fixed;
+  bottom:276rpx;
+  right: 34rpx;
+}
+
+.list{
+  color: #666666;
+  font-size:26rpx;
+  font-weight:400;
+  background: #EEEEEE;
+  margin-top: 42px;
+}
+
+.list-item{
+  background: #fff;
+  margin-bottom: 21rpx;
+}
+
+.list-item-head{
+  height: 88rpx;
+  padding: 0 31rpx;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  border-bottom: #F5F5F5 solid 1px;
+}
+
+.list-item-content{
+  font-size: 24rpx;
+  padding: 31rpx;
+  border-bottom: #F5F5F5 solid 1px;
+}
+.list-item-bottom{
+  width: 100%;
+  height: 108rpx;
+  display: flex;
+  justify-content: flex-end;
+  align-items:center;
+}
+
+.radius-buttom{
+  width:140rpx;
+  height:48rpx;
+  border:1px solid rgba(82,151,252,1);
+  border-radius:24rpx;
+  line-height: 48rpx;
+  text-align: center;
+  color: #5297FC;
+  margin-right: 45rpx;
+}
+.radius-buttom-active{
+  background:linear-gradient(0deg,rgba(34,121,255,1) 0%,rgba(82,149,252,1) 100%);
+  color: #fff;
+  margin-right: 31rpx;
+}
+
+.custom{
+  display: flex;
+  
+}
+.custom span{
+  font-size: 15px;
+  color: #333333;
+  margin-left: 12px;
+  
+}
+.custom-img{
+  width: 200rpx;
+  height: 200rpx;
+  background: #66666640;
+}

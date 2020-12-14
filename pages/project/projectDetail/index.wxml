@@ -1,0 +1,199 @@
+<import src="../../../wxParse/wxParse.wxml" />
+
+<view style="width:100%;overflow-x:hidden">
+	<!-- 轮播图 -->
+	<swiper
+	 indicator-dots="true"
+	 autoplay="true"
+	 interval="{{2500}}"
+	 duration="{{500}}"
+	 class="project-img"
+	>
+		<block wx:for="{{product.content_imgs}}" wx:key="index">
+			<swiper-item>
+				<image
+				 src="{{item}}"
+				 bindload="imgOnLoad"
+				 data-thumb="{{item}}"
+				 style="display:none"
+				/>
+				<image class="swiper-image" src="{{imgLoad ? item : '../../../static/imgChange/1553329277(1).jpg'}}" mode="aspetFill" />
+			</swiper-item>
+		</block>
+	</swiper>
+
+	<!-- 拼团价格 -->
+	<view class="" wx:if="{{product.actInfo}}">
+		<group-buying-price value="{{ product.actInfo }}" />
+	</view>
+
+	<!-- 价格信息 -->
+	<view wx:if="{{!product.actInfo}}">
+		<view wx:if="{{product.type == 1}}">
+			<view class="project-price">
+				<span>￥</span>
+				{{product.price/100}}
+				<span class="waitPay">{{product.ori_price/100}}</span>
+			</view>
+		</view>
+		<view wx:if="{{product.type == 0}}">
+			<view class="project-price">
+				<span>￥</span>
+				{{product.price/100}}
+				<span class="waitPay">{{product.ori_price/100}}</span>
+			</view>
+		</view>
+	</view>
+	<!-- 标题 -->
+	<view>
+		<view class="projectName-content titleBold">{{product.name}}</view>
+		<view class="orderNum">已售{{product.count}}</view>
+	</view>
+
+	<!-- 拼团组建 -->
+	<group-buying wx:if="{{product.actInfo}}" productId="{{product.id}}" />
+
+	<!-- 详情页 -->
+	<view>
+		<view class="projectName-title">
+			<view class="rectangle" />
+			<h2 style="font-size:30rpx;">项目简介</h2>
+		</view>
+		<view class="detailBox">
+			<template is="wxParse" data="{{wxParseData:PROJECT.nodes}}" />
+		</view>
+	</view>
+
+	<!-- submitBar -->
+	<view class="{{showSaleBtn== true ? 'bottomOneBtnBox' : 'bottomTwoBtnBox'}} bottomBtnBox ">
+
+		<view class="priceBox">
+			<view bindtap="showTips" wx:if="{{product.type == 1 || product.type == 2}}" style="display:flex;align-items:center">
+				预约支付:
+				<span style="color:#FF5855;font-size: 22rpx;">￥</span>
+				<span style="color:#ff5855;font-size:22rpx;font-weight:bold">
+					{{product.pay_price/100}}
+				</span>
+				<image style="width:26rpx;height:26rpx;margin-left:12rpx;" src="../../../static/imgChange/priceInfo.png" />
+			</view>
+			<p wx:if="{{product.type == 1}}">
+				到院再付:
+				<span style="color:#222222;font-size:20rpx;font-weight:500">
+					￥{{(product.price-product.pay_price)/100}}
+				</span>
+			</p>
+			<p wx:if="{{product.type == 2}}">
+				到院再付:
+				<span style="color:#222222;font-size:20rpx;font-weight:500">实际沟通为准</span>
+			</p>
+		</view>
+
+		<template is="{{submitBarType}}" data="{{product}}" />
+
+	</view>
+
+	<template name="sell">
+		<button class="saleBox" bind:tap="bindSubmitBuyOrder" data-status="{{product.type}}">
+			<span>买</span>
+			<p>享店主折扣优惠</p>
+		</button>
+
+		<button class="saleBox" hidden="{{showSaleBtn}}" open-type="share">
+			<span>卖</span>
+			<p>赚取提成</p>
+		</button>
+	</template>
+
+	<template name="groupbBuying">
+		<button class="saleBox" bind:tap="bindSubmitBuyOrder" data-status="{{product.type}}">
+			<span>单买价格</span>
+			<p>¥{{product.actInfo.pay_price / 100}}</p>
+		</button>
+
+		<button
+		 class="saleBox"
+		 style="background-color:#fc6252"
+		 bind:tap="handleGroupBuyingOrder"
+		 hidden="{{showSaleBtn}}"
+		>
+			<span>发起拼团</span>
+			<p>¥{{product.actInfo.group_price / 100}}</p>
+		</button>
+	</template>
+
+	<!-- 客服窗口 -->
+	<button
+	 style="display:block"
+	 open-type="contact"
+	 bindcontact="handleContact"
+	 show-message-card="true"
+	 send-message-path="../mall-projectDetailPage/index"
+	 send-message-title="{{project.name}}"
+	 session-from="weapp"
+	 size="20"
+	>
+		<image class="message" src="/static/project/message.png" mode="aspectFill" />
+	</button>
+
+	<!-- 分享朋友圈 -->
+	<button
+	 style="display:block"
+	 bind:tap="showCanvas"
+	 bindcontact="handleContact"
+	 show-message-card="true"
+	 send-message-path="../mall-projectDetailPage/index"
+	 send-message-title="{{project.name}}"
+	 session-from="weapp"
+	 size="20"
+	>
+		<image
+		 class="shareBtn"
+		 style="bottom:170rpx"
+		 src="/static/icons/share.png"
+		 mode="aspectFill"
+		/>
+	</button>
+
+	<!-- 返回首页 -->
+	<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+		<image src="/static/icons/backHome.png" />
+	</view>
+
+	<!-- 注册组件  -->
+	<vst-login show="{{loginShow}}" bind:change="handleLoginChange" />
+	<vst-register openCode="{{openCode}}" isShow="{{registerShow}}" bind:change="handleRedister" />
+	<!-- 信息提示组件 -->
+	<i-message id='message' />
+</view>
+
+<!-- 预约金提示弹窗 -->
+<view class="priceTips" style="z-index:1001" hidden="{{showTips}}">
+	<image src="../../../static/imgChange/back.png" class="tipBack" />
+	<view class="tipQuestion">
+		<span/>
+		什么是预约金?
+		<span/>
+	</view>
+	<view class="itemsTip">
+		<view class="itemTip">预约金是项目预定金</view>
+		<view class="itemTip">即：预约金+到院支付金额=项目金额</view>
+		<view class="itemTip">注：预约金到院消费前可退</view>
+	</view>
+	<view class="tipBtn" bindtap="closeTips">确定
+	</view>
+</view>
+<button style="width:100rpx;height:80rpx" bindtap="openSetting">打开设置页
+</button>
+
+<view
+ class="commodity_screen"
+ bindtap="closeModal"
+ catchtouchmove='true'
+ hidden="{{showCanvas}}"
+/>
+<global-return/>
+<canvas class="shareProduct" hidden="{{showCanvas}}" canvas-id="shareProductCanvas">
+	<view class="saveCanvas" catch:tap="saveCanvas">保存到相册
+	</view>
+</canvas>
+

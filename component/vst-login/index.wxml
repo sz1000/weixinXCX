@@ -1,0 +1,20 @@
+<view
+ class="commodity_screen"
+ wx:if="{{show}}"
+ catchtouchmove='handleStopMove'
+ catch:tap="handleCloseModal"
+>
+	<view class="loginBox" catch:tap="handleStop">
+		<view class="loginText">
+			<text class="firstText">欢迎</text>
+			<text>您好，</text>
+			<text>在使用小程序之前，</text>
+			<text>请先登陆。</text>
+		</view>
+		<buttons class="loginButton" bindtap="getLoginAuth">
+			<image src='/static/img/wxicon.png' />
+			授权登录
+		</buttons>
+	</view>
+</view>
+

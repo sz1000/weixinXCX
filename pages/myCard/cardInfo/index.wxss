@@ -1,0 +1,50 @@
+/* pages/myCard/cardInfo/index.wxss */
+.cardInfo {
+  width: 100%;
+  min-height: 100vh;
+  background: #f9f9f8;
+  padding-bottom: 50px;
+}
+
+.headContainer {
+  display: flex;
+  padding-left: 15px;
+  color: #495060;
+  background: #fff;
+  flex-direction:column;
+  line-height: 1.4;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.box{
+  padding: 7px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.line{
+  width: 100%;
+  border-bottom: 1px solid #49506010;
+}
+.headContainer image {
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50rpx;
+  margin-right: 15px;
+}
+.sleColor{
+  color:#495060;
+}
+
+.serveButton{
+  width: 90%;
+  height: 70rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-size: 14px;
+  margin: 50px auto;
+  background: #5297FC;
+  color: #fff;
+  border-radius:10rpx;
+}

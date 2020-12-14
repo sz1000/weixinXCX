@@ -1,0 +1,17 @@
+
+<canvas class='createCard' style="disply:none;" canvas-id="createCardCanvas">
+<cover-view class="container">
+  <cover-view class="title">亲~长按识别二维码，你可以通过这张小小的卡片认识我~你最贴心的美丽顾问</cover-view>
+  <cover-view class="imgBox">
+    <cover-image wx:if="{{imgUrl !== ''}}"  src="{{imgUrl}}" class="img" bindtap="img" mode="aspectFill" />
+  </cover-view>
+  <cover-view style="width:100%;">
+    <cover-view class="saveBtn" bindtap="saveBtn">保存图片并复制文案</cover-view>
+    <cover-view class="centerView">
+      <cover-view class="tip">保存图片并复制精品文案发布在朋友圈</cover-view>
+      <cover-view class="tip">用过的小伙伴们都表示吸引力更强哦</cover-view>
+    </cover-view>
+  </cover-view>
+</cover-view>
+
+</canvas>

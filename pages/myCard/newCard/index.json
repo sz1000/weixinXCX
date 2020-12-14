@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText":"销售名片",
+  "usingComponents": {
+    "title-container" : "./component/title-container/index",
+    "global-article-card" : "/component/global-article-card/index",
+    "global-prodact-card" : "/component/global-prodact-card/index",
+    "global-doctor-card" : "/component/global-doctor-card/index",
+    "global-share" : "/component/global-share/index"
+  }
+}

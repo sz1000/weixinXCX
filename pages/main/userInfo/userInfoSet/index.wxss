@@ -1,0 +1,29 @@
+/* pages/main/userInfo/userInfoSet/index.wxss */
+page{
+    background-color: #F7F7F7;
+}
+
+input{
+    width: 70vw;
+}
+
+.avatar_container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.must{
+    color: #FF3E24;
+}
+
+.tel_container{
+    display: flex;
+    align-items: center;
+}
+
+.updata_button{
+   color: #C9A880;
+   line-height: 24rpx;
+   display: flex;
+}

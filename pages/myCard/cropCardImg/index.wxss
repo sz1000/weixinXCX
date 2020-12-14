@@ -1,0 +1,130 @@
+.bgBox {
+  width: 100%;
+  height: 500px;
+  background-color: #000000;
+  position: relative;
+}
+
+.textData {
+  position: absolute;
+  z-index: 1000;
+  top: 10px;
+  left: 10px;
+  color: #fff;
+}
+
+.btnBox {
+  position: absolute;
+  display: block;
+  z-index: 9000;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #5f5f5f;
+  color: rgb(223, 223, 223);
+}
+
+.btnCard {
+  width: 50%;
+  text-align: center;
+}
+
+.moveImgBox {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+}
+
+.bgimg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.modal {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 100;
+}
+
+.moveBox {
+  position: absolute;
+  z-index: 1000;
+  /* background: wheat; */
+  border: 1px solid #fff;
+}
+
+.point {
+  background: #fff;
+  width: 3px;
+  height: 14px;
+}
+
+.point1 {
+  background: #fff;
+  width: 17px;
+  height: 3px;
+}
+
+
+.handle {
+  position: absolute;
+}
+
+.handleNW {
+  transform: rotate(90deg);
+  margin: -3px -3px;
+}
+
+.handleNE {
+  right: 0;
+  transform: rotate(180deg);
+  margin: -3px -3px;
+}
+
+.handleSW {
+  bottom: 0;
+  transform: rotate(0deg);
+  margin: -3px -3px;
+}
+
+.handleSE {
+  right: 0;
+  bottom: 0;
+  transform: rotate(-90deg);
+  margin: -3px -3px;
+}
+
+.canvasbox {
+  position: absolute;
+  z-index: 0;
+  top: 99999;
+  opacity: 0;
+}
+
+.createCard {
+  position: absolute;
+  z-index: 0;
+  width: 750px;
+  height: 1334px;
+  background-color: rgb(197, 197, 197);
+}
+
+.createCardBox {
+  display: none;
+
+  top: 99999;
+
+  opacity: 0;
+}

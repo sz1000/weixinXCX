@@ -1,0 +1,9 @@
+<view class="contentBox">
+    <image src='/static/img/saveFinish.png' class="finishImg"/>
+    <view>支付成功</view>
+</view>
+<button  class="orderBtn" bindtap='goToHomePage'>返回首页</button>
+<!-- <view class="backBtnStyle" bindtap='goToHomePage'>
+    <text  decode='true'> &lt; </text>
+    返回首页
+</view> -->

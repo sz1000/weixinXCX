@@ -1,0 +1,15 @@
+<view class="imgBox">
+  <view class='imgRight'>
+    <image mode="aspectFill" src="https://img.vstsa.xyz/0740336955faf2a2f8f75c820ec27b2e.jpg"></image >
+  </view>
+  <view class='imgLeft'>
+    <view class='imgLeftTop'>
+      <image class='imgSizeSmall' mode="aspectFill" style="margin-bottom:6rpx" src="https://img.vstsa.xyz/0740336955faf2a2f8f75c820ec27b2e.jpg"></image >
+    </view>
+    <view class='imgLeftBottom imgSizeSmall'>
+        <view class="fontStye imgSizeSmall">+9</view>
+        <view class="mask imgSizeSmall"></view>
+        <image class="imgSizeSmall" mode="aspectFill"  src="https://img.vstsa.xyz/0740336955faf2a2f8f75c820ec27b2e.jpg"></image >
+    </view>
+  </view>
+</view>

@@ -1,0 +1,130 @@
+<view style="width:100%;overflow:hidden">
+  <view class="userInfo" style="background-image: url('https://img.kodin.cn/kodin/{{isSaler ? 'gold-bg2':'general-bg1'}}.png');{{isSaler? 'height:300rpx':''}}">
+    <image class="user-headImg" src="{{isLogined ? avatarUrl : '/static/icons/default-headimg.png'}}" />
+  <view class="userbox" >
+    <view class="user-name" wx:if="{{isLogined}}">{{nickName}}</view>
+    <view class="statusbox" bindtap="tovipgrade">
+  <!-- 钻石 -->
+  <i-icon type="integral" color="#FBF5F7" size="24"/>
+  <!-- <i-icon type="integral_fill" color="#FBF5F7" size="24"/> -->
+  <!-- 星星 -->
+  <!-- <i-icon type="collection"  color="#FBF5F7" size="24"/> -->
+
+    <view class="user-title" bind:tap="handleToVipDetaile" style="background-image: url('https://img.kodin.cn/kodin/{{isSaler ? 'gold':'general'}}-streamer.png')">
+     <view  > {{isSaler ? '黄金会员':'普通会员'}}</view>
+    </view>
+
+<!-- 进度条 -->
+   
+
+
+    </view>
+    
+    
+     </view>
+   
+    <button class="login-button" wx:if="{{!isLogined}}" bindtap="handleLogin">登录</button>
+  </view>
+
+
+</view>
+ 
+<view class="container">
+
+  <view class="saler-container" wx:if="{{isSaler}}">
+    <!-- 销售收益 -->
+    <view class="commonBox1">
+      <view class="commonBar" style="margin-left:40rpx;">
+        <view class="common-bar-left">销售收益
+        </view>
+        <view class="showOrderBtn" data-page="/pages/myProfit/Index/index" bind:tap="switchToPage">
+          立即提现
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+      <view class="itemBox saler-item-box">
+        <view class="item">
+          <span>{{canWithDraw/100}}</span>
+          <view>可提现收益</view>
+        </view>
+        <view class="item">
+          <span>{{todayAmount/100}}</span>
+          <view>本月收益</view>
+        </view>
+        <view class="item"bind:tap="handleTomoneyDetail">
+          <i-icon type="document_fill"  color="#C8A67E" size="24"/>
+          <view>提现明细</view>
+        </view>
+        <view class="item">
+          <span>{{todayAmount/100}}</span>
+          <view>今日收益</view>
+        </view>
+        <view class="item">
+          <span>{{todayAmount/100}}</span>
+          <view>累计收益</view>
+        </view>
+        <view class="item"bind:tap="handleToearningsDetail">
+          	<i-icon type="createtask_fill" color="#C8A67E" size="24" />
+          <view>收益明细</view>
+        </view>
+      </view>
+    </view>
+    <view class="divide" style="margin:0 10px;" />
+  </view>
+
+  <!-- 列表 -->
+  <view>
+    <view class="commonBox" style="height:100rpx;">
+      <view class="commonBar" bind:tap="todistribuitionaward" style="height:100rpx;">
+        <view>
+          <span class="redpacket_fill">
+            <i-icon type="redpacket_fill" color="#C9A880" size="28"/>
+          </span>
+          <span class="redpacket_fill">分销奖励</span>
+          <span class="redpacket_number">￥5555</span>
+        </view>
+        <view class="showOrderBtn" >
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+    </view>
+    <view class="commonBox" style="height:100rpx;" bind:tap="tocommission">
+      <view class="commonBar" style="height:100rpx;">
+        <view>
+          <span class="redpacket_fill">
+            <i-icon type="financial_fill"color="#C9A880"  size="28" />
+          </span>
+          <span class="redpacket_fill">业绩提成</span>
+          <span class="redpacket_number">￥6666</span>
+        </view>
+        <view class="showOrderBtn" >
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+    </view>
+    <view class="commonBox"  bind:tap="tomanage" style="height:100rpx;">
+      <view class="commonBar" style="height:100rpx;">
+        <view>
+          <span class="redpacket_fill">
+            <i-icon type="transaction_fill" color="#C9A880"  size="28"/>
+          </span>
+          <span class="redpacket_fill" >管理奖</span>
+          <span class="redpacket_number" style="margin-left:32rpx">￥9999</span>
+        </view>
+        <view class="showOrderBtn" >
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+    </view>
+
+    <view class="commonBox" style="height:80rpx;text-align: center;color: #fff;background: #C9A880;">
+      <view class="invite_btn">
+        <span style="height:80rpx;line-height:80rpx;">邀请好友加入您的团队</span>
+      </view>
+    </view>
+  </view>
+
+</view>
+
+<i-message id="message" />
+<vst-register openCode="{{openCode}}" isShow="{{registerShow}}" bind:change="handleRegister" />

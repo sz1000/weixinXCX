@@ -1,0 +1,8 @@
+{
+  
+  "navigationBarTitleText": "杭州安歆医美",
+  "usingComponents": {
+    "i-load-more": "../../../dist/load-more/index",
+    "global-prodact-card":"../../../component/global-prodact-card/index"
+  }
+}

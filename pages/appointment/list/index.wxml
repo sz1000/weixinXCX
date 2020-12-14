@@ -1,0 +1,102 @@
+<!--pages/appointment/list/index.wxml-->
+<!-- 过滤器加载 -->
+<wxs
+ src="../../../filter/filter.wxs"
+ module="filter"
+/>
+
+<view class="tabs-container">
+	<i-tabs
+	 current="{{ current }}"
+	 bindchange="handleChange"
+	>
+		<i-tab
+		 key=""
+		 title="全部预约"
+		/>
+		<i-tab
+		 key="0"
+		 title="待服务"
+		/>
+		<i-tab
+		 key="2"
+		 title="已服务"
+		/>
+		<i-tab
+		 key="3"
+		 title="已取消"
+		/>
+	</i-tabs>
+</view>
+
+<view class="list">
+	<view
+	 class="list-item"
+	 wx:for="{{dataList}}"
+	 wx:key="{{index}}"
+	>
+		<view class="list-item-head">
+			<span>预约编号:{{item.appoint_num}}</span>
+			<span>{{filter.appointType(item.status)}}</span>
+		</view>
+
+		<view
+		 class="list-item-content"
+		 data-id='{{item.id}}'
+		 bindtap="handToDetail"
+		>
+			<view class="list-item-content-container">
+				<global-prodact-card
+				 wx:if="{{item.item_type === 1}}"
+				 item="{{ item.productInfo }}"
+				 disable="true"
+				/>
+
+				<global-doctor-card
+				 wx:if="{{item.item_type === 0}}"
+				 item="{{ item.doctorInfo }}"
+				 disable="true"
+				/>
+
+				<view
+				 class="custom"
+				 wx:if="{{item.item_type === 2}}"
+				>
+					<view class="custom-img" />
+					<span>到院安排</span>
+				</view>
+
+			</view>
+			<view style="margin-top:32rpx">到院时间:{{item.appoint_time}}</view>
+		</view>
+
+		<view
+		 class="list-item-bottom"
+		 wx:if="{{item.status === 0}}"
+		>
+			<picker
+			 range="{{pickerArr}}"
+			 id="{{item.id}}"
+			 data-index="{{index}}"
+			 bindchange="bindPickerChange"
+			 class="radius-buttom"
+			>取消预约
+			</picker>
+			<view
+			 id="{{item.id}}"
+			 bindtap="handToNewAppoin"
+			 class="radius-buttom radius-buttom-active"
+			>
+				修改预约
+			</view>
+		</view>
+
+	</view>
+</view>
+
+<image
+ class="newAppointment"
+ bindtap="handToNewAppoin"
+ src='/static/icons/newAppointment.png'
+/>
+

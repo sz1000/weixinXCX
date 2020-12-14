@@ -1,0 +1,81 @@
+<!--pages/project/groupBuyingDtaile/index.wxml-->
+<view class="container" hover-class="none" hover-stop-propagation="false">
+	<view class="container-item">
+		<group-buying-card value="{{serveData.actInfo}}" />
+	</view>
+
+	<view class="container-item">
+		<view class="start-paying" wx:if="{{type === 'start'}}">
+			<span style="color:#FF3B30">【正在开团】...</span>
+			立即支付，即可开团成功
+		</view>
+
+		<group-buying-peopel value="{{serveData}}" type="{{type}}" />
+	</view>
+
+	<view class="rule-container">
+		<global-top-bar title="拼团" subTitle="拼团规则" url="/pages/project/groupBuyingRule/index?productId={{serveData.actInfo.product_id}}" />
+		<rule-flow/>
+	</view>
+
+	<view class="submit-bar" wx:if="{{type}}">
+		<template is="{{type}}" data="{{serveData,timeEnd}}" />
+	</view>
+</view>
+
+<global-returnIndex wx:if="{{returnIndexShow}}" />
+<vst-register isShow="{{registerShow}}" openCode="{{openCode}}" bind:change="handleRegister" />
+<vst-login show="{{loginShow}}" bind:change="handleLoginChange" />
+<i-message id="message" />
+
+<button
+ open-type="contact"
+ bindcontact="handleContact"
+ show-message-card="true"
+ send-message-path="/pages/main/Index/index"
+ send-message-title="订单咨询"
+ session-from="weapp"
+ class="message-box"
+>
+	<image class="message" src="../../../static/project/message.png" mode="aspectFill" />
+</button>
+
+<template name="start">
+	<view class="submit-bar-start">
+		<view class="submit-bar-start-price">
+			合计:
+			<span class="price-symbol">
+				¥
+			</span>
+			<span style="color:#FF3B30;font-size:38rpx;font-weight:bold;">
+				{{serveData.actInfo.group_price / 100}}
+			</span>
+		</view>
+		<view class="button" bind:tap="hangdlePay">
+			支付并开团
+		</view>
+	</view>
+</template>
+
+<template name="details">
+	<view class="submit-bar-detaile">
+		<view bind:tap="handleToOrder" class="detal-btn {{serveData.status == 1 ? 'status1':''}} " style=";color: rgba(82, 149, 252, 1);">
+			查看订单详情
+		</view>
+		<button open-type="share" wx:if="{{serveData.status !== 1}}" class="button">
+			邀请好友拼团
+		</button>
+	</view>
+</template>
+
+<template name="join">
+	<button
+	 class="button"
+	 disabled="{{timeEnd || serveData.status === 1}}"
+	 bind:tap="hangdleJoinGroupPay"
+	 style="width:100vw"
+	>
+		我要参团
+	</button>
+</template>
+

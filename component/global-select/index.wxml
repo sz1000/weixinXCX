@@ -1,0 +1,62 @@
+<!--component/global-select/index.wxml-->
+<view  class="cantainer">
+    <radio-group current="{{current}}" data-id="asdasdasd" bindchange="handleCardChange">
+        <view wx:for="{{projectList}}" wx:key="item" class="cardBox" style='opacity:{{current == item.id ? 1 : 0.5}};'>
+            <view class="radioBox">
+                <radio color="#5295FC" bindtap="targetHand" class="radioStyle" position="left" data-target="{{item}}" value="{{item.id}}"></radio>
+            </view>
+            <view class="item-centent">
+              <template is="{{type}}" data="{{item}}"></template>
+            </view>
+        </view>
+    </radio-group>
+<!-- <view class="saveBtn" bindtap="save">保存</view> -->
+  
+</view>
+
+<template name="articleInfo">
+   <image class="radio-img" src="{{item.head_img}}"></image >
+    <view class="item-centent-text">
+        <view class="centent-title ellipsisTwo">{{item.title}}</view>
+        <view class="content-subtitle">作者：{{item.author_name}}</view>
+    </view>
+</template>
+
+<template name="productInfo">
+   <image class="radio-img" src="{{item.cover_img}}"></image >
+    <view class="item-centent-text">
+        <view class="centent-title ellipsisTwo">{{item.name}}</view>
+        <view class="content-subtitle">
+          <view class="priceContainer" wx:if="{{item.type === 1 || item.type ===0}}">     
+            <span class="price">￥{{item.type === 0 ? item.pay_price/100 : item.price/100}}</span>
+            <span class="ori-price" style="margin-left:12rpx">{{item.ori_price/100}}</span>
+            <span class="limit">限时优惠</span>
+          </view>
+          <view wx:if="{{item.type === 1 || item.type === 2}}" class="priceContainer">           
+            <span class="pay-price">预约金：{{item.pay_price/100}}</span>
+          </view>
+        </view>
+    </view>
+</template>
+
+<template name="doctorInfo">
+   <image class="radio-img" src="{{item.avatar}}"></image >
+    <view class="item-centent-text">
+        <view class="centent-title ellipsisTwo">
+          <span class="doctor-name">
+          {{item.name}}
+          </span>
+          <span class="doctor-title">
+            {{item.title}}
+          </span>
+          </view>
+        <view class="doctor-hospital">
+          {{item.hospital}}
+        </view>
+        <view class="doctor-tag">
+          <span wx:for="{{item.tags}}" wx:for-item="tag" wx:key="{{index}}">
+            {{tag}}
+          </span>
+        </view>
+    </view>
+</template>

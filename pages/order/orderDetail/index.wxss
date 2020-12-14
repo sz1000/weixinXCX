@@ -1,0 +1,292 @@
+
+.headTip{
+  width: 100%;
+  height: 86rpx;
+  background-color: #5297FC;
+  color: #ffffff;
+  font-size: 30rpx;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+  display: flex;
+  align-items: center;
+  padding-left: 17rpx;
+}
+.headTip image{
+  width: 42rpx;
+  height: 42rpx;
+  /* border-radius: 50%; */
+  margin-right: 22rpx;
+}
+.orderInfoBox{
+  width: 690rpx;
+  height: 210rpx;
+  padding: 22rpx;
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 12px auto;
+  margin-bottom:22rpx;
+
+  box-shadow:0px 0px 8px #33333316;
+}
+.productPrice{
+  font-size: 34rpx;
+  color: #F55F52;
+}
+.productPrice span{
+  font-size: 26rpx;
+}
+picker{
+  color: #cccccc;
+  font-size: 30rpx;
+  width: 400rpx;
+}
+.itemBox picker{
+  margin-left: 20rpx;
+  text-align: left;
+}
+.orderContent{
+  width: 540rpx;
+  height: 150rpx;
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.orderInfoBox image{
+  width: 150rpx;
+  height: 150rpx;
+  margin-right: 20rpx;
+  border-radius: 6rpx;
+}
+.chooseDate{
+  width: 534rpx;
+  height: 56rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.chooseDate p{
+  width:200rpx;
+}
+.chooseDate picker{
+  width: 200rpx;
+}
+.itemBox{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.hospitalBox{
+  height: fit-content;
+  border-bottom: none !important;
+}
+.hospitalAddrBox{
+  height: fit-content;
+  padding-bottom: 20rpx
+}
+.itemBoxReamrk{
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  margin:20rpx 0 0 30rpx;
+  position: relative;
+}
+.itemBoxReamrk span{
+  text-align: left;
+  width: 140rpx;
+  color: #999999;
+}
+
+.itemBoxReamrk textarea{
+  color: #222222;
+  margin-left: 20rpx;
+  text-align: left;
+  width: 540rpx;
+  height: 100%;
+}
+.itemBox input{
+  color: #222222;
+  margin-left: 30rpx;
+  text-align: left;
+  width: 540rpx;
+}
+.textNum{
+  color: #222222;
+  font-size: 24rpx;
+  position: absolute;
+  right: -60rpx;
+  bottom: -30rpx;
+}
+.itemBox span{
+  text-align: left;
+  width: 140rpx;
+  color: #999999;
+}
+.fontColor{
+  color: #cccccc;
+}
+.outerBox{
+  width: 100vm;
+  height: fit-content;
+  padding: 30rpx 0;
+  margin-top: 45rpx;
+  border-top: 18rpx solid #eeeeee;
+}
+.inputBox{
+  width: 690rpx;
+  margin-left: 22rpx;
+  text-align: center;
+  color: #222222;
+  font-size: 32rpx;
+  box-shadow:-1px 0px 15px #33333316;
+  padding:15rpx 7rpx;
+}
+.tipBox{
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.tipTop{
+  display: flex;
+  flex-direction: row;
+  margin-left:30rpx;
+  align-items: center; 
+}
+.tipBox image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 13rpx;
+}
+.textColor{
+  color:#999999;
+  max-width: 632rpx;
+  margin: 20rpx 0 0 68rpx;
+  text-align: left;
+}
+.orderInfoItems{
+  width: 100%;
+  height: fit-content;
+  padding: 30rpx 22rpx;
+  color: #333333;
+  font-size: 26rpx;
+  border-top: 18rpx solid #eeeeee;
+}
+.firstItem{
+  width: 706rpx;
+  display: flex;
+  justify-content: space-between;
+}
+.firstItem p{
+  color: #5297FC
+}
+.orderInfoItems :nth-last-child(1){
+  margin-bottom: 0;
+}
+.orderItem{
+  margin-bottom: 20rpx;
+}
+.orderItem span{
+  margin-left:20rpx; 
+}
+.priceBox{
+  padding: 20rpx 30rpx;
+  color: #222222;
+  font-size: 30rpx;
+  border-top: 18rpx solid #eeeeee;
+  overflow: hidden;
+}
+.priceBox span{
+  color: #F55F52;
+}
+.needPay{
+  width: 690rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+.needPay span{
+  margin-left: 10rpx;
+}
+.priceItem{
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.statusBox{
+  color:#999999;
+  font-size: 26rpx;
+  padding:0 0 0 30rpx;
+  margin-bottom: 20rpx;
+}
+.lineThrough{
+  text-decoration: line-through;
+}
+
+.tipStatus image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 10rpx;
+}
+.verification{
+  font-size: 46rpx;
+  margin-bottom: 20rpx;
+}
+.tipStatus{
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 700rpx;
+}
+.orderBtnBox{
+  width: 706rpx;
+  padding-bottom: 20rpx;
+  margin-left: 22rpx;
+  display: flex;
+  align-items: center;
+  /* flex-direction: row; */
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+}
+.orderBtn{
+  width: fit-content;
+  height: 52rpx;
+  background-color: #5297FC;
+  color: #ffffff;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  border-radius: 26rpx;
+  text-align: center;
+  line-height: 52rpx;
+  margin: 0;
+}
+.orderBtnNull{
+  width: fit-content;
+  height: 50rpx;
+  color: #5297FC;
+  padding: 0 20rpx;
+  font-size: 28rpx;
+  border-radius: 26rpx;
+  text-align: center;
+  line-height: 52rpx;
+  border: 1rpx solid #5297FC;
+  margin-right: 35rpx;
+}
+.validBox{
+  margin:10rpx 0 0 36rpx;
+}

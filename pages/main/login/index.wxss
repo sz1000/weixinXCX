@@ -1,0 +1,58 @@
+page{
+    display: flex;
+    flex-direction:column;
+}
+
+.loginText :first-child{
+    font-size: 60rpx;
+    font-weight: 600;
+}
+
+.loginText{
+    margin-top: 196rpx;
+    margin-left: 72rpx;
+    color: #222222;
+    margin-bottom: 28rpx;
+    font-size: 32rpx;
+}
+
+.loginText text{
+    position: relative;
+    display: block;
+    margin-top: 20rpx;
+}
+
+.loginButton{
+    display: flex;
+    justify-content:center;
+    align-items:Center;
+    position: absolute;
+    bottom:192rpx;
+    width: 590rpx;
+    height: 100rpx;
+    align-self:center; /*flex水平居中*/
+    background: #333333;
+    color: #fff;
+    font-size: 32rpx;
+    border-radius: 48rpx;
+    letter-spacing:10rpx;/*行间距*/
+}
+
+.loginButton image{
+    position: absolute;
+    width: 58rpx;
+    height: 48rpx;
+    left: 54rpx;
+}
+
+/* style="width:38rpx; height:38rpx" */
+/* style="width:42rpx; height:40rpx" */
+
+.RightBox{
+    display: inline-flex;
+    justify-content: flex-end;
+    background-color: antiquewhite;
+    width: 100%;
+    position: absolute;
+    margin: 100px;
+}

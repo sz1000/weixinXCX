@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="contentBox">
+    <view class="titleGuide">快捷访问"Kodin"小程序</view>
+    <view class="tipOne">1 点击页面右上角省略号图标
+      <image src="/static/icons/guide1.png" mode="aspetFit"></image>
+    </view>
+    <view class="tipTwo">2 选择添加到我的小程序
+      <image src="/static/icons/guide2.png" mode="aspetFit"></image>
+    </view>
+    <view class="tipThree">3 微信下拉,访问"Kodin"
+      <image src="/static/icons/guide3.png" mode="aspetFit"></image>
+    </view>
+  </view>
+
+</view>

@@ -1,0 +1,9 @@
+{
+  "usingComponents": {
+    "global-select":"/component/global-select/index",
+    "global-doctor-card":"/component/global-doctor-card/index",
+    "global-product-card":"/component/global-prodact-card/index",
+    "global-select-time":"/component/global-select-time/index"
+  },
+  "navigationBarTitleText":"新增预约" 
+}

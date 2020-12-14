@@ -1,0 +1,167 @@
+<i-tabs current="{{ current }}" color="#5295FC" bindchange="handleChange">
+    <i-tab key="teamEarnings" title="团队收益"></i-tab>
+    <i-tab key="myTeam" title="我的团队"></i-tab>
+</i-tabs>
+<view>
+    <template is="{{current}}" data="{{teamNum,earning,scrollTop,myTeam,noDataContent}}" />
+</view>
+<!-- 团队收益 -->
+<template name="teamEarnings">
+    <view class="page-content">
+        <view class="numBox">
+            <view class="numItem">
+                <view>团队人数</view>
+                <text>{{teamNum}}</text>
+            </view>
+            <view class="greyLine"></view>
+            <view class="numItem">
+                <view>提成收益</view>
+                <text>￥{{earning/100}}</text>
+            </view>
+        </view>
+        <view class="greyBox"></view>
+        <view class="getMoreMoney">
+            <view class="backImg"></view>
+        </view>
+        <view class="greyBox"></view>
+        <view class="tipBox">
+            <view class="marginLeftBox">
+                 <view class="iconBox">
+                <view class="tipTitle">
+                    <image src="/static/img/tip.png" />
+                    <view>提示小贴士</view>
+                </view>
+                <view class="lookmore">
+                    <view>查看更多详情</view>
+                    <image src="/static/img/lookmore.png" />
+                </view>
+            </view>
+            <view class="tipContent">1.你的提成来自于邀请好友加入与好友成交的分润</view>
+            <view class="tipContent">2.每个加入你团队的好友都会为你带来20元的收入</view>
+            <view class="tipContent">3.每个团队成员成交都会为你带来分润收入</view>
+            </view>
+        </view>
+        <view class="btn" bindtap="addFenXiao">邀请好友</view>
+    </view>
+</template>
+<template name='myTeam'>
+    <scroll-view class='scrollStyle' scroll-y style="height: 100vh;" bindscroll="getScroll">
+        <view>
+            <view class="i-sticky-demo">
+                <i-sticky scrollTop="{{scrollTop}}" wx:for="{{myTeam}}" wx:key='index'>
+                    <!-- <i-sticky-item i-class="i-sticky-demo-title"> -->
+                        <!-- <view slot="title">{{index}}大叫好</view> -->
+                        <!-- <view slot="content" i-class="teamItemBox" wx:for="{{item}}" wx:for-item="items" wx:key="index"> -->
+                            <view class="contentBox">
+                                <image class="headImg" style="width: 43px; height: 43px; background-color: #eeeeee;" mode="aspectFill" src="{{item.avatar}}"></image>
+                                <view class="infoBox">
+                                    <view class="infoName">
+                                        <image src="/static/img/{{items.sex == 1 ? 'icon-female' : 'icon-male'}}.png" class="sexImg" />
+                                        {{item.nick_name}}
+                                    </view>
+                                    <view class="getEarning">带来的收益(元)：{{item.income/100||'0'}}</view>
+                                </view>
+                            </view>
+                        <!-- </view> -->
+                    <!-- </i-sticky-item> -->
+                </i-sticky>
+                <!-- 暂无数据 -->
+                <view class="noDataBox" wx:if="{{myTeam == null}}">{{noDataContent}}</view>
+            </view>
+        </view>
+    </scroll-view>
+   
+</template>
+<!-- <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+        团队收益
+    </view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+        我的团队
+    </view> -->
+<!-- <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">
+        待审核
+    </view> -->
+<!-- </view> -->
+<!-- <swiper current="{{currentTab}}" duration="0" bindchange="swiperTab" style="height:{{sweiperHeight}}px"> -->
+<!-- <swiper-item> -->
+<!-- 团队收益 -->
+<!-- </swiper-item> -->
+<!-- <swiper-item> -->
+<!-- 我的团队 -->
+<!-- <view>
+            <view>
+                <view class="time" wx:if="{{parentData}}">
+                    <text>我的领队</text>
+                </view>
+                <view class="teamItemBox"  wx:if="{{parentData}}">
+                    <view class="contentBox">
+                        <view class="headImg" style="background-image:url({{parentData.avatarUrl}})"></view>
+                        <view class="infoBox">
+                            <view class="infoName">
+                            <image wx:if="{{parentData.gender == 2}}" src="/static/img/icon-female.png" class="sexImg" />
+                            <image wx:if="{{parentData.gender == 1}}" src="/static/img/icon-male.png" class="sexImg" />
+                                {{parentData.name}}
+                            </view>
+                            <view>有任何问题都可以咨询他哦～</view>
+                        </view>
+                    </view>
+                </view>
+                <view wx:for="{{myTeam}}" wx:key="item" wx:for-index="name" data-indexs="{{item.id}}">
+                    <view class="time">
+                        <text>{{name}}</text>
+                    </view>
+                    <view class="teamItemBox">
+                        <view class="contentBox">
+                            <view class="headImg" style="background-image:url({{item.avatarUrl}})"></view>
+                            <view class="infoBox">
+                                <view class="infoName">
+                                    <image wx:if="{{item.gender == 2}}" src="/static/img/icon-female.png" class="sexImg" />
+                                    <image wx:if="{{item.gender == 1}}" src="/static/img/icon-male.png" class="sexImg" />
+                                    {{item.name}}
+                                </view>
+                                <view class="getEarning">带来的收益(元)：20</view>
+                            </view>
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="btn" bindtap="addFenXiao">邀请好友</view>
+        </view> -->
+<!-- </swiper-item> -->
+<!-- 待审核 -->
+<!-- <swiper-item>
+
+       <i-load-more tip="暂无数据" wx:if="{{waitList.length == 0}}" loading="{{ false }}" />
+        <view wx:for="{{waitList}}" wx:key="item" wx:for-index="name" data-index="{{item.id}}">
+            <view class="time" >
+                <text>{{item.create_at}}</text>
+            </view>
+            <view class="itemBox">
+                <view class="contentBox">
+                    <view class="headImg" style="background-image:url({{item.user.userInfo.avatarUrl}})"></view>
+                    <view class="infoBox">
+                        <view class="infoName">
+                            <image wx:if="{{item.user.gender == 2}}" src="/static/img/icon-female.png" class="sexImg" />
+                            <image wx:if="{{item.user.gender == 1}}" src="/static/img/icon-male.png" class="sexImg" />
+                            {{item.user.username}}
+                        </view>
+                        <view>工作状态：学生</view>
+                        <view class="traning">
+                            <view>有无微商经验：无</view>
+                            <view>有无医美从业经验：无</view>
+                        </view>
+                    </view>
+                </view>
+                <view class="btnBox">
+                    <view bindtap="agree" data-ids="{{item.id}}">通过</view>
+                    <view bindtap="refuse">拒绝</view>
+                </view>
+            </view>
+        </view>
+    </swiper-item> -->
+<!-- </swiper> -->
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+        <image src="/static/icons/backHome.png"></image>
+</view>

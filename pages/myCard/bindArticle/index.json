@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "绑定我的素材",
+  "disableScroll": true,
+  "usingComponents": {
+    "i-tabs": "../../../dist/tabs/index",
+    "i-tab": "../../../dist/tab/index",
+    "i-load-more": "../../../dist/load-more/index",
+    "i-modal": "../../../dist/modal/index"
+  }
+}

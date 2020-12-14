@@ -1,0 +1,7 @@
+<!--component/global-cell/index.wxml-->
+<view class="cell">
+    <view class="cell-title">{{title}}</view>
+    <view class="cell-content">
+        <slot></slot>
+    </view>
+</view>

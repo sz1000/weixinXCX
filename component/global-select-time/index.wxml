@@ -1,0 +1,23 @@
+<!--component/global-select-time/index.wxml-->
+<view>
+  <view class="time-value" bindtap="hangshow">{{value || '请选择时间'}}</view>
+  <view wx:if="{{show}}" class="time-msk"></view>
+ <picker-view wx:if="{{show}}" indicator-style="height: 30px;" class="select-time" value="asdasdasd" bindchange="bindChange">
+    <view class="pickerBottonBox">
+      <view bindtap="handHide" style="margin-left: 10px;">取消</view>
+      <view bindtap="confirmChange" class="confirm-borrom">确定</view>
+    </view>
+ 
+    
+    <picker-view-column>
+      <view wx:for="{{days}}"   class="select-time-item" wx:key="index">{{item}}日</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{hours}}"   class="select-time-item" wx:key="index">{{item}}时</view>
+    </picker-view-column>
+    <picker-view-column>
+      <view wx:for="{{minutes}}"   class="select-time-item" wx:key="index">{{item}}分</view>
+    </picker-view-column>
+  </picker-view>
+</view>
+

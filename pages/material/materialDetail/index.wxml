@@ -1,0 +1,61 @@
+
+<image src="{{demo.headImgUrl}}" mode="widthFix" class="topImg"/>
+<view class="demoText" style="text-decoration: none">{{demo.headText}}</view>
+<image src="{{demo.authorAvatarUrl}}" class="headerImg" />
+<view class="infoContent">
+    <view class="name">{{demo.authorName}}</view>
+    <view class="time">{{demo.updateTime}}</view>
+</view>
+<view class="{{greyTitle}}">
+    <text>{{demo.title}}</text>
+</view>
+
+<view wx:for="{{demo.content}}" wx:key="itemIndex" wx:for-item="item">
+    <template is="{{item.type}}" data="{{item}}"></template>
+</view>
+<view style="width:100%;height:50rpx;"></view>
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>
+<!-- <view hidden="{{showShare}}">
+<button class="shareBtn" open-type="share"  style="background-image:url(https://vst.67zu.com/share.png)" plain='true'></button>
+
+</view> -->
+
+<!-- 图文 -->
+<template name="img">
+    <image class="demoImg_item" src="{{item.content.imgUrl}}" mode="widthFix"></image>
+    <view wx:if="{{item.content.text != null}}" class="demoText">{{item.content.text}}</view>
+</template>
+
+<!-- 文字 -->
+<template name="text">
+    <view wx:if="{{item.content.text != null}}" class="text">{{item.content.text}}</view>
+</template>
+<!-- <view class="same" bindtap="goToSku">
+    <view class="txt">同款推荐</view>
+    <view class="sameInfo">
+        <image src="/static/newImg/tianyanka.jpg" class="sameImg" />
+        <view class="sameTxt">
+            <view class="sameTitle">【七夕有礼】微整注射体验卡，立体五官，可注射卧蚕（到店咨询，我们比你更懂你）.</view>
+            <br />
+            <view class="hospital">杭州安歆医美</view>
+            <h4>
+                ￥ 50
+                <s>120</s>
+            </h4>
+        </view>
+    </view>
+</view>
+<view class="withMe" bindtap="goToSku">
+    <view class="txt">和我相关</view>
+    <view class="meInfo">
+        <image src="{{demo.authorAvatarUrl}}" class="headerImg" />
+        <view class="infoContent">
+            <view class="name">{{demo.authorName}}</view>
+            <view class="time">{{demo.updateTime}}</view>
+        </view>
+    </view>
+    <image src="/static/newImg/sameImg.jpg" class="sameBackImg" />
+    <view class="imgTit">复苏圣手，最潮韩鼻，绝佳吸晴宝典</view>
+</view> -->

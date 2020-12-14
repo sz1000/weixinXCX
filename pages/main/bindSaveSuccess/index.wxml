@@ -1,0 +1,21 @@
+<view class="shareBox">
+
+    <image src="/static/img/saveFinish.png" class="saveFinish"></image>
+    <view class="finishText">保存成功</view>
+    <view class="shareText">快分享给你的朋友吧</view>
+    <view class="shareAfter">
+        <button class="share" bindtap="shareToScope">
+            <image src="/static/img/finishShare.png" class="finishShare"></image>
+            <view >分享朋友圈</view>
+        </button>
+         <button class='share' open-type="share">
+            <image src="/static/img/finishWx.png" class="finishWx"></image>
+            <view  class="fen">分享好友</view>
+        </button>
+    </view>
+    <view bindtap='backIndex' class='backIndex'>
+        返回首页
+    </view>
+
+
+</view>

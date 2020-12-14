@@ -1,0 +1,100 @@
+<wxs src="../../../filter/filter.wxs" module="filter" />
+
+<view style="overflow:hidden;width:100%;">
+	<view class="headTip" wx:if="{{serveData.status == 2}}">
+		<image src="/static/project/quxiao@2x.png" />
+		已取消
+	</view>
+	<view class="headTip" wx:if="{{serveData.status == 0}}">
+		<image src="/static/project/fukuan@2x.png" />
+		待支付
+	</view>
+	<view class="headTip" wx:if="{{serveData.status == 1}}">
+		<image src="/static/project/paySuccess.png" />
+		已支付
+	</view>
+	<view class="headTip" wx:if="{{serveData.status == 3}}">
+		<image src="/static/project/finished.png" />
+		已完成
+	</view>
+	<view class="headTip" wx:if="{{serveData.status == 4}}">
+		<image src="/static/project/finished.png" />
+		退款
+	</view>
+	<view class="orderInfoBox">
+		<global-prodact-card item="{{serveData.productInfo}}" actInfo="{{serveData.actInfo}}" />
+	</view>
+
+	<view class="outerBox" wx:if="{{serveData.actInfo ? serveData.resCode == 'SUCCESS' || serveData.resCode == 'FINISH' : serveData.status == 3 || serveData.status == 1 }}">
+		<view class="statusBox {{serveData.status == 3 || serveData.resCode == 'FINISH'  ? 'lineThrough' : ''}}">
+			<view class="verification">核销码:{{serveData.secret_key}}</view>
+			<view class="tipStatus">
+				到院消费请提供核销码，商家会根据核销码查询订单信息
+			</view>
+			<view wx:if="{{serveData.act_id ? serveData.resCode === 'SUCCESS' : serveData.status == 1}}">
+				截止有效期:{{serveData.end_time}}
+			</view>
+			<!-- <view class="validBox" wx:if="{{product.valid_policy == 1 && status !== 2 && status !== 3}}">
+				截止有效期{{product.valid_end_time}}
+			</view> -->
+		</view>
+	</view>
+
+	<view class="priceBox" wx:if="{{serveData.act_id}}">
+		<view class="">
+			<span>【{{filter.groupBuyingStatus(serveData.resCode).status}}】</span>
+			{{filter.groupBuyingStatus(serveData.resCode).subText}}
+		</view>
+		<buying-peopel type="start" value="{{serveData}}" />
+	</view>
+
+	<view class="priceBox">
+		<view class="priceItem">
+			<view>{{serveData.productInfo.type == 0 ? '商品价格' : '预约金'}}</view>
+			<span>￥{{serveData.productInfo.pay_price/100}}</span>
+		</view>
+		<view class="priceItem" wx:if="{{serveData.productInfo.type == 1}}">
+			<view>尾款(到院再付)</view>
+			<span>￥{{(serveData.odd_price)/ 100}}</span>
+		</view>
+		<view class="priceItem" wx:if="{{serveData.productInfo.type == 2}}">
+			<view>尾款(到院再付)</view>
+			<span>实际沟通为准</span>
+		</view>
+
+		<view class="needPay">
+			{{ serveData.status !== 0 ? '实付款:' :'需付款:'}}
+			<span>￥{{serveData.pay_price/100}}</span>
+		</view>
+	</view>
+
+	<view class="orderInfoItems">
+		<view class="firstItem">
+			<view class="orderItem">订单号:
+				<span>{{serveData.order_num}}</span>
+			</view>
+			<p bind:tap="copyOrderNum">复制</p>
+		</view>
+		<view class="orderItem">下单时间:
+			<span>{{serveData.created_at}}</span>
+		</view>
+		<view wx:if="{{serveData.status == 1 || serveData.status == 3}}" class="orderItem">支付方式:
+			<span>微信支付</span>
+		</view>
+		<view wx:if="{{serveData.status == 1}}" class="orderItem">支付时间:
+			<span>{{serveData.pay_time}}</span>
+		</view>
+		<view wx:if="{{serveData.status == 3}}" class="orderItem">核销时间:
+			<span>{{serveData.confirm_time}}</span>
+		</view>
+	</view>
+	<view class="orderBtnBox">
+		<!-- <view wx:if="{{serveData.status == 3}}  "" class="orderBtn" bind:tap="orderAgain">再次预约</view> -->
+		<view class="orderBtnNull" wx:if="{{serveData.status == 0}}" bind:tap="cancelOrder">取消订单</view>
+		<view wx:if="{{serveData.status == 0}}" class="orderBtn" bind:tap="orderPay">支付订单</view>
+		<view wx:if="{{serveData.status == 2}}" class="orderBtn" bind:tap="deleteOrder">删除订单</view>
+		<button open-type="share" wx:if="{{serveData.status == 1 && serveData.act_id && serveData.resCode == 'JOINING_PAID'}}" class="orderBtn">邀请好友参团</button>
+		<view wx:if="{{serveData.actInfo ? serveData.resCode == 'SUCCESS'  :  serveData.status == 1}}" class="orderBtn">申请退款</view>
+	</view>
+</view>
+

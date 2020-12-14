@@ -1,0 +1,25 @@
+<view class="headBox">
+  <view class="blueBox"></view>
+  <view class="title">请选择您的问题类型</view>
+</view>
+<!-- <view class="questionBox">
+    <view>双击编辑文本</view>
+</view> -->
+<i-panel>
+  <i-checkbox-group current="{{current}}" bindchange="handleFruitChange">
+    <i-checkbox i-class="questionBox" wx:for="{{question}}" position="{{position}}" wx:key="{{item.id}}" value="{{item.name}}"></i-checkbox>
+  </i-checkbox-group>
+</i-panel>
+<view class="feedBox">
+  <view class="blueBox"></view>
+  <view class="title">请详细描述您的建议</view>
+</view>
+<view class="textBox">
+  <textarea placeholder="请输入你的建议..." placeholder-class="phclass" cols="30" rows="10" class="textArea" maxlength="300" bindinput='num'></textarea>
+  <view class="count">{{num}}/300</view>
+</view>
+<view class="submitBtn" bindtap="switchTo">提交</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>

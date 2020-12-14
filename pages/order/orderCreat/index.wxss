@@ -1,0 +1,313 @@
+/* .address_left {
+  float: left;
+  margin: 10px;
+  font-size: 15px;
+  line-height: 26px;
+}
+.address_right {
+  float: left;
+   margin: 10px;
+  font-size: 15px;
+  line-height: 26px;
+}
+.to_address_page {
+  float: right;
+}
+.name {
+  color: #111;
+}
+.default {
+  color: #d49226;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 6px;
+  border: 1px solid #d49226;
+}
+.mobile {
+  color: #333;
+} 
+
+.detail_address {
+  float: left;
+  color: #999;
+  width: 450rpx;
+}
+*/
+
+page{
+    /* background-color:#fff; */
+    background: #FFF;
+    color: #27313E;
+}
+
+.arrow_right {
+  background: #ffffff;
+  margin: 40rpx 60rpx 0 0;
+  display: flex;
+  text-align: right;
+  float: right;
+}
+.icon-arrowright {
+  height: 80rpx;
+  line-height: 80rpx;
+  float: right;
+}
+.tag{
+    font-size:22rpx;
+    padding: 3rpx 12rpx;
+    margin-top: 16rpx;
+
+    display: inline-block;
+}
+
+.container{
+  width: 100%;
+    background: #ffffff;
+    margin: 28rpx 33rpx;
+    display: flex;
+}
+
+.container_left{
+    width: 150rpx;
+    font-size:30rpx;
+}
+
+.container_right{
+    width: 560rpx;
+}
+
+
+.item_title{
+    font-size: 28rpx;
+    margin-bottom: 6rpx;
+}
+
+.item_content{
+  width: 450rpx;
+   height: 80rpx;
+  color: #222222;
+   margin: 0 auto;
+    font-size:30rpx;
+    padding-left: 0rpx;
+    float: left; 
+}
+
+.orderInfoBox{
+  width: 100%;
+  height: 210rpx;
+  display: flex;
+  flex-direction: row;
+  margin-top: 50rpx;
+  align-items: center;
+  padding-left: 16rpx;
+   border-top: 18rpx solid #eeeeee;
+  
+}
+.productPrice{
+  font-size: 34rpx;
+  color: #F55F52;
+}
+.productPrice span{
+  font-size: 26rpx;
+}
+picker{
+  color: #cccccc;
+  font-size: 30rpx;
+  width: 400rpx;
+}
+.itemBox picker{
+  margin-left: 20rpx;
+  text-align: left;
+}
+.orderContent{
+  width: 540rpx;
+  height: 150rpx;
+  color: #222222;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+/* .orderInfoBox image{
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 6rpx;
+} */
+.hospitalBox{
+  height: fit-content !important;
+  border-bottom: none !important;
+}
+.hospitalAddrBox{
+  height: fit-content !important;
+  padding-bottom: 20rpx
+}
+.chooseDate{
+  width: 534rpx;
+  height: 56rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+.chooseDate p{
+  width:200rpx;
+}
+.chooseDate picker{
+  width: 200rpx;
+}
+.itemBox{
+  display: flex;
+  flex-direction: row;
+  height: 80rpx;
+  align-items: center;
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  border-bottom: 1rpx solid #eeeeee;
+}
+.itemBoxReamrk{
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 30rpx;
+  margin:20rpx 0 0 30rpx;
+  position: relative;
+}
+.itemBoxReamrk span{
+  text-align: left;
+  width: 140rpx;
+  color: #999999;
+}
+.itemBoxReamrk textarea{
+  color: #222222;
+  margin-left: 30rpx;
+  text-align: left;
+  width: 540rpx;
+  height: 100%;
+}
+.itemBox input{
+  color: #222222;
+  margin-left: 30rpx;
+  text-align: left;
+  width: 540rpx;
+}
+.textNum{
+  color: #222222;
+  font-size: 24rpx;
+  position: absolute;
+  right: -45rpx;
+  bottom: -30rpx;
+}
+.itemBox span{
+  text-align: left;
+  width: 140rpx;
+  color: #999999;
+}
+.fontColor{
+  color: #cccccc;
+}
+.outerBox{
+  width: 100vm;
+  height: fit-content;
+  padding: 30rpx 0;
+  margin-top: 45rpx;
+  border-top: 18rpx solid #eeeeee;
+  border-bottom: 18rpx solid #eeeeee;
+}
+.inputBox{
+  width: 690rpx;
+  margin-left: 22rpx;
+  text-align: center;
+  color: #222222;
+  font-size: 32rpx;
+  box-shadow:-1px 0px 15px #33333316;
+  padding:15rpx 7rpx;
+}
+.tipBox{
+  color:#999999;
+  font-size: 26rpx;
+  display: flex;
+  flex-direction: column;
+  margin-top: 30rpx;
+}
+.tipTop{
+  display: flex;
+  flex-direction: row;
+  margin-left:30rpx;
+  align-items: center; 
+}
+.tipBox image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 13rpx;
+}
+text{
+  max-width: 632rpx;
+  margin: 20rpx 0 0 68rpx;
+  text-align: left;
+}
+
+.priceBox{
+  width: 100%;
+  padding: 0 30rpx;
+  color: #222222;
+  font-size: 30rpx;
+  margin-bottom: 138rpx;
+}
+.priceBox span{
+  color: #F55F52;
+}
+.needPay{
+  width: 690rpx;
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 30rpx;
+}
+.needPay span{
+  margin-left: 10rpx;
+}
+.priceItem{
+  width: 690rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30rpx;
+}
+.bottomBox{
+  width: 100%;
+  height: 98rpx;
+  display: flex;
+  justify-content: flex-end;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+}
+.totalPrice{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right:40rpx; 
+  color: #333333;
+  font-size: 28rpx;
+}
+.totalPrice span{
+  color: #F55F52;
+  font-size: 38rpx;
+  font-weight: Bold;
+  margin-left: 12rpx;
+}
+.orderBtn{
+  width: 228rpx;
+  height: 96rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+  background-color: #5297fc;
+  text-align: center;
+  line-height: 90rpx;
+}
+.content{
+   width: 100%;
+  height: 100rpx;
+
+}
+

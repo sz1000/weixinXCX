@@ -1,0 +1,155 @@
+/* pages/main/selectProductList/index.wxss */
+
+radio .wx-radio-input.wx-radio-input-checked::before {
+  border-radius: 50%;
+  /* 圆角 */
+  border: 3px solid #5295FC;
+  width: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  height: 40rpx;
+  /* 选中后对勾大小，不要超过背景的尺寸 */
+  line-height: 40rpx;
+  text-align: center;
+  font-size: 30rpx;
+  /* 对勾大小 30rpx */
+  color: #fff;
+  /* 对勾颜色 白色 */
+  background: #5295FC;
+  transform: translate(-50%, -50%) scale(1);
+  -webkit-transform: translate(-50%, -50%) scale(1);
+}
+
+.radioBox {
+  width: 80rpx;
+  height: 200rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background: red; */
+}
+
+
+.radio-img {
+  width: 100px;
+  height: 100px;
+  padding: 10px 0;
+  border-radius: 4px;
+  overflow: hidden;
+  margin-right: 10px;
+}
+
+.titleBox {
+  margin: 0 auto;
+  width: 90%;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 30rpx;
+  color: #222222;
+  margin-bottom: 13rpx;
+}
+
+.item-centent {
+  display: flex;
+  align-items: center;
+}
+
+.item-centent-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100px;
+  margin: 4px 0;
+}
+
+.centent-title{
+  font-size: 28rpx;
+  color: #000;
+  font-weight: 400
+}
+
+.content-subtitle{
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.blueBox {
+  background-color: rgb(40, 120, 255);
+  width: 6rpx;
+  height: 28rpx;
+  margin-right: 12rpx;
+  margin-top: 8rpx;
+}
+
+.cardBox {
+  border: 1px solid transparent;
+  box-shadow: #cccccc 0px 0px 10px;
+  border-radius: 8rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 716rpx;
+  /* height: 240rpx; */
+  display: flex;
+  flex-direction: row;
+  /* justify-content: space-between; */
+}
+
+.cardBox:last-child {
+  margin-bottom: 180rpx;
+}
+
+.radio {
+  margin-top: 40px;
+  color: transparent;
+}
+
+.itemImg {
+  margin-top: 35rpx;
+  width: 170rpx;
+  height: 170rpx;
+}
+
+.contentBox {
+  margin: 35rpx 30rpx 0rpx 20rpx;
+  height: 170rpx;
+  width: 417rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.title {
+  font-size: 24rpx;
+  color: #222222;
+  text-align: left !important;
+  line-height: 15px;
+  margin-top: 0 !important;
+}
+
+.hospital {
+  margin-top: 20rpx;
+  font-size: 20rpx;
+  color: #999999;
+}
+
+.price {
+  /* margin-top: 10rpx; */
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #F55F52;
+}
+
+.saveBtn {
+  position: fixed;
+  bottom: 59rpx;
+  right: 0;
+  left: 0;
+  margin: 0 auto;
+  background-color: #5297FC;
+  border-radius: 43rpx;
+  width: 451rpx;
+  height: 85rpx;
+  text-align: center;
+  line-height: 85rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+}

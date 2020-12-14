@@ -1,0 +1,67 @@
+page {
+  background-color: #f7f7f7;
+  font-family: "PingFang-SC-Regular"
+}
+
+.infoBox {
+  width: 100%;
+  height: 130rpx;
+  border-top: 1px solid #f5f5f5;
+  background-color: #ffffff;
+  display: flex;
+  justify-content: flex-start;
+  line-height: 130rpx;
+}
+
+.headImg {
+  margin: 15rpx 32rpx 15rpx 31rpx;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 100%;
+}
+
+.infoBox view {
+  font-size: 30rpx;
+  color: #27313E;
+}
+
+.toRight {
+  position: absolute;
+  top: 55rpx;
+  right: 0;
+  width: 14rpx;
+  height: 20rpx;
+  padding-right: 30rpx;
+
+}
+
+.contentBox {
+  margin-top: 19rpx;
+  background-color: #ffffff;
+  width: 100%;
+  height: 200rpx;
+
+}
+
+.contentBox view {
+  border-bottom: 1rpx solid #f5f5f5;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.contentBox view view {
+  margin-left: 30rpx;
+  font-size: 30rpx;
+  color: #27313E;
+  letter-spacing: 1rpx;
+}
+
+.contentBox image {
+  position: relative;
+  top: 42rpx;
+  right: 30rpx;
+  width: 14rpx;
+  height: 20rpx;
+}

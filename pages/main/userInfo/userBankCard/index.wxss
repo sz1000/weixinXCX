@@ -1,0 +1,20 @@
+/* pages/main/userInfo/userBankCard/index.wxss */
+page{
+    background-color: #F7F7F7;
+}
+
+.must{
+    color: #FF3E24;
+}
+
+.tip{
+    font-size: 10px;
+    text-align: right;
+    margin-top:22rpx;
+    margin-right: 44rpx;
+    margin-bottom: 75rpx;
+}
+
+input{
+    width: 70vw;
+}

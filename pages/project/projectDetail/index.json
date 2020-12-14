@@ -1,0 +1,10 @@
+{
+  "usingComponents":{
+    "i-count-down": "../../../dist/count-down/index",
+    "group-buying":"./components/group-buying/index",
+    "group-buying-price":"./components/group-buying-price/index",
+    "vst-login":"../../../component/vst-login/index",
+    "vst-register":"../../../component/vst-register/index"
+  },
+  "navigationBarTitleText": "商品详情"
+}

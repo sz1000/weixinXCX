@@ -1,0 +1,31 @@
+/* component/global-top-bar/index.wxss */
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 28rpx;
+}
+
+.topbar-item {
+    display: flex;
+    align-items: center;
+
+    font-size:26rpx;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+}
+
+.title-icon {
+    width: 6rpx;
+    height: 28rpx;
+    background: rgba(82, 151, 252, 1);
+    border-radius: 4rpx;
+    overflow: hidden;
+
+    margin-right: 15rpx;
+}
+
+.title {
+    font-size: 30rpx;
+    font-weight: bold;
+    color: #333333
+}

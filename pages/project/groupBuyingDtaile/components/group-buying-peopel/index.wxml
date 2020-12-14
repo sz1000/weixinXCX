@@ -1,0 +1,34 @@
+<!-- pages/project/groupBuyingDtaile/components/group-buying-peopel/index.wxml -->
+<view class="container">
+	<view class="headimg-arr">
+		<view class="headimg-box boss">
+			<image class="headimg-item" src="{{groupBuyingData.leaderInfo.avatar ? groupBuyingData.leaderInfo.avatar : '/static/icons/default-headimg.png'}}" />
+		</view>
+		<view class="headimg-box" wx:for="{{groupBuyingData.actInfo.group_people_num - 1}}" wx:key="index">
+			<image class="headimg-item" src="{{groupBuyingData.members[index] ? groupBuyingData.members[index].userInfo.avatar : '/static/icons/default-headimg.png'}}" />
+		</view>
+	</view>
+	<view class="surplusPeopel" wx:if="{{type !== 'start' && groupBuyingData.status !== 1 }}">
+		再邀
+		<span style="color:#FF3B30;">{{groupBuyingData.actInfo.group_people_num - groupBuyingData.members.length - 1}}</span>
+		人，超值商品马上到手！
+	</view>
+
+	<view class="countDown-container" wx:if="{{type !== 'start' && groupBuyingData.status !== 1}}">
+		<view>
+			{{groupBuyingData.time_to_close > 0 ? "剩余时间" : "拼团已失效"}}
+		</view>
+		<view>
+			<i-count-down
+			 wx:if="{{groupBuyingData.time_to_close}}"
+			 target="{{groupBuyingData.time_to_close}}"
+			 secondType="{{true}}"
+			 countdown-class="countDown"
+			 symbol-class="countdown-symbol"
+			 count-class="countdown-count"
+			 format="{{[':',':',' ']}}"
+			/>
+		</view>
+	</view>
+</view>
+

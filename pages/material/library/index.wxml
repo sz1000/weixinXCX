@@ -1,0 +1,54 @@
+<!-- 我的素材悬浮框 -->
+<image bind:tap="toMyMaterial" class="myMaterialBtn1" src="/static/icons/myMaterial.png"></image>
+<view class="page-container">
+  <view class="tabTop">
+    <i-tabs current="{{ currentTab }}" bindchange="currentTabChange">
+      <i-tab i-class="touchBig" key="recommend" title="推荐"></i-tab>
+      <i-tab i-class="touchBig" key="albums" title="图册"></i-tab>
+      <i-tab i-class="touchBig" key="richText" title="图文"></i-tab>
+      <!-- <i-tab key="sVideo " title="短视频"></i-tab> -->
+    </i-tabs>
+  </view>
+  <scroll-view scroll-y="true" scroll-top='{{scrollTop}}' class='scrollBox' bindscrolltoupper='refreshData' bindscrolltolower='loadMoreData'>
+    <view class="contentBox">
+      <!-- 暂无数据 -->
+      <view class="noDataBox" wx:if="{{eleData.length == 0}}">{{noDataContent}}</view>
+      <!-- <view wx:for='{{eleData}}' wx:key="item" wx:for-index="index">
+        <template is="{{item.template}}" data="{{item,index,spinShow,eleData}}"></template>
+      </view> -->
+      <view wx:for="{{eleData}}" wx:key="{{eleData.id}}">
+      <global-article-card item="{{eleData[index]}}" add="{{true}}" showIsJoin="{{true}}"></global-article-card>
+    </view>
+    </view>
+    <i-load-more wx:if="{{loadMoreTip}}" />
+    <i-load-more wx:if="{{lastLoad}}" tip="已经到底了" loading="{{ false }}" />
+  </scroll-view>
+</view>
+<!-- 用户第一次登陆 显示的内容 -->
+<view wx:if="{{hintShow}}">
+  <view class="mask"></view>
+  <view class="firstShowBox">
+    <view class="fTitle">每天就用五分钟</view>
+    <view class="blueUnderLine"></view>
+    <image src="https://img.vstsa.xyz/a.png" class="imgTipOne" />
+    <view class="tipBox">
+      <view class="blueBox"></view>
+      <view>Tip1: 看到好东西就收藏下来</view>
+    </view>
+    <image src="https://img.vstsa.xyz/b.png" class="imgTipTwo" />
+    <view class="tipBox">
+      <view class="blueBox"></view>
+      <view>Tip2:首页进入我的素材</view>
+    </view>
+    <image src="https://img.vstsa.xyz/c.png" class="imgTipThree" />
+    <view class="tipBox">
+      <view class="blueBox"></view>
+      <view>Tip3:在我的收藏里就可以编辑分享素材啦</view>
+    </view>
+    <view class="tryBtn" bindtap="tryBtn">我来试试</view>
+  </view>
+</view>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+  <image src="/static/icons/backHome.png"></image>
+</view>

@@ -1,0 +1,2 @@
+<!--component/global.returnIndex/index.wxml-->
+<image wx:if="{{show}}" class="returnIndex" bind:tap="returnIndex" src='/static/icons/backHome.png'></image >

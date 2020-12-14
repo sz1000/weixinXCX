@@ -1,0 +1,66 @@
+/* pages/distributionCenter/vipgrade/index.wxss */
+
+.header {
+  height: 300rpx;
+}
+
+.header_title {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: rgba(48, 49, 51, 1);
+  padding:20rpx 30rpx;
+}
+
+.header_context {
+  height: 200rpx;
+  padding: 20rpx;
+  line-height: 50rpx;
+  margin: 0rpx 20rpx;
+  font-weight: 400;
+  color: rgba(144, 147, 153, 1);
+  font-size: 28rpx;
+}
+
+.main {
+  min-height: cac(100vh-200rpx);
+}
+
+.main_title {
+  height: 40rpx;
+  line-height: 40rpx;
+  font-size: 36rpx;
+  font-weight: bold;
+  color: rgba(48, 49, 51, 1);
+  padding: 20rpx 30rpx;
+}
+.table {
+  
+border:1px solid #dadada;
+border-right: 0;
+border-bottom: 0;
+margin: 30rpx;
+color: #666;
+}
+.tr {
+width: 100%;
+display: flex;
+justify-content: space-between;
+}
+.th,
+.td {
+padding: 10px;
+border-bottom: 1px solid #dadada;
+border-right: 1px solid #dadada;
+text-align: center;
+width:100%
+}
+.th {
+font-weight: 400;
+background-color:#eee;
+/* background-color:#FFBFC2CC; */
+
+border-bottom: 1px solid #dadada;
+border-right: 1px solid #dadada;
+}

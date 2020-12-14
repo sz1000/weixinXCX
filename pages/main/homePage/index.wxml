@@ -1,0 +1,134 @@
+<view style="width:100%;overflow:hidden">
+  <view class="userInfo" style="background-image: url('https://img.kodin.cn/kodin/{{isSaler ? 'gold-bg2':'general-bg1'}}.png');{{isSaler? 'height:1200rpx':''}}">
+    <image class="user-headImg" src="{{isLogined ? avatarUrl : '/static/icons/default-headimg.png'}}" />
+    <view class="user-title" bind:tap="handleToVipDetaile" style="background-image: url('https://img.kodin.cn/kodin/{{isSaler ? 'gold':'general'}}-streamer.png')">
+      <view>{{isSaler ? '黄金会员':'普通会员'}}</view>
+    </view>
+    <view class="user-name" wx:if="{{isLogined}}">{{nickName}}</view>
+    <image data-page="/pages/main/userInfo/Index/index" bindtap="switchToPage" class="setUp" src="/static/icons/shezhi.png" />
+    <button class="login-button" wx:if="{{!isLogined}}" bindtap="handleLogin">登录</button>
+  </view>
+
+  <view class="container">
+
+    <view class="saler-container" wx:if="{{isSaler}}">
+      <view class="saler-title">
+        会员权益
+      </view>
+      <!-- 销售收益 -->
+      <view class="commonBox1">
+        <view class="commonBar" style="margin-left:0;">
+          <view class="common-bar-left">
+            <view class="commonIcon" /> 销售收益
+          </view>
+          <view class="showOrderBtn" data-page="/pages/myProfit/Index/index" bind:tap="switchToPage">
+            立即提现
+            <image src="/static/icons/Path@2x.png" />
+          </view>
+        </view>
+        <view class="itemBox saler-item-box">
+          <view class="item">
+            <span>{{canWithDraw/100}}</span>
+            <view>可提现收益</view>
+          </view>
+          <view class="item">
+            <span>{{todayAmount/100}}</span>
+            <view>今日收益</view>
+          </view>
+          <view class="item">
+            <span>{{todayAmount/100}}</span>
+            <view>累计收益</view>
+          </view>
+        </view>
+      </view>
+      <view class="divide" style="margin:0 10px;" />
+      <!-- 销售工具 -->
+      <view class="commonBox1" style="height:400rpx;">
+        <view class="commonBar" style="margin-left:0;">
+          <view class="common-bar-left">
+            <view class="commonIcon" /> 销售工具
+          </view>
+        </view>
+
+        <view class="itemBox saler-item-box">
+          <view class="item1" data-page="/pages/material/library/index" bind:tap="switchToPage">
+            <image class="item-bg" src="/static/icons/library.png" />
+            <view>素材库系统</view>
+          </view>
+
+                <view class="item1" data-page="/pages/distributionCenter/Index/index" bind:tap="switchToPage">
+            <image class="item-bg" src="/static/icons/tuandui.png" />
+            <view>分销中心</view>
+            </view>
+
+
+             <!-- 可叮的分销团队 -->
+          <!-- <view class="item1" data-page="/pages/myDistribution/Index/index" bind:tap="switchToPage">
+            <image class="item-bg" src="/static/icons/tuandui.png" />
+            <view>分销团队</view>
+          </view> -->
+
+
+          <view class="item1" data-page="{{'/pages/myCard/newCard/index?id=' + loginData.id}}" bind:tap="switchToPage">
+            <image class="item-bg" src="/static/icons/mingpian.png" />
+            <view>销售名片</view>
+          </view>
+          <view class="item1" bind:tap="toOrderList" data-page="/pages/myFollowOrder/Index/index" bind:tap="switchToPage">
+            <image class="item-bg" src="/static/icons/gendan.png" />
+            <view>跟单系统</view>
+          </view>
+ </view>       
+      </view>
+    </view>
+
+    <view class="commonBox">
+      <view class="commonBar">
+        <view>我的订单</view>
+        <view class="showOrderBtn" bind:tap="showAllOrder">
+          查看所有订单
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+      <view class="divide" />
+      <view class="itemBox">
+        <view class="item" bind:tap="toOrderList" data-current="0" data-state="-1">
+          <image src="/static/icons/fukuan.png" />
+          <view>待支付</view>
+          <p wx:if="{{orderNumWaitPay != 0}}" class="itemNum">{{orderNumWaitPay}}</p>
+        </view>
+        <view class="item" bind:tap="toOrderList" data-current="1" data-state="0">
+          <image src="/static/icons/mony.png" />
+          <view>已支付</view>
+          <p wx:if="{{orderNumHasOrdered != 0}}" class="itemNum">{{orderNumHasOrdered}}</p>
+        </view>
+        <view class="item" bind:tap="toOrderList" data-current="3" data-state="2">
+          <image src="/static/icons/finished.png" />
+          <view>已核销</view>
+          <p wx:if="{{orderNumFinished != 0}}" class="itemNum">{{orderNumFinished}}</p>
+        </view>
+        <view class="item" bind:tap="toOrderList" data-current="4" data-state="3">
+          <image src="/static/icons/quxiao.png" />
+          <view>退款</view>
+          <p wx:if="{{refundNum != 0}}" class="itemNum">{{refundNum}}</p>
+        </view>
+
+      </view>
+    </view>
+
+    <!-- 我的预约 -->
+    <view class="commonBox" style="height:120rpx;">
+      <view class="commonBar" style="height:120rpx;">
+        <view>我的预约</view>
+        <view class="showOrderBtn" bind:tap="toAppointmentList">
+          查看所有预约
+          <image src="/static/icons/Path@2x.png" />
+        </view>
+      </view>
+    </view>
+
+  </view>
+
+</view>
+
+<i-message id="message" />
+<vst-register openCode="{{openCode}}" isShow="{{registerShow}}" bind:change="handleRegister" />

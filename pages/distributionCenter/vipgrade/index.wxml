@@ -1,0 +1,25 @@
+<!--pages/distributionCenter/vipgrade/index.wxml-->
+<view class="header">
+  <view class="header_title">1.等级说明</view>
+  <view class="header_context">
+   会员等级是基于用户使用吉优业务累计获取的消费额度，
+    用户消费额度达到对应门槛，则立即升级。 其中
+    普通用户无会员体验资格，其余三个等级都有会员体验资格。
+  </view>
+</view>
+<!-- 会员等级说明 -->
+<view class="main">
+  <view class="main_title">2.会员等级说明</view>
+  <view class="table">
+    <view class="tr">
+      <view class="th">等级</view>
+      <view class="th">对应升级门槛</view>
+    </view>
+    <block wx:for="{{listData}}" wx:key="{[id]}">
+      <view class="tr">
+        <view class="td">{{item.code}}</view>
+        <view class="td">{{item.text}}</view>
+      </view>
+    </block>
+  </view>
+</view>

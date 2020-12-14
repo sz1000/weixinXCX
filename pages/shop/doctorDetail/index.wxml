@@ -1,0 +1,123 @@
+<scroll-view scroll-into-view="{{toModel}}" scroll-y="true" enable-back-to-top="true" scroll-with-animation="true">
+  <view class="backView">
+    <view class="backInfo">
+      <view class="backImg">
+        <image src="{{doctor.avatar}}" class="img" mode="aspectFill"></image>
+      </view>
+      <view class="doctorname">{{doctor.name}}</view>
+      <view class="introduces">{{doctor.title}}</view>
+      <view class="tagBox">
+        <view class="tag" wx:for="{{[0,1,2,3,4,5]}}" wx:key="tagItem" wx:for-item="tagIndex" wx:if="{{doctor.tags.length > tagIndex ? true : false}}">
+          {{doctor.tags[tagIndex]}}
+        </view>
+    
+      </view>
+      <view class="bigView">
+        <view class="eyeView">
+          <view class="count">{{doctor.reserve_num}}</view>
+          <view class="order">预约</view>
+        </view>
+        <view class="eyeView">
+          <view class="count">{{doctor.case_num}}</view>
+          <view class="order">案例</view>
+        </view>
+      </view>
+      <view class="divide"></view>
+      <view class="iconBox">
+        <view class="iconContent" data-type="doctorIntro" data-name="医生资料" bind:tap="showDoctor">
+          <image class="iconImg" src="../../../static/img/resource.png" />
+          <p class="iconText">医生资料</p>
+        </view>
+        <view class="iconContent" data-type="doctorQualify" data-name="医生资格证" bind:tap="showDoctor">
+          <image class="iconImg" src="../../../static/img/card.png" />
+          <p class="iconText">医生资格证</p>
+        </view>
+        <view class="iconContent" data-type="doctorJob" data-name="医生执业证" bind:tap="showDoctor">
+          <image class="iconImg" src="../../../static/img/answer.png" />
+          <p class="iconText">医生执业证</p>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="model_4" data-rol="demo" id="demo">
+    <view style="width:560rpx;">
+      <i-tabs current="{{ current }}" bindchange="handleChange" color="#5297FC">
+        <i-tab key="tab1" title="相关案例"></i-tab>
+        <i-tab key="tab2" title="5问5答"></i-tab>
+        <i-tab key="tab3" title="明星项目"></i-tab>
+      </i-tabs>
+    </view>
+    <view class="title" id="tab1">
+      <image src="../../../static/img/right_align.png" />
+      相关案例
+      <image src="../../../static/img/left_align.png" />
+    </view>
+    <view wx:if="{{materials.length == 0}}" class="nodataContent">{{noDataContent}}</view>
+    <view wx:for="{{materials}}" wx:key="{{materials.id}}">
+      <global-article-card item="{{materials[index]}}"></global-article-card>
+    </view>
+  </view>
+  <view class="model_5" id="tab2">
+    <view class="title">
+      <image src="../../../static/img/right_align.png" />
+      5问5答
+      <image src="../../../static/img/left_align.png" />
+    </view>
+      <view class="askBox" wx:for="{{questions}}" wx:key="{{index}}">
+        <view class="questionBox">
+          <image  src="/static/img/wenhao.png"></image>
+          <view class="question">{{item.question}}</view>
+        </view>
+        <view class="answerBox">
+          <p>医生解析:</p>
+          <view class="answer">{{item.answer}}</view>
+        </view>
+      </view>
+      <view style="color:#666666;text-align:center;margin-bottom:15rpx;" wx:if="{{questions == false}}">{{noQuestions}}</view>
+  </view>
+  <view class="projectAreaBox" id="tab3">
+    <view class="title">
+      <image src="../../../static/img/right_align.png" />
+      明星项目
+      <image src="../../../static/img/left_align.png" />
+    </view>
+    <view wx:if="{{product.length == 0}}" class="nodataContent">{{noDataContent}}</view>
+    <view class="projectBox" wx:for="{{product}}" wx:for-item="item" wx:key="item.id" data-project="{{item}}" bindtap="goToProductDetail">
+      <image src="{{item.cover_img}}" class="projectCover" mode="aspectFill" />
+      <view class="projectInfo">
+        <view class="projectTitle">{{item.name}}</view>
+        <view class="projectPrice">￥{{item.price/100}}</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+<view style="padding-top:20rpx"></view>
+<!-- <view class="btn" bindtap="showModal">预约</view> -->
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>
+
+<view class="showMask" wx:if="{{showDoctorBox}}" bind:tap="closeModal"></view>
+<view class="modalContainer" wx:if="{{showDoctorBox}}">
+  <view class="credentialsBox" >
+    <view class="topImgBox">
+      <view>{{doctorBoxName}}</view>
+      <!-- <view >{{doctorBoxName}}</view> -->
+    </view>
+    <view wx:if="{{credentialsType !== 'doctorIntro'}}">
+       <view class="imgBox">
+         <image style="width:100%;height:100%" src="{{ credentialsType === 'doctorQualify' ? doctor.cert_img : doctor.work_img }}"></image >
+       </view>
+       <view class="imgBox">
+        <image style="width:100%;height:100%" src="{{credentialsType == 'doctorQualify' ? doctor.cert_img_bk : doctor.work_img_bk}}"></image >
+        </view>
+    </view>
+    <view wx:else class="doctorIntro {{doctor.intro == null ? 'centerVertical' : ''}}">
+      {{doctor.intro == null ? '暂无内容' : doctor.intro}}
+    </view>
+    
+  </view>
+  <image class="cancel" mode="aspectFill" bind:tap="closeModal"  src="/static/project/quxiao@2x.png"></image>
+</view>
+  

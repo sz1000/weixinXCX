@@ -1,0 +1,45 @@
+<!--pages/main/groupbooking/index.wxml-->
+<view class="header">
+<image src="../../../static/img/groupbooking.png" mode="widthFix"></image>
+</view>
+<!-- 套餐美颜美肤系列 -->
+<view class="main">
+ <view class="container_wrap">
+ <view class="container_img">
+ <image src="../../../static/img/group_booking_background.png" style="width:260rpx; height:170rpx"> </image>
+ 
+ </view>
+ <view class="container_text">
+  <view class="container_title">398套餐 美颜美肤系列</view>
+  <view class="container_describe">爱上吉优 | 缔造美丽神话 | 自用省钱</view>
+  <view class="rushprice_wrap">
+  <view class="rush">抢购</view>
+  <view class="price">¥10220</view>
+  
+  </view>
+ 
+ </view>
+ 
+ </view>
+</view>
+<!-- 套餐美颜美肤系列 -->
+<view class="main">
+ <view class="container_wrap">
+ <view class="container_img">
+ <image src="../../../static/img/group_booking_background.png" style="width:260rpx; height:170rpx"> </image>
+ 
+ </view>
+ <view class="container_text">
+  <view class="container_title">398套餐 美颜美肤系列</view>
+  <view class="container_describe">爱上吉优 | 缔造美丽神话 | 自用省钱</view>
+  <view class="rushprice_wrap">
+  <view class="rush">抢购</view>
+  <view class="price">¥10220</view>
+  
+  </view>
+ 
+ </view>
+ 
+ </view>
+</view>
+

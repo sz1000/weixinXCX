@@ -1,0 +1,180 @@
+/* pages/myCard/newCard/index.wxss */
+.container {
+  position: relative;
+  /* width: 750rpx;
+  height: 100rpx; */
+  padding-bottom: 100rpx;
+}
+
+.introContent{
+  padding-bottom: 32rpx;
+}
+
+.browseInfo{
+  width: 100%;
+  height: 125rpx;
+  border-top: 1px solid #F3F3F3;
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.imageBox image{
+  width: 48rpx;
+  height: 48rpx;
+  border-radius: 22rpx;
+  margin-right: 12rpx;
+}
+
+.likeClick{
+  text-align: center;
+  margin-right: 23rpx;
+  color: #333333
+}
+
+.likeClick image{
+  width: 34rpx;
+  height: 34rpx;
+}
+
+.bottmBar {
+  position: fixed;
+  bottom: 0px;
+  z-index: 999;
+  width: 750rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background: rgba(255, 255, 255, 1);
+  box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.06);
+  border-top: 1px solid #00000003
+}
+
+.updataCardInfo {
+  width: 230rpx;
+  height: 62rpx;
+  border: 2rpx solid;
+  text-align: center;
+  /* border-image: linear-gradient(0deg, rgba(34, 121, 255, 1), rgba(82, 149, 252, 1)) 10 10; */
+  opacity: 0.8;
+  border-radius: 8rpx;
+  font-size: 28rpx;
+  font-weight: normal;
+  color: rgba(36, 122, 255, 1);
+  line-height: 60rpx;
+}
+
+.shareCard {
+  width: 230rpx;
+  height: 62rpx;
+  background: #2279FF;
+  border-radius: 8rpx;
+  font-size:28rpx;
+  line-height: 60rpx;
+  color: #fff;
+  font-weight:normal;
+  text-align: center;
+  padding: 0;
+}
+
+.camera{
+  width: 56rpx;
+  height:56rpx;
+  position: absolute;
+  right: 30rpx;
+  top:40rpx
+}
+
+.bgImg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 750rpx;
+  height: 1114rpx;
+  background: bisque;
+}
+
+.bgImg image{
+  width: 750rpx;
+  height: 1114rpx;
+}
+
+.content {
+  position: absolute;
+  z-index: 1;
+  left: 30rpx;
+  top: 861rpx;
+  width: 690rpx;
+  height: 450rpx;
+  background: #fff;
+  box-shadow: 0px 8px 14px 0px rgba(0, 0, 0, 0.08);
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+}
+
+.infoContainer {
+  position: relative;
+  margin-left: 63rpx;
+}
+
+.infoHeadImg {
+  width: 166rpx;
+  height: 166rpx;
+  border-radius: 83rpx;
+  overflow: hidden;
+  box-shadow: 0px 4px 12px 0px rgba(0, 0, 0, 0.1);
+  margin-left: -20rpx;
+  margin-top: -100rpx;
+  background: #fff;
+}
+
+.infoName {
+  display: flex;
+  margin-top: 41rpx;
+}
+
+.infoNameContainer {
+  position: relative;
+}
+
+.infoNameText {
+  font-size: 44rpx;
+  color: #333;
+  font-weight: 500;
+  color: rgba(51, 51, 51, 1);
+  line-height: 60rpx;
+  margin-right: 33rpx;
+}
+
+.infoNameDecoration {
+  position: absolute;
+  z-index: -1;
+  bottom: 10rpx;
+  width: 130rpx;
+  height: 10rpx;
+  background: linear-gradient(-68deg, rgba(253, 126, 89, 1) 0%, rgba(245, 95, 82, 1) 100%);
+}
+
+
+.textIcon {
+  margin-bottom: 30rpx;
+}
+
+.iconSize {
+  width: 30rpx;
+  height: 30rpx;
+  margin-right: 13rpx;
+}
+
+.text1 {
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 34rpx;
+}
+
+.infoContact {
+  display: flex;
+}

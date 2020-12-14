@@ -1,0 +1,60 @@
+<!-- 销售名片管理 -->
+
+<view class="page-content">
+    <view class="personInfo" bindtap='personInfomation'>
+        <text>个人信息设置</text>
+        <image class="toRight" src="/static/img/toRight.png"></image>
+        <image class="headerImg" src="{{userMs.avatarUrl}}"></image>
+    </view>
+    <view class="demo" bind:tap="toMyMaterial">
+        <text>案例设置</text>
+        <image class="toRight" src="/static/img/toRight.png"></image>
+    </view>
+
+
+
+
+
+    <view class="chooseCover" bind:tap="toCropper">
+        <text>选择封面</text>
+        <image class="toRight" src="/static/img/toRight.png"></image>
+    </view>
+    <view class="willSeeCard">
+        <text>销售名片预览</text>
+    </view>
+    <view class="willSeeArea">
+        <view class="myCardImgBox">
+            <view class="container" animation="{{animationData}}" bind:transitionend="animationEnd" wx:if="{{ spinShow }}" style="opacity: 1;">
+                <i-spin animtion='true' fix></i-spin>
+            </view>
+            <image class="myCardImg" src="{{cardImg ? cardImg : bgImg}}"  bindtap="toImg"></image>
+        </view>
+        <view class="myCardImgBox">
+            <view class="container" animation="{{animationData}}" bind:transitionend="animationEnd"  wx:if="{{ spinShow }}" style="opacity: 1;">
+                <i-grid-item>
+                    <i-spin fix></i-spin>
+                </i-grid-item>
+            </view>
+            <image   class="cardModal" src='/static/img/cardModal.png'></image >
+            <image class="myCardImg_h5" src="{{cardImg ? cardImg : bgImg}}" bindtap="toH5" />
+        </view>
+    </view>
+
+    <view class="introduce">
+        <view>朋友圈</view>
+        <view>H5/小程序</view>
+    </view>
+</view>
+
+
+<!-- 提示框 -->
+<i-modal visible="{{ tipMakeCard }}" bind:ok="toMakeCard" bind:cancel="toMakeCard">
+    <view>你们还没有制作销售名片.现在去制作？</view>
+</i-modal>
+
+
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+        <image src="/static/icons/backHome.png"></image>
+
+</view>

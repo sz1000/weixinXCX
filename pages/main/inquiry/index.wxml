@@ -1,0 +1,97 @@
+<!-- pages/main/inquiry/index.wxml -->
+<view class="">
+	<form
+	 bindsubmit="formSubmit"
+	 bindreset="formReset"
+	>
+		<i-input
+		 title="姓名:"
+		 maxlength="20"
+		 value="{{submit.client_name}}"
+		 name="client_name"
+		 placeholder="请输入姓名"
+		/>
+		<view class="select-contaienr">
+			<view class="select-name">性别:</view>
+			<view>
+				<i-radio-group
+				 current="{{currentGender}}"
+				 bindchange="handleGenderChange"
+				>
+					<view class="select-radio">
+						<view
+						 class=""
+						 wx:for="{{fruit}}"
+						 wx:key="{{item.id}}"
+						>
+							<i-radio
+							 showLine="{{false}}"
+							 position="left"
+							 name="gender"
+							 value="{{item.name}}"
+							/>
+						</view>
+					</view>
+				</i-radio-group>
+			</view>
+		</view>
+		<global-cell title="生日:">
+			<picker
+			 mode="date"
+			 value="{{date}}"
+			 name="birthday"
+			 bindchange="bindDateChange"
+			>
+				<view class="row-content">{{ submit.birthday || '请选择出生日期'}}</view>
+			</picker>
+		</global-cell>
+		<i-input
+		 name="tel"
+		 title="手机号:"
+		 type="number"
+		 maxlength="20"
+		 bind:change="handleTelChange"
+		 placeholder="请输入手机号"
+		/>
+		<global-cell title="验证码:">
+			<view class="code-container">
+				<input
+				 type="number"
+				 name="code"
+				 placeholder="请输入验证码"
+				/>
+				<view
+				 bindtap='handleCountDown'
+				 class="countDown"
+				>{{ countDown || "获取验证码"}}
+				</view>
+			</view>
+		</global-cell>
+		<i-cell-group>
+			<i-cell
+			 bindtap="handQuestion"
+			 data-item="{{item}}"
+			 data-index="{{index}}"
+			 title="{{item.title}}"
+			 wx:key="{{index}}"
+			 wx:for="{{submit.customize}}"
+			 label="{{item.answer}}"
+			 is-link
+			></i-cell>
+		</i-cell-group>
+		<button
+		 form-type="submit"
+		 class="submitButton"
+		>
+			提交
+		</button>
+	</form>
+</view>
+<unit-questions
+ wx:if="{{questionShow}}"
+ bindchange="handAnswer"
+ value="{{questionObj}}"
+/>
+
+<i-message id="message" />
+

@@ -1,0 +1,216 @@
+<!-- 首页 -->
+<swiper autoplay="true" interval="3000" style="width: 100vm;height:340rpx;background:#EEEEEE;">
+	<block wx:if="{{blockOne}}" wx:for="{{blockOne}}" wx:key="{{key}}">
+		<swiper-item>
+			<image
+			 bindtap="goDetail"
+			 src="{{item.imgUrl}}"
+			 data-item="{{item}}"
+			 mode="aspetFit"
+			 class="slide-image"
+			/>
+		</swiper-item>
+	</block>
+</swiper>
+
+<view class="circumscrible">
+	<view class="navIconBox">
+		<view
+		 class="navIconContent"
+		 style="background: #EEEEEE;"
+		 wx:for="{{8}}"
+		 wx:key="key"
+		 wx:if="{{!blockTwo}}"
+		/>
+		<view
+		 class="navIconContent"
+		 wx:for="{{blockTwo}}"
+		 wx:key="key"
+		 wx:if="{{blockTwo && index < 8}}"
+		 wx:for-index="index"
+		 wx:for-item="item"
+		 bindtap="goToProject"
+		 data-item="{{item}}"
+		>
+			<image src="{{item.ico_img}}" class="navIconImg" />
+			<p class="navIconText">{{item.name}}</p>
+		</view>
+
+		<view class="navIconContent" bindtap="handleToInquiry" mode="aspectFill">
+			<image src="/static/icons/inqury.png" mode="aspectFill" class="navIconImg" />
+			<p class="navIconText">问诊</p>
+		</view>
+
+		<view class="navIconContent" bindtap="handleToGroupBuying" mode="aspectFill">
+			<image src="/static/icons/groupBuying.png" mode="aspectFill" class="navIconImg" />
+			<p class="navIconText">拼团</p>
+		</view>
+	</view>
+	<view class="bannerMid" bind:tap="handleTogroupbooking">
+		<image
+		 class="bannerMidIcon"
+		 src="../../../static/img/GO.png"
+		 mode="aspectFit|aspectFill|widthFix"
+		 lazy-load="false"
+		/>
+		<image class="bannerMidImg" src="../../../static/img/vip-inlet.png" mode="aspectFit|aspectFill|widthFix" />
+	</view>
+
+	<view class="imgBox">
+		<view class="imgLeft">
+			<image
+			 class="imgLeftContent {{blockThree[0] ? '' : 'loading'}}"
+			 data-item="{{blockThree[0]}}"
+			 bindtap="goDetail"
+			 mode="aspectFill"
+			 src="{{blockThree[0].imgUrl}}"
+			/>
+		</view>
+		<view class="imgRight">
+			<image
+			 class="imgRightContent {{blockThree[1] ? '' : 'loading'}}"
+			 style="margin-bottom:5rpx"
+			 data-item="{{blockThree[1]}}"
+			 bindtap="goDetail"
+			 mode="aspectFill"
+			 src="{{blockThree[1].imgUrl}}"
+			/>
+			<image
+			 class="imgRightContent {{blockThree[2] ? '' : 'loading'}}"
+			 data-item="{{blockThree[2]}}"
+			 bindtap="goDetail"
+			 mode="aspectFill"
+			 src="{{blockThree[2].imgUrl}}"
+			/>
+		</view>
+	</view>
+
+	<view class="doctorContent">
+		<view class="doctorHead">
+			<view class="headLeft">
+				<span class="rectangle" />
+				<h2>医生</h2>
+			</view>
+			<view class="headRight" bindtap="toShop" data-id="1">
+				<span class="allDoctor">全部</span>
+				<image class="imgAll" src="../../../static/project/dayu.png" />
+			</view>
+		</view>
+		<view class="doctorBox">
+			<view
+			 wx:for="{{blockFour}}"
+			 wx:for-index="index"
+			 wx:for-item="item"
+			 wx:key="key"
+			>
+				<view wx:if="{{index < 2}}">
+					<template is="{{blockFour.length >= 2 ? 'docTwo' : 'docOne'}}" data="{{item,showDoctorNum,docData,blockFour}}" />
+				</view>
+			</view>
+		</view>
+	</view>
+
+	<view class="caseListBox">
+		<view class="doctorHead">
+			<view class="headLeft">
+				<span class="rectangle" />
+				<h2>案例</h2>
+			</view>
+		</view>
+		<view wx:if="{{demoList.length > 0}}">
+
+			<view wx:for="{{demoList}}" wx:for-item="item1" wx:key="{{index}}">
+				<global-article-card item="{{item1}}" add="{{false}}" />
+			</view>
+		</view>
+	</view>
+	<!-- 头像悬浮框
+  <view class="welcome {{welcome == true ? 'sideHeadBefore' :'sideHeadAfter'}}" wx:if="{{showHeadImg}}"
+    bindtap="welcomeTo">
+    <view style="z-index:20;display:flex;align-items:center;position: fixed;bottom: 730rpx;">
+      <image style="width:80rpx;height:80rpx;border-radius:100%;border:6rpx solid #5297FC"
+        src="{{ parentInfo ? parentInfo.avatar : userInfo.avatar}}" />
+    </view>
+
+  </view>
+  <view class="welcomeBox">
+    <view class="{{welcome == true ? 'welContent' :'welAfter'}}">
+      <span style="font-weight:600">欢迎来到</span>
+      <p>{{parentInfo ? parentInfo.nick_name : userInfo.nick_name}}的可叮</p>
+    </view>
+  </view> -->
+
+	<view class="checkButton" bindtap="toShop" data-id="2">
+		查看更多
+		<image style="margin:9rpx;width:11rpx;height:22rpx" src="../../../static/project/dayu.png" />
+	</view>
+
+	<button
+	 open-type="contact"
+	 bindcontact="handleContact"
+	 show-message-card="true"
+	 send-message-path="/pages/main/Index/index"
+	 send-message-title="{{project.name}}"
+	 session-from="weapp"
+	 size="20"
+	>
+		<image class="message" src="../../../static/project/message.png" mode="aspectFill" />
+	</button>
+</view>
+
+<!-- 登录组件 -->
+<!-- <login-model wx:if="{{showLogin}}"></login-model> -->
+<!-- 有销售ID但不是销售的跳转浮层 -->
+<view class="commodity_screen" wx:if="{{becomeSaler}}" bindtap="closeModal" />
+<i-modal
+ title="成为销售"
+ visible="{{becomeSaler}}"
+ bindtap="beSaler"
+ show-cancel="{{false}}"
+ actions="{{attribute}}"
+>
+	<image style="width:100rpx;height:100rpx;" src="../../../static/img/logo.png" />
+	<view>成为可叮销售,用双手成就</view>
+	<view>你的梦想</view>
+</i-modal>
+
+<vip-mask bind:show="handleCloseVipMask" wx:if="{{vipMaskShow}}" />
+
+<!-- 医生模板 -->
+<template name="docOne">
+	<view
+	 class="doctorInfoOne"
+	 data-item="{{item}}"
+	 data-bindid="{{item.bindId}}"
+	 bindtap="goDetail"
+	>
+		<image class="docHeadOne" src="{{item.avatar}}" mode="aspectFill" />
+		<view class="docListOne">
+			<p class="docName">
+				{{item.name}}
+				<span class="docJob">{{item.title}}</span>
+			</p>
+			<p class="docJob">{{item.hospital}}</p>
+		</view>
+	</view>
+</template>
+<template name="docTwo">
+	<view
+	 class="doctorInfoBox"
+	 data-item="{{item}}"
+	 data-bindid="{{item.bindId}}"
+	 bindtap="goDetail"
+	>
+		<view class="docHeadPic">
+			<image class="docHeadImg" src="{{item.avatar}}" mode="aspectFill" />
+		</view>
+		<view class="docInfo">
+			<p class="docName">
+				{{item.name}}
+				<span class="docJob">{{item.title}}</span>
+			</p>
+			<p class="docJob">{{item.hospital}}</p>
+		</view>
+	</view>
+</template>
+

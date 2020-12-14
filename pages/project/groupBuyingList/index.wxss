@@ -1,0 +1,21 @@
+/* pages/project/groupBuyingList/index.wxss */
+
+page{
+    background: #F8F8F8;
+}
+
+.list-container{
+    display: flex;
+    flex-wrap:wrap;
+}
+
+.list-item{
+    margin-left: 24rpx;
+    margin-bottom: 24rpx;
+}
+
+.banner{
+    width: 100vw;
+    height: 208rpx;
+    margin-bottom: 24rpx;
+}

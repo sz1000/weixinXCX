@@ -1,0 +1,60 @@
+<!-- pages/appointment/newAppointment/index.wxml -->
+<view class="container">
+  <view class="item">
+    <view class="item-head">
+      <view class="item-head-icon"></view>
+      <view>预计到院时间</view>
+    </view>
+    <view class="date-container">
+      <global-select-time bindchange="handTimeChange" value="{{submit.appoint_time}}"></global-select-time>
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-head">
+      <view class="item-head-icon"></view>
+      <view>服务</view>
+    </view>
+    <view class="item-but-container">
+      <view bindtap="handSlectServe" class="rudio-btn {{submit.item_type == 0 ? 'rudio-btn-active' : ''}}" data-id="0">
+        医生
+      </view>
+      <view bindtap="handSlectServe" class="rudio-btn {{submit.item_type == 1 ? 'rudio-btn-active' : ''}}" data-id="1">
+        项目
+      </view>
+      <view bindtap="handSlectServe" class="rudio-btn {{submit.item_type == 2 ? 'rudio-btn-active' : ''}}" data-id="2">
+        到院安排
+      </view>
+    </view>
+    <view class="item-selected-serve" wx:if="{{selectedServeType !== 'custom' && selectedServeType}}">
+      <global-doctor-card wx:if="{{selectedServeType ==  'doctorInfo'}}" item="{{selectedServe}}"></global-doctor-card>
+      <global-product-card wx:if="{{selectedServeType ==  'productInfo'}}" item="{{selectedServe}}"></global-product-card>
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-head">
+      <view class="item-head-icon"></view>
+      <view>预约人</view>
+    </view>
+    <view class="">
+      <input class="input-item" id='client' bindblur="handTextInput" value="{{submit.client}}" placeholder="请填写姓名" />
+      <view class="line"></view>
+      <input class="input-item" id='tel' value="{{submit.tel}}" bindblur="handTextInput" placeholder="请填写手机号" />
+    </view>
+  </view>
+  <view class="item">
+    <view class="item-head">
+      <view class="item-head-icon"></view>
+      <view>备注</view>
+    </view>
+    <view style="height:270rpx" class="">
+      <view bindtap="handTextareaInput" class="textStyle" wx:if="{{!textareaShow}}">
+        {{submit.remark || '请输入备注内容，限制200字'}}
+      </view>
+      <textarea wx:if="{{textareaShow}}" auto-focus="{{true}}" id="remark" bindblur="handTextInput" value="{{submit.remark}}" class="textStyle" maxlength="{{200}}" placeholder="请输入备注内容，限制200字" />
+    </view>
+  </view>
+  <view class="submitBtn" bindtap="handSubmit">确认提交</view>
+  <view style="height:30rpx;"></view>
+</view>
+<global-select wx:if="{{showSelect}}" type="{{selectTarget}}" bindchange="hangSelectChange"></global-select>
+<i-message id="message" />

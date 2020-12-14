@@ -1,0 +1,90 @@
+<scroll-view class='scrollBox' scroll-top='{{scrollTop}}' scroll-y='true' bindscrolltoupper='refreshData' bindscrolltolower='loadMoreData'>
+  <view class="top-substitute"></view>
+  <view class="contentBox">
+    <!-- 暂无数据 -->
+    <view class="noDataBox" wx:if="{{showingData.length == 0}}">{{noDataContent}}</view>
+    <template  is="{{item.template}}" wx:for="{{showingData}}" wx:key="item" data-index="{{item.articleId}}" data="{{item,deleteDialog,currentDeleteId,deleteId}}" />
+  </view>
+  <i-load-more wx:if="{{loadMoreTip}}" />
+  <i-load-more wx:if="{{lastLoad}}" tip="已经到底了" loading="{{ false }}" />
+</scroll-view>
+<template name="album">
+  <view class="showAreaTw">
+    <view class="card " wx:if="{{item.isCard}}">
+      <text>名片</text>
+    </view>
+    <view class="CardArea album" bindtap="toYulan" data-article="{{item}}">
+      <view class="title">{{item.title}}</view>
+      <view class="img" wx:if="{{item.imgArray.length <= 3}}">
+        <image class="imgIcon" wx:for="{{[0,1,2]}}" wx:key="imgItem" wx:for-item="imgIndex" mode="aspectFill" src="{{item.imgArray[imgIndex]}}" style="opacity:{{item.imgArray.length > imgIndex ? 100 : 0}};"></image>
+      </view>
+      <view class="img-Collections" wx:if="{{item.imgArray.length > 3}}">
+        <view wx:for="{{[0,1,2]}}" wx:key="imgItem" wx:for-item="imgIndex" mode="aspectFill" style="opacity:{{item.imgArray.length > imgIndex ? 100 : 0}};">
+          <image class="imgIcon" src="{{item.imgArray[imgIndex]}}" mode="aspectFill"></image>
+          <div class="mark" wx:if="{{imgIndex == 2}}">{{item.imgArray.length - 3}}+</div>
+        </view>
+      </view>
+      <view class="personInfo">
+        <image mode="widthFill" src="{{item.userAvatar}}" />
+        {{item.userName}}
+      </view>
+    </view>
+    <view class="menu">
+      <view class="menuItem" data-index="{{item.isCard}}" data-item="{{item}}" bindtap="toTop">
+        <image class="imgAdd" src="/static/img/icon_card{{item.isCard ? '_fill.png' : '.png'}}" />
+        加入名片
+      </view>
+      <view class="line">|</view>
+      <view class="menuItem" data-item="{{item}}" bindtap="showModal">
+        <image class="imgShare" src="/static/img/icon_share.png" />
+        分享
+      </view>
+      <view class="line">|</view>
+      <view class="menuItem" bindtap="delete" data-item="{{item}}">
+        <image class="imgDelete" src="/static/img/icon_delete.png" />
+        删除
+      </view>
+    </view>
+  </view>
+</template>
+<template name="myDiary">
+  <view class="showAreaTw">
+    <view class="card " wx:if="{{item.isCard}}">
+      <text>名片</text>
+    </view>
+    <view class="CardArea" bindtap="toYulan" data-article="{{item}}">
+      <view class="title">{{item.headText}}</view>
+      <view class="content">{{item.title}}</view>
+      <view class="img">
+        <image class="imgIcon" wx:for="{{[0,1,2]}}" wx:key="imgItem" wx:for-item="imgIndex" mode="aspectFill" src="{{item.imgArray[imgIndex]}}" style="opacity:{{item.imgArray.length > imgIndex ? 100 : 0}};"></image>
+      </view>
+      <view class="personInfo">
+        <image mode="widthFix" src="{{item.userAvatar}}" />
+        {{item.userName}}
+      </view>
+    </view>
+    <view class="menu">
+      <view class="menuItem" data-index="{{item.isCard}}" data-item="{{item}}" bindtap="toTop">
+        <image class="imgAdd" src="/static/img/icon_card{{item.isCard ? '_fill.png' : '.png'}}" />
+        加入名片
+      </view>
+    </view>
+    <!-- 暂无数据 -->
+  </view>
+</template>
+<!-- 遮罩层 -->
+<view class="commodity_screen" bindtap="closeModal" wx:if="{{showModalStatus}}"></view>
+<!-- 分享弹出层 -->
+<view class="shareModal" wx:if="{{showModalStatus}}">
+  <view class="shareBox">
+    <button bindtap="sharePic"  class="Wx">
+      <image src="/static/img/finishShare.png" class="finishWx"></image>
+      <view>分享朋友圈</view>
+    </button>
+    <button open-type="share" class="Wx">
+      <image src="/static/img/finishWx.png" class="finishWx"></image>
+      <view>分享好友</view>
+    </button>
+  </view>
+  <view class="cancle" bindtap="closeModal">取消</view>
+</view>

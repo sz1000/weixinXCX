@@ -1,0 +1,12 @@
+<view>
+    <picker class='pickerStyle' mode="{{mode}}" bindchange="selectInput" range="{{range}}">
+        <view class="pickerTitle">
+            <view>{{title}}</view>
+            <view class="right">
+                <input placeholder="{{placeholder}}" value="{{value}}" disabled="true" />
+                <image wx:if="{{showArrow}}" src="../../static/icons/Path@2x.png"></image>
+            </view>
+            
+        </view>
+    </picker>
+</view>

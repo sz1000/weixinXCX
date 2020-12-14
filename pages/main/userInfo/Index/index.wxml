@@ -1,0 +1,49 @@
+<!--pages/main/userInfo/Index/index.wxml-->
+<i-cell-group>
+	<i-cell is-link url="/pages/main/userInfo/userInfoSet/index">
+		<view class="avatar_container">
+			<image
+			 class="avatar"
+			 src="{{avatar}}"
+			 mode="aspectFit"
+			 lazy-load="false"
+			/>
+			<view class="">
+				个人信息
+			</view>
+		</view>
+	</i-cell>
+</i-cell-group>
+
+<view class="" style="height:10px;" />
+
+<i-cell-group>
+	<i-cell
+	 wx:if="{{isSaler}}"
+	 title="实名认证"
+	 i-class="font"
+	 is-link
+	 url="/pages/main/userInfo/userVerify/index"
+	/>
+	<i-cell
+	 title="银行卡管理"
+	 i-class="font"
+	 is-link
+	 wx:if="{{isSaler}}"
+	 url="/pages/main/userInfo/userBankCard/index"
+	/>
+	<i-cell
+	 title="收货地址"
+	 i-class="font"
+	 is-link
+	 url="/pages/main/userInfo/userAddress/Index/index"
+	/>
+
+	<button open-type="feedback" class="feed_button">
+		<i-cell title="意见反馈" i-class="font" is-link>
+
+		</i-cell>
+	</button>
+
+</i-cell-group>
+

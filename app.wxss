@@ -1,0 +1,402 @@
+@import "wxParse/wxParse.wxss";
+
+.hidden,
+.none {
+  display: none !important;
+}
+
+
+page {
+  height: 100%;
+  font-size: 12px;
+}
+
+button::after {
+  border: none;
+}
+
+button[disabled] {
+  color: #fff !important;
+  background: rgba(170, 170, 170, .7) !important;
+  /* border-color: #46b8da !important; */
+}
+
+button{
+  background: none;
+  font-size:26rpx;
+  color: #333333;
+  line-height:normal;
+}
+
+.button{
+  border:1px solid #C9A880;
+  padding: 10rpx 18rpx;
+  border-radius:4px;
+  color: #C9A880;
+}
+.button_fill{
+  color: #fff;
+  background-color: #C9A880;
+  padding: 26rpx;
+  text-align: center;
+  border-radius:6px;
+}
+
+.primaryBut{
+  border: 1px solid #5194FC;
+  color: #5194FC;
+  line-height: 2;
+  border-radius:26rpx;
+}
+
+.primaryBut-full{
+  border: 1px solid #5194FC;
+  color: #fff;
+  line-height: 2;
+  border-radius:26rpx;
+  background: #5194FC;
+}
+
+
+/* 垂直居中 */
+.verticalGlobal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 按钮 */
+.btn {
+
+  z-index: 999;
+  width: 190px;
+  height: 45px;
+  background-color: #5297FC;
+  border-radius: 23px;
+  font-size: 14px;
+  font-family: "HiraginoSansGB-W3";
+  color: #fff;
+  letter-spacing: 2rpx;
+  text-align: center;
+  line-height: 45px;
+  position: fixed;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 10px;
+}
+
+.loading{
+  background: #EEEEEE;
+}
+
+/* 标题 */
+.title {
+  margin-top: 16px;
+  width: 100%;
+  height: 30px;
+  text-align: center;
+  line-height: 30px;
+  font-family: 'PingFang-SC-Regular';
+  font-size: 30rpx;
+  color: #333333;
+  letter-spacing: 1rpx;
+}
+
+.title image {
+  width: 15px;
+  height: 9px;
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+/* 案例  */
+.demo_title {
+  font-size: 16px;
+  color: #000000;
+  padding: 10px;
+  padding-bottom: 7px;
+}
+
+.demo_content {
+  font-size: 12px;
+  color: #717171;
+  padding: 10px;
+  padding-top: 0;
+}
+
+.doctor {
+  background-size: 100% 100%;
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 345px;
+  height: 120px;
+}
+
+.doctorName {
+  font-size: 14px;
+  color: #000000;
+  text-align: left;
+  margin: 8px 10px 8px 17px;
+}
+
+.doctorName span {
+  font-size: 12px;
+  color: RGBA(136, 136, 136, 1);
+
+}
+
+.hospitalName {
+  color: #888888;
+  text-align: left;
+  font-size: 12px;
+  margin-left: 17px;
+  letter-spacing: 1rpx;
+}
+
+.info {
+  width: 140px;
+  height: 25px;
+  background-color: #F2F2F2;
+  border-radius: 13px;
+  margin: 15px 10px 30px 17px;
+  font-size: 11px;
+  text-align: center;
+  line-height: 25px;
+  color: #222222;
+  float: left;
+
+}
+
+.cat {
+  background-size: 100% 100%;
+  width: 175px;
+  height: 175px;
+  margin-right: 6px;
+}
+
+.cat:last-child {
+  margin-right: 0px;
+}
+
+.imgView {
+  width: 100%;
+  height: 185px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+}
+
+.personInfo {
+  border-bottom: 1px solid #EEEEEE;
+  height: 40px;
+  /* line-height: 50px; */
+  color: #717171;
+  font-size: 12px;
+  padding-left: 3%;
+
+}
+
+.headImg {
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  border-radius: 100%;
+  margin-right: 5px;
+}
+
+.proInfo {
+  border-bottom: 1px solid #EEEEEE;
+  margin-top: 5px;
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  color: #8A898A;
+  font-size: 12px;
+}
+
+.num {
+  font-size: 10px;
+  margin-left: 7px;
+}
+
+.buy {
+  width: 11px;
+  height: 11px;
+  padding-left: 17px;
+}
+
+
+
+.tab-bar {
+  position: fixed;
+  z-index: 99999;
+  width: 100%;
+  height: 100rpx;
+  font-size: 22rpx;
+  color: #9b9b9b;
+  background: #fff;
+  text-align: center;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.tab-bar .menu-item {
+  display: block;
+  flex: 1;
+  height: 100%;
+}
+
+.tab-bar .menu-item image {
+  margin: 10rpx auto 5rpx auto;
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.tab-bar .menu-item.active {
+  color: #53df87;
+}
+
+/* 返回首页样式 */
+.backBtnStyle {
+  position: fixed;
+  bottom: 160rpx;
+  right: 15rpx;
+  width: 88rpx;
+  height: 88rpx;
+}
+.backBtnStyle image{
+  width: 100%;
+  height: 100%;
+}
+
+
+
+
+
+/* 重构开始 */
+
+h1 {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 20px;
+  color: #333333;
+  letter-spacing: 2rpx;
+  text-align: left;
+
+}
+
+h2 {
+  font-size: 18px;
+  color: #333333;
+  line-height: 17px;
+  font-weight: 500;
+}
+
+.titleBold {
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 26px;
+  color: #333333;
+  letter-spacing: 2rpx;
+  text-align: left;
+}
+
+.ellipsisTwo {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.ellipsisOne {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+}
+
+.briefContent {
+  margin-top: 15rpx;
+  font-size: 15px;
+  font-weight: 300;
+  color: #717171;
+  line-height: 19px;
+  letter-spacing: 1px;
+}
+
+.rectangle {
+  display: inline-block;
+  width: 3px;
+  height: 30rpx;
+  background: #5297FC;
+  border-radius: 3rpx;
+  margin-right: 10rpx;
+}
+
+.divide {
+  display: block;
+  background-color: #eeeeee95;
+  height: 1px;
+}
+
+.message {
+  width: 88rpx;
+  height: 88rpx;
+  position: fixed;
+  bottom: 270rpx;
+  right: 15rpx;
+  opacity: 0;
+ 
+  /*透明*/
+  animation: warn 3s linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes warn {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  40% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+button::after {
+  border: none
+}
+
+.shareBtn::after {
+  border: 0;
+}
+
+.shareBtn {
+  width: 88rpx;
+  height: 88rpx;
+  position: fixed;
+  bottom: 170rpx;
+  right: 15rpx;
+}
+
+.avatar {
+  width: 100rpx;
+  height: 100rpx;
+  background: #969696;
+  border-radius: 50%;
+  margin-right: 32rpx;
+}
+
+
+/* 自定义tabBar样式 */

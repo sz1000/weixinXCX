@@ -1,0 +1,69 @@
+<!-- pages/appointment/detaileAppointment/index.wxml -->
+<wxs src="../../../filter/filter.wxs" module="filter" />
+
+<view>
+	<view class="head-hint">
+		<view class="head-hint-icon">
+			<i-icon type="{{submit.status === 3 ? 'delete' : 'time'}} delete" size="28" color="#fff" />
+		</view>
+		<view>
+			<view>
+				{{filter.appointType(submit.status)}}
+			</view>
+			<view wx:if="{{submit.status === 0 }}" style="font-size:11px">
+				请按时到店，到院后提供手机号与商家确认
+			</view>
+		</view>
+	</view>
+	<view class="detaile-container">
+		<view class="detaile-title">预约详情</view>
+		<view class="detaile-item {{submit.item_type !== 2 ? 'detaile-serveContainer' : ''}}">
+			<view class="detaile-item-head">服务</view>
+			<view>
+				<span wx:if="{{submit.item_type === 2}}">到院安排</span>
+				<global-prodact-card wx:if="{{submit.item_type === 1 }}" item="{{submit.productInfo}}" />
+				<global-doctor-card wx:if="{{submit.item_type === 0 }}" item="{{submit.doctorInfo}}" />
+			</view>
+		</view>
+		<view class="detaile-item">
+			<view class="detaile-item-head">到院时间</view>
+			<view>{{submit.appoint_time}}</view>
+		</view>
+		<view class="detaile-item">
+			<view class="detaile-item-head">预约人</view>
+			<view>{{submit.client}}</view>
+		</view>
+		<view class="detaile-item">
+			<view class="detaile-item-head">手机号</view>
+			<view>{{submit.tel}}</view>
+		</view>
+		<view class="detaile-item remark-container">
+			<view class="detaile-item-head">备注</view>
+			<view class="remark">{{submit.remark}}</view>
+		</view>
+	</view>
+
+	<view class="line" />
+
+	<view class="aoppint">
+		<view class="aoppint-bumber">
+			<view>预约编号：{{submit.appoint_num}}</view>
+			<view bindtap="handCopy" class="aoppint-copy">复制
+			</view>
+		</view>
+		<view class="aoppint-tiem">创建时间：{{submit.appoint_time}}</view>
+	</view>
+
+	<view class="handle-container" wx:if="{{submit.status === 0}}">
+		<picker
+		 range="{{pickerArr}}"
+		 id="{{item.id}}"
+		 bindchange="handCancelAoppint"
+		 class="baseButton"
+		>取消预约
+		</picker>
+		<view bindtap="handModifyAoppint" class="baseButton fullButton">修改预约
+		</view>
+	</view>
+</view>
+

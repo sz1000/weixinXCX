@@ -1,0 +1,7 @@
+<view class="finishBox">
+    <view class="imgBox">
+        <image src="/static/img/submitFinish.png"></image>
+    </view>
+    <view class="submitFinish">提交成功</view>
+</view>
+<view class="btn" bindtap="back">返回首页</view>

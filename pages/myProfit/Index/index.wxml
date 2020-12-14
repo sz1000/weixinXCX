@@ -1,0 +1,64 @@
+<view class="hearder">
+  <view class="earnings_wrap">
+    <view class="earnings_title">￥62738
+    </view>
+    <view class="earnings_text">可提现收益(元）</view>
+  </view>
+</view>
+<view class="content">
+  <view class="main">
+    <view class="container_wrap">
+      <view class="container_box">
+        <view class="money_incon">￥</view>
+        <view class="input_money">
+          <input type="number" placeholder="请输入金额"></input>
+        </view>
+        <view class="btn_money" >全部提现</view>
+      </view>
+      <view class="container_text">扣除
+        <text class="price">10%</text>综合管理费，实际可提现收益
+        <text class="price">￥6129</text>
+      </view>
+    </view>
+
+    <view class="img_wrap" wx:if="{{ visible }}">
+      <image src="../../../static/img/withdraw.png" mode="widthFix" style="width:400rpx; height:500rpx; margin:auto">
+      </image>
+      <view class="account_money">¥7283</view>
+      <view class="procedurefree_wrap">
+        <view class="procedurefree">手续费：¥29</view>
+        <view class="rate">费率：2%</view>
+        <!-- 取消 -->
+        <view class="cancel" bindtap="handleClose">取消</view>
+        <!-- 确定 -->
+        <view class="confirm" bindtap="confirmWithdrawal">确定</view>
+      </view>
+    </view>
+
+  </view>
+
+  <!-- 收款信息 -->
+  <view class="context_wrap">
+    <view class="context_title">收款信息</view>
+    <view class="context_region">
+      <view class="cotext_name">周先生</view>
+      <view class="context_tel">18217929716</view>
+    </view>
+  </view>
+  <!-- 收款账户 -->
+  <view class="context_wrap">
+    <view class="context_title">收款账户</view>
+    <view class="context_region">
+      <view class="cotext_icon">
+        <image class="image"></image>
+      </view>
+      <view class="context_tel">工商银行（72893）</view>
+    </view>
+  </view>
+  <!-- 提交 -->
+  <view class="footer">
+    <view class="submit_btn" bindtap="handleOpen">提交</view>
+  </view>
+  
+</view>
+<view class="mask" wx:if="{{ visible }}"></view>

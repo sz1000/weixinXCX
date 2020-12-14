@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "杭州安歆医疗美容",
+  "usingComponents": {
+    "login-model": "../../../component/vst-login/index",
+    "i-modal": "../../../dist/modal/index",
+    "global-article-card":"/component/global-article-card/index",
+    "vip-mask":"./components/vip-mask/index"
+  }
+}

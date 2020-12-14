@@ -1,0 +1,43 @@
+<!--pages/main/userInfo/userVerify/index.wxml-->
+<form bindsubmit="handleSubmit">
+	<i-cell-group>
+		<i-cell title="姓名">
+			<view class="must" slot="icon">*</view>
+			<input
+			 type="text"
+			 slot="footer"
+			 name="name"
+			 value="{{submitData.name}}"
+			 placeholder="请输入姓名"
+			/>
+		</i-cell>
+		<i-cell title="身份证号">
+			<view class="must" slot="icon">*</view>
+			<input
+			 type="text"
+			 slot="footer"
+			 name="idcard_num"
+			 value="{{submitData.idcard_num}}"
+			 placeholder="请输入身份证号"
+			/>
+		</i-cell>
+		<i-cell title="上传身份证照片">
+			<view class="picture_container">
+				<view class="picture_container_item">
+					<image mode="scaleToFill" src="{{submitData.idcard_front || '/static/img/id_card_front.png'}}" />
+					<button bind:tap="handleIdcardFrontImage" class="button_fill">上传正面</button>
+				</view>
+				<view class="picture_container_item">
+					<image mode="scaleToFill" src="{{ submitData.idcard_back ||'/static/img/id_card_verso.png'}}" />
+					<button bind:tap="handleIdcardBackImage" class="button_fill">上传反面</button>
+				</view>
+			</view>
+		</i-cell>
+	</i-cell-group>
+
+	<button class="button_fill" form-type="submit" style="margin:28rpx">
+		保存
+	</button>
+</form>
+<i-message id="message" />
+

@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "i-message": "../../../dist/message/index"
+  },
+  "navigationBarTitleText": "信息输入"
+ 
+}

@@ -1,0 +1,37 @@
+/* pages/main/inquiry/components/questions/index.wxss */
+.question-container{
+    width: calc(100vw -  20px);
+    height: 100vh;
+    position: fixed;
+    z-index: 1000;
+    background: #fff;
+    top:0px;
+    left:0px;
+    padding: 10px;
+    font-size:  14px;
+}
+.answer{
+    width: 100%;
+    margin-top:10px;
+}
+
+.textarea{
+    border: 1px solid #00000010;
+    width: calc(100% - 8px);
+    border-radius: 4px;
+    padding: 4px;
+}
+
+.button{
+    margin: 0 auto;
+    margin-top: 20px;
+    width:100%;
+    height:70rpx;
+    background:rgba(82,151,252,1);
+    border-radius:4rpx;
+    font-size:30rpx;
+    font-weight:400;
+    color: #fff;
+    text-align: center;
+    line-height: 70rpx;
+}

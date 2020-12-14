@@ -1,0 +1,25 @@
+<!-- 个人信息 -->
+<view class="personInfoBox">
+  <text>头像</text>
+  <image class="headerImg" bind:tap="chooseAvatar" src="{{avatarUrl}}"></image>
+</view>
+<view class="personInfoBox">
+  <text>昵称</text>
+  <input type="text" disabled="{{true}}" class="txtToRight inputStyle" value="{{nickName}}" />
+</view>
+<view class="personInfoBox">
+  <text>姓名</text>
+  <input class="txtToRight inputStyle" bind:tap="input"  bindblur="change" data-name="{{name}}" style="color:#666" value="{{name}}" />
+</view>
+<view class="personInfoBox"  bindtap="showTelBox">
+  <text>联系方式</text>
+  <view class="txtToRight" style="color:#666">{{tel}}</view>
+  <!-- <input class="txtToRight inputStyle" style="color:#666" value="{{tel}}" /> -->
+</view>
+<button class="saveBtn" bindtap="saveBtn" wx:if="{{showSaveBtn}}">保存</button>
+<!-- 返回首页 -->
+<view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+    <image src="/static/icons/backHome.png"></image>
+</view>
+<regist-model  is-show="{{showRegisterBox}}" bind:close="freshData" only-show-tel="{{true}}"></regist-model>
+<i-message id='message'></i-message>

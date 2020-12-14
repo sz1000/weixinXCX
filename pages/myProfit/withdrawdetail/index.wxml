@@ -1,0 +1,44 @@
+<!-- 提现明细页面-->
+<view class="head">
+	<picker
+	 class=""
+	 mode="date"
+	 value="{{timeValue}}"
+	 fields="month"
+	 bindchange="handleChangeTime"
+	>
+		<view class="time-select">{{timeValue}}
+			<i-icon type="unfold" />
+		</view>
+	</picker>
+
+	<view class="count-container">
+		<view class="count-item">
+			<view>¥{{count.canWithDraw / 100}}</view>
+			<view>申请中</view>
+		</view>
+		<view class="parting-line" />
+		<view class="count-item">
+			<view>¥{{count.cantWithDraw / 100}}</view>
+			<view>待打款</view>
+		</view>
+		<view class="parting-line" />
+		<view class="count-item">
+			<view>¥{{count.withDraw / 100}}</view>
+			<view>已打款</view>
+		</view>
+	</view>
+</view>
+
+<view class="list-container">
+	<view class="list-item">
+		<view class="item-content">
+      <view class="item-details">
+        <view class="withdraw">提现 <view class="price"> ¥2728</view></view>
+        <view class="have-money">已打款</view>
+      </view>
+      <view class="time">2019.09.19 17:09:18</view>
+		</view>
+	</view>
+</view>
+

@@ -1,0 +1,76 @@
+<view class="bgBox" style="width:{{bgBoxW}}px;height:{{bgBoxH}}px">
+  
+    <!-- <view class="textData">
+        <text>x: {{stv.offsetX}}</text>
+        ,
+        <text>y: {{stv.offsetY}}</text>
+        ,
+        <text>d: {{stv.distance}}</text>
+        ,
+        <text>s: {{stv.scale}}</text>
+        ,
+     </view> -->
+  <view class="moveBox" 
+ 
+  style="width:{{cutBoxW}}px;height:{{cutBoxH}}px;top:{{cutBoxY}}px;left:{{cutBoxX}}px"
+  >
+      <view class="moveImgBox">
+        <image class='bgimg'    
+         bind:touchstart='imgMoveStart' bind:touchmove='imgMoveIng' bind:touchend='imgMoveEnd'
+        style='width:{{bgimgZoomW}}px;height:{{bgimgZoomH}}px;transform:translate({{stv.offsetX}}px, {{stv.offsetY}}px)  scale({{stv.scale}} ' src='{{imgPath}}' ></image >
+      </view>
+
+      <view class='handle  handleNW' id='NW'
+             bind:touchstart="handleMoveStart"
+             bind:touchmove="handleMoveIng"
+             bind:touchend="handleMoveEnd"
+      >
+        <view class="point"></view>
+        <view class="point1"></view>
+      </view>
+      <view class='handle  handleNE'  id='NE'
+             bind:touchstart="handleMoveStart"
+             bind:touchmove="handleMoveIng"
+             bind:touchend="handleMoveEnd"
+      >
+        <view class="point"></view>
+        <view class="point1"></view>
+      </view>
+       <view class='handle  handleSW'  id='SW'
+             bind:touchstart="handleMoveStart"
+             bind:touchmove="handleMoveIng"
+             bind:touchend="handleMoveEnd"
+       >
+        <view class="point"></view>
+        <view class="point1"></view>
+      </view>
+       <view class='handle  handleSE'  id='SE'
+             bind:touchstart="handleMoveStart"
+             bind:touchmove="handleMoveIng"
+             bind:touchend="handleMoveEnd"
+       >
+        <view class="point"></view>
+        <view class="point1"></view>
+      </view>
+  </view>
+  <view class="modal"></view>
+  <view class="imgBox">
+    <image class='bgimg' 
+        style='width:{{bgimgZoomW}}px;height:{{bgimgZoomH}}px;transform:translate({{bgimgX}}px, {{bgimgY}}px) scale({{stv.scale}});' src='{{imgPath}}' ></image >
+  </view>
+</view>
+
+<view class="btnBox">
+  <view class="btnCard" bind:tap="uploadImg">上传背景图片</view> |
+  <view class="btnCard" bind:tap="creadCrad">确定</view>
+</view>
+
+
+<canvas class='canvasbox' style='width:{{bgimgOriginW}}px;height:{{bgimgOriginH +  bgimgOriginLength}}px;disply:none;'  canvas-id="myCanvas"></canvas>
+
+
+
+<canvas class='createCard' style="disply:none;" canvas-id="createCardCanvas"></canvas>
+
+
+

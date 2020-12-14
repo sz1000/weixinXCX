@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "绑定同款项目",
+  "usingComponents": {
+      "i-card": "../../../dist/card/index",
+      "i-radio-group": "../../../dist/radio-group/index",
+      "i-radio": "../../../dist/radio/index"
+  }
+}

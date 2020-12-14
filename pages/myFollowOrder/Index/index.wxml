@@ -1,0 +1,113 @@
+<!-- 修改 -->
+    <i-tabs fixed current="{{ current }}" color="#5295FC" bindchange="handleChange">
+        <i-tab my-class="tab-class" key="teamEarnings" title="线上预约"></i-tab>
+        <i-tab my-class="tab-class" key="myTeam" title="线下预约"></i-tab>
+    </i-tabs>
+
+    <scroll-view scroll-y="{{true}}" style="height:100vh"  bindscrolltoupper='refreshData' bindscrolltolower='loadMoreData'>
+
+        <view style="padding-top:84rpx;">
+            <template is="{{current}}" data="{{onLineData,offlineData,showModal}}" />
+
+        </view>
+
+            <i-load-more wx:if="{{loadMoreTip}}" />
+            <i-load-more wx:if="{{lastLoad}}" tip="已经到底了" loading="{{ false }}" />              
+    </scroll-view>
+
+<!-- 返回首页 -->
+  <view class="backBtnStyle" bindtap='goToHomePage' wx:if="{{showBackBtn}}">
+        <image src="/static/icons/backHome.png"></image>
+  </view>
+
+<template name="teamEarnings">
+<!-- 线上 -->
+
+    <view class="cusInfo" wx:for="{{onLineData}}" wx:key="{{index}}">
+        <view style="margin-left:30rpx;">
+            <view class="infoItem">
+                <p>客户姓名：</p>{{item.userInfo.name}}
+            </view>
+            <view class="infoItem">
+                <p>联系电话：</p>{{item.userInfo.tel}}
+            </view>
+            <view class="infoItem">
+                <p>就诊机构：</p>杭州安歆医美
+            </view>
+        </view>
+        <view class="content" style="display:inline-block;">
+            <view style="margin:20rpx;">
+                <view style="display:flex;flex-direction: column;float:left;">
+                    <view class="confirm"><span></span> 已确认消费单：{{item.consumerInfo.confirmed}}</view>
+                    <view class="confirm"><span></span> 待确认消费单：{{item.consumerInfo.unconfirm}}</view>
+                    <view class="confirm"><span></span> 已拒绝消费单：{{item.consumerInfo.rejected}}</view>
+                </view>
+                <view style="display:flex;flex-direction: column;float:right;">
+                    <view class="confirm"><span></span> 已确认金额：{{item.consumerInfo.confirmedPrice/100}}</view>
+                    <view class="confirm"><span></span> 待确认金额：{{item.consumerInfo.unconfirmPrice/100}}</view>
+                    <view class="confirm"><span></span> 已拒绝金额：{{item.consumerInfo.rejectedPrice/100}}</view>
+                </view>
+            </view>
+
+        </view>
+        <view style="border-top:2rpx #EEEEEE solid;margin-top:40rpx;"></view>
+        <view style="display:flex;flex-direction: row;justify-content: flex-end;margin-right: 26rpx;">
+            <!-- <view class="order-btn" data-id='{{item.id}}' bindtap="deleteOrderOnline" data-type="onLine">删除跟单</view> -->
+            <view class="order-btn" bindtap="toDetail" data-id="{{item.id}}" data-type="onLine">查看详情</view>
+            <view class="order-btn" bindtap="toAddPay" data-id="{{item.id}}" data-type="onLine">添加消费</view>
+        </view>
+        <view style="width: 100%;height:16rpx;background-color: #F3F4F5"></view>
+    </view>
+
+    <view class="tip" wx:if="{{!onLineData}}">暂无跟单数据</view>
+
+</template>
+<template name='myTeam'>
+    <view class="cusInfo" wx:for="{{offlineData}}" wx:key="{{index}}">
+        <view style="margin-left:30rpx;">
+            <view class="infoItem">
+                <p>客户姓名：</p>{{item.consumer}}
+            </view>
+            <view class="infoItem">
+                <p>联系电话：</p>{{item.tel}}
+            </view>
+            <view class="infoItem">
+                <p>就诊机构：</p>上海市仁爱医院
+            </view>
+        </view>
+        <view class="content" style="display:inline-block;">
+            <view style="margin:20rpx;">
+                <view style="display:flex;flex-direction: column;float:left;">
+                    <view class="confirm"><span></span> 已确认消费单：{{item.consumerInfo.confirmed}}</view>
+                    <view class="confirm"><span></span> 待确认消费单：{{item.consumerInfo.unconfirm}}</view>
+                    <view class="confirm"><span></span> 已拒绝消费单：{{item.consumerInfo.rejected}}</view>
+                </view>
+                <view style="display:flex;flex-direction: column;float:right;">
+                    <view class="confirm"><span></span> 已确认金额：{{item.consumerInfo.confirmedPrice/100}}</view>
+                    <view class="confirm"><span></span> 待确认金额：{{item.consumerInfo.unconfirmPrice/100}}</view>
+                    <view class="confirm"><span></span> 已拒绝金额：{{item.consumerInfo.rejectedPrice/100}}</view>
+                </view>
+            </view>
+
+        </view>
+        <view style="border-top:2rpx #EEEEEE solid;margin-top:40rpx;"></view>
+        <view style="display:flex;flex-direction: row;justify-content: flex-end;margin-right: 26rpx;">
+            <!-- <view class="order-btn" bindtap="deleteOrderOffline" data-id='{{item.id}}' data-type="offLine">删除跟单</view> -->
+            <view class="order-btn" bindtap="toDetail" data-id="{{item.id}}" data-type="offLine">查看详情</view>
+            <view class="order-btn" bindtap="toAddPay" data-id="{{item.id}}" data-type="offLine">添加消费</view>
+        </view>
+        <view style="width: 100%;height:16rpx;background-color: #F3F4F5"></view>
+    </view>
+    <view bindtap="addOrder" data-type="offLine"><button style="margin-bottom:60rpx;"  class="{{!offlineData? '':'addbtn'}}" >添加跟单</button></view>
+
+    <!-- <view class="mask" catchtouchmove="preventTouchMove" wx:if="{{showModal}}" bindtap="closeShowModal"></view>
+    <view class="modalDlg" wx:if="{{showModal}}">
+        <view class="menuBtn" bindtap="go" data-text="从订单导入" data-id="{{item.id}}">
+            从订单导入
+        </view>
+        <view class="menuBtn" bindtap="go" data-text="手动输入" data-id="{{item.id}}">
+            手动输入
+        </view>
+    </view> -->
+    <view class="tip" wx:if="{{!offlineData}}">暂无跟单数据</view>
+</template>

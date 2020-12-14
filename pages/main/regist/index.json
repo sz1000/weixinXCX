@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "注册",
+  "usingComponents": {
+    "regist-model": "../../../component/vst-register/index",
+    "i-message": "../../../dist/message/index"
+  }
+}

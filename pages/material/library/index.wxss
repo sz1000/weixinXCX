@@ -1,0 +1,467 @@
+page {
+  background-color: rgb(245, 245, 245);
+}
+
+.tabTop {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999;
+}
+
+.scrollBox {
+  position: absolute;
+  top: 42px;
+  height: calc(100% - 42px);
+}
+
+.img-Collections {
+  height: 330rpx;
+  position: relative;
+  width: 99%;
+  padding-left: 30rpx;
+}
+
+.img-Collections .mark {
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: white;
+  font-size: 40rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.img-Collections>view {
+  position: relative;
+  float: left;
+  width: 220rpx;
+  height: 155rpx;
+  margin-left: 10rpx;
+  /* border-radius: 10rpx; */
+  margin-bottom: 22rpx;
+}
+
+.img-Collections>view>image {
+  width: 100%;
+  height: 100%;
+}
+
+.img-Collections>view:first-child {
+  width: 440rpx;
+  height: 330rpx;
+  margin-top: 0;
+  margin-left: 0;
+}
+
+.imgIcon {
+  width: 340rpx;
+  height: 280rpx;
+  /* overflow: hidden; */
+  /* background-size:100%;
+  background-repeat: no-repeat; */
+}
+
+
+.spinShow {
+  width: 168px;
+  height: 45px;
+  position: absolute;
+  z-index: 1;
+}
+
+.swiper-tab {
+  background-color: #ffffff;
+  width: 100%;
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+
+}
+
+.swiper-tab-item {
+  width: 25%;
+  color: #222222;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+.swiper-tab-item:after {
+  margin-left: 60rpx;
+  content: "|";
+  color: #eeeeee;
+}
+
+.swiper-tab-item:last-child:after {
+  margin-left: 20rpx;
+  content: "";
+}
+
+.active {
+  color: #fc5e50;
+}
+
+swiper {
+  text-align: center;
+
+}
+
+.showArea {
+  margin-top: 130rpx;
+  width: 100%;
+  height: 550px;
+
+  overflow: hidden;
+}
+
+.showAreaTw {
+  border: 1px solid transparent;
+  background-color: #ffffff;
+  /* height: 650rpx; */
+  width: 100%;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+
+.myMaterialBtn {
+  width: 87rpx;
+  height: 87rpx;
+  position: absolute;
+  bottom: 58rpx;
+  right: 30rpx;
+}
+
+.myMaterialBtn1 {
+  width: 87rpx;
+  height: 87rpx;
+  position: fixed;
+  bottom: 46%;
+  right: 30rpx;
+  z-index: 10000;
+}
+
+.title {
+
+  width: 90%;
+  height: 30px;
+  margin: 30rpx 43rpx 20rpx 30rpx;
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card {
+  width: 0;
+  height: 0;
+  border-width: 50px 0 50px 50px;
+  border-style: solid;
+  border-color: #fc5e50 transparent transparent;
+  /*灰 透明 透明 */
+  position: absolute;
+  right: 0rpx;
+
+}
+
+.card text {
+  width: 60rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: 53rpx;
+  font-size: 23rpx;
+  color: #ffffff;
+
+}
+
+.content {
+  width: 90%;
+  height: 70rpx;
+  margin: 30rpx 43rpx 20rpx 30rpx;
+  font-size: 26rpx;
+  color: #717171;
+  text-align: left;
+  letter-spacing: 1px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: pre-wrap
+}
+
+.img,
+.imgRadio {
+  width: 690rpx;
+  height: 280rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  margin-left: 30rpx;
+  margin-right: 230rpx;
+}
+
+.img view {
+  background-repeat: no-repeat;
+  width: 31%;
+  height: 200rpx;
+}
+
+.personInfo {
+  border-bottom: 1rpx solid #eeeeee80;
+  /* margin-top: 21rpx; */
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  color: #717171;
+  font-size: 24rpx;
+  padding-left: 0 !important;
+}
+
+.personInfo image {
+  border-radius: 100%;
+  width: 48rpx;
+  height: 48rpx;
+  vertical-align: middle;
+  margin-left: 30rpx;
+  margin-right: 14rpx;
+  object-fit: cover;
+}
+
+.menu {
+  margin-left: 30rpx;
+  height: 90rpx;
+  background-color: #ffffff;
+  width: 690rpx;
+  text-align: center;
+  line-height: 100rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.imgAdd {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: middle;
+  margin-right: 12rpx;
+}
+
+.joinFontColor {
+  color: #FC5E50;
+}
+
+.addBtn {
+  width: 350rpx;
+  height: 90rpx;
+  background-color: #fc5e50;
+  border-radius: 90rpx;
+  line-height: 90rpx;
+  color: #ffffff;
+  font-size: 28rpx;
+  text-align: center;
+  position: fixed;
+  bottom: 10rpx;
+  left: 200rpx;
+  z-index: 999;
+
+}
+
+.mask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #222222;
+  z-index: 9000;
+  opacity: 0.2;
+}
+
+/* 第一次登陆显示的内容 */
+.firstShowBox {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  width: 697rpx;
+  height: 1150rpx;
+  background-color: #ffffff;
+  border-radius: 8rpx;
+  z-index: 99999;
+  text-align: center;
+
+}
+
+.fTitle {
+  width: 100%;
+  height: 154rpx;
+  line-height: 154rpx;
+  font-size: 40rpx;
+  font-weight: bold;
+  color: #222222;
+  text-align: center;
+
+}
+
+.blueUnderLine {
+  position: absolute;
+  top: 90rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 282rpx;
+  height: 14rpx;
+  background: linear-gradient(to bottom, #4E94FF, #596AFD);
+  opacity: 0.8;
+}
+
+.imgTipOne {
+  border: 1px dashed #333333;
+  padding: 2px;
+  width: 642rpx;
+  height: 185rpx;
+}
+
+.tipBox {
+  margin: 24rpx auto 22rpx auto;
+  width: 616rpx;
+  display: flex;
+  justify-content: flex-start;
+  font-size: 28rpx;
+  color: #222222;
+  text-align: left;
+
+}
+
+.blueBox {
+  margin-right: 12rpx;
+  width: 8rpx;
+  height: 32rpx;
+  background-color: #5297FC;
+}
+
+.imgTipTwo {
+  border: 1px dashed #333333;
+  padding: 2px;
+  width: 642rpx;
+  height: 212rpx;
+}
+
+.imgTipThree {
+  border: 1px dashed #333333;
+  padding: 2px;
+  width: 642rpx;
+  height: 178rpx;
+}
+
+.tryBtn {
+  margin: 0 auto;
+  width: 451rpx;
+  height: 85rpx;
+  background-color: #5783FA;
+  border-radius: 43rpx;
+  text-align: center;
+  line-height: 85rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  letter-spacing: 1rpx;
+
+}
+
+.noDataBox {
+  width: 100%;
+  height: 130px;
+  line-height: 250rpx;
+  text-align: center;
+  font-size: 14px;
+  color: #454545;
+}
+
+.bindPrice {
+  color: #ff668D;
+  font-size: 32rpx;
+}
+
+.bindPrice span {
+  font-size: 24rpx;
+}
+
+.personInfoBox {
+  /* margin-top: 21rpx; */
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: left;
+  color: #717171;
+  font-size: 24rpx;
+  padding-left: 0 !important;
+  border-bottom: 1rpx solid #eeeeee80;
+}
+
+.personInfoBox image {
+  border-radius: 100%;
+  width: 48rpx;
+  height: 48rpx !important;
+  vertical-align: middle;
+  /* margin-left: 30rpx; */
+  margin-right: 14rpx;
+}
+
+.bindProject {
+  width: 690rpx;
+  height: 34rpx;
+  margin-top: 22rpx;
+  margin-left: 30rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  color: #8a898a;
+  border-bottom: 1rpx solid #eeeeee80;
+  line-height: 30rpx;
+}
+
+.rightBlock {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.buyIcon {
+  width: 30rpx;
+  height: 30rpx;
+  background: linear-gradient(-90deg, rgba(255, 105, 157, 1) 0%, rgba(255, 145, 148, 1) 100%);
+  border-radius: 2rpx;
+  color: #ffffff;
+  font-size: 20rpx;
+  text-align: center;
+  vertical-align: center;
+  /* line-height: 28rpx; */
+}
+
+.projectName {
+  width: 336rpx;
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+
+.orderNum text {
+  margin-left: 10rpx;
+}

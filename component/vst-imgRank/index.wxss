@@ -1,0 +1,36 @@
+
+.imgBox{
+  display:flex;
+  flex-flow:row;
+  margin: 24rpx 0;
+}
+.imgStyle {
+  width: 220rpx;
+  height: 220rpx;
+  margin-right: 24rpx;
+}
+.imgRight{
+  margin-right: 10rpx
+}
+.imgRight image{
+  width: 420rpx;
+  height: 280rpx;
+}
+.imgSizeSmall{
+  width: 255rpx;
+  height: 135rpx;
+}
+.mask{
+  position: absolute;
+  background-color: black;
+  opacity: 0.3;
+}
+.fontStye{
+  position: absolute;
+  z-index: 100;
+  font-size: 13px;
+  color: #fff;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

@@ -1,0 +1,305 @@
+.count-down{
+  background: #FF5855;
+  color: #000;
+}
+
+
+.project-img {
+  width: 750rpx;
+  height: 670rpx;
+}
+
+.swiper-image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.projectName-title {
+  margin-top: 40rpx;
+  width: 100%;
+  height: 30rpx;
+  line-height: 30rpx;
+  display: flex;
+  /* justify-content: flex-start; */
+  align-items: center;
+  margin-left: 30rpx;
+}
+
+.detailBox {
+  width: 100%;
+  height: fit-content;
+  padding: 32rpx 30rpx 100rpx 0rpx;
+}
+
+.wxParse-p image{
+  width: 100% !important;
+  height: auto;
+}
+/* .projectName-title text{
+    font-size: 30rpx;
+} */
+.projectName-content {
+  width: 90%;
+  margin: 32rpx auto;
+}
+
+.projectContent {
+  width: 90%;
+  margin: 32rpx auto;
+  letter-spacing: 4rpx;
+  font-size: 26rpx;
+  color: #444444;
+  line-height: 40rpx;
+  padding-left: 30rpx;
+}
+
+.greyLine,
+.greyLines {
+  margin: 40rpx auto;
+  width: 90%;
+  height: 1rpx;
+  background-color: #EEEEEE;
+}
+
+.greyLines {
+  height: 2rpx;
+}
+
+.project-price {
+  margin: 32rpx 0rpx 0rpx 32rpx;
+  font-size: 42rpx;
+  color: #FF5855;
+  display: flex;
+  align-items: center;
+}
+.project-price span{
+  font-size: 32rpx;
+}
+.waitPay {
+  color: #999999;
+  font-size: 22rpx !important;
+  line-height: 44rpx;
+  font-weight: 400;
+  margin-left: 8rpx;
+  text-decoration: line-through;
+}
+.orderNum{
+  color: #888888;
+  font-size: 24rpx;
+  font-weight: 400;
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 32rpx;
+}
+.imgBox {
+  margin-bottom: 38px;
+  width: 100%;
+  text-align: center;
+}
+
+.footImg {
+  width: 100%;
+
+}
+
+.orderBtn {
+  /* position: fixed; */
+  /* bottom: 30rpx;
+    left: 0;
+    right: 0; */
+  /* margin: 0 auto; */
+  width: 401rpx;
+  /* height: 85rpx; */
+  background-color: #5297FC;
+  border-radius: 43rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  margin-bottom: 40rpx;
+}
+
+.bottomBtnBox {
+  width: 100vm;
+  position: fixed;
+  bottom: 0;
+  background-color: #ffffff;
+  box-shadow:2px 2px 5px #33333342;
+
+  /* padding-left: 30rpx; */
+}
+
+.bottomOneBtnBox {
+  width: 750rpx;
+  height: 96rpx;
+  display: flex;
+  justify-content:space-between;
+  font-size: 22rpx;
+  font-weight: 400;
+}
+
+.bottomTwoBtnBox {
+  width: 750rpx;
+  height: 96rpx;
+  display: flex;
+  flex-direction: row;
+  font-size: 22rpx;
+  font-weight: 400;
+}
+.priceBox{
+  width: 33.3%;
+  height: 100%;
+  color: #333333;
+  font-size: 22rpx;
+  padding-left: 30rpx;
+  /* margin-left: 30rpx; */
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.saleBox {
+  width: 33.3%;
+  height: 100%;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.bottomBtnBox button:nth-child(2) {
+  background-color: #577FFA;
+}
+
+.bottomBtnBox button:nth-child(3) {
+  background-color: #5297FC;
+}
+
+view span {
+  font-size: 32rpx;
+  height: 36rpx;
+}
+
+button {
+  position: none;
+  display: none;
+  margin-left: 0;
+  margin-right: 0;
+  padding-left: 0;
+  padding-right: 0;
+  box-sizing: none;
+  font-size: 22rpx;
+  /* text-align:center; */
+  text-decoration: none;
+  line-height: 0;
+  border-radius: 0;
+  -webkit-tap-highlight-color: transparent;
+  overflow: none;
+  color: #fff;
+  background-color: #5297FC;
+}
+.priceTips{
+  width: 527rpx;
+  height: 590rpx;
+  border-radius: 16rpx;
+  position: fixed;
+  background-color: #ffffff;
+  color: #333333;
+  font-size: 26rpx;
+  left: 112rpx;
+  top: 25%;
+}
+.close{
+  width: 20rpx !important;
+  height: 20rpx !important;
+  position: absolute;
+  z-index: 20;
+  top:30rpx;
+  right: 30rpx;
+}
+.tipQuestion{
+  color: #5297FC;
+  font-size: 34rpx;
+  position: relative;
+  top: 225rpx;
+  left: 132rpx;
+  width: 261rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.tipQuestion span{
+  width: 8rpx;
+  height: 8rpx;
+  border-radius: 50%;
+  background-color: #5297FC;
+}
+.tipBack{
+  position: absolute;
+  top: -70rpx;
+}
+/* itemTip */
+.itemsTip{
+  width: 440rpx;
+  height: 130rpx;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-top: 268rpx;
+  margin-left:10%;
+}
+.priceTips image{
+  width:100%;
+  height: 300rpx;
+}
+.tipBtn{
+  margin: 0 auto;
+  width: 409rpx;
+  height: 72rpx;
+  background-color: #5297FC;
+  border-radius: 38rpx;
+  color: #ffffff;
+  font-size: 32rpx;
+  text-align: center;
+  margin-top: 48rpx;
+  line-height: 66rpx;
+}
+/* 遮罩层样式 */
+.commodity_screen {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #00000042;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+
+.shareProduct{
+  width: 312px;
+  height: 420px;
+  border-radius: 14rpx;
+  position: fixed;
+  z-index: 9999;
+  left: 63rpx;
+  top: 200rpx;
+  background-color: #ffffff;
+}
+.saveCanvas{
+  width: 249rpx;
+  height: 69rpx;
+  background:linear-gradient(-26deg,rgba(34,121,255,1) 0%,rgba(82,149,252,1) 100%);
+  border-radius: 8rpx;
+  color: #ffffff;
+  font-size: 30rpx;
+  font-weight: 500;
+  position: fixed;
+  z-index: 10000;
+  bottom:80px;
+  left: 251rpx;
+  text-align: center;
+  line-height: 69rpx;
+}

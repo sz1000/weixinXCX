@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "订单详情",
+  "usingComponents": {
+    "global-prodact-card":"../../../component/global-prodact-card/index",
+    "buying-peopel":"../../project/groupBuyingDtaile/components/group-buying-peopel/index"
+  }
+}

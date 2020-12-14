@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "group-buying-item":"./components/group-buying-item/index"
+  },
+  "navigationBarTitleText":"拼团首页"
+}

@@ -1,0 +1,15 @@
+<view class="shareBox">
+	<i-icon
+	 type="success_fill"
+	 class="saveFinish"
+	 color="#5297FC"
+	 size="120"
+	/>
+	<view class="finishText">支付成功</view>
+	<view class="shareText">返回查看会员权益</view>
+	<view bindtap='backIndex' class='backIndex'>
+		返回
+	</view>
+
+</view>
+

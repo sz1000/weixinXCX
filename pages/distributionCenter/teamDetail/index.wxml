@@ -1,0 +1,43 @@
+<!--pages/distributionCenter/teamDetail/index.wxml-->
+<!-- 个人信息 -->
+<view class="header">
+<view class="Title_wrap">
+ <view class="portrait">
+ <!-- 图片暂时是写死的，后面从接口字段中获取 -->
+<image src="../../../static/img/group_booking_background.png" style="width:150rpx;height:150rpx;border-radius:50%;"></image>
+ </view>
+ <view class="dial">一键拨号</view>
+ </view>
+
+<view class="userInfo_wrap">
+<view class="grade_name_wrap">
+ <view class="name">林俊杰</view>
+ <view class="grade">三星经理</view>
+</view>
+<view class="userInfo_box">
+     <view class="wachat">微信号：27282939</view>
+     <view class="tel"> 手机号：18227399283</view>
+     <view class="join_time"> 加入时间：2019.09.18</view>
+</view>
+</view>
+</view>
+<!-- 总业绩 -->
+<view class="performance_container">
+<view class="title_wrap">
+<view class="Title_icon"></view>
+<view class="Total_performance">总业绩</view>
+</view>
+<view class="performance_price_wrap">
+<text style="font-size:26rpx; diaplay:inline;">￥</text>
+<view class="performance_price">7389.4</view>
+</view>
+</view>
+<!-- 更多信息 -->
+<view class="more_warp">
+  <view class="title_wrap">
+<view class="Title_icon"></view>
+<view class="more_message">更多信息</view>
+</view>
+<view class="order_number">团队订单数量：9个</view>
+<view class="team_number">团队人员数量：10人</view>
+</view>

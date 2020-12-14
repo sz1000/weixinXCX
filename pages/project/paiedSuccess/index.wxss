@@ -1,0 +1,29 @@
+.contentBox{
+    width: 200px;
+    height: 300px;
+    margin: 37px auto;
+    text-align: center;
+}
+.finishImg{
+    width: 68px;
+    height: 68px;
+}
+.contentBox view{
+    margin-top: 10px;
+    font-size: 17px;
+    color: #333333;
+}
+.orderBtn{
+    position: fixed;
+    bottom: 40rpx;
+    line-height: 85rpx;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    width: 451rpx;
+    height: 85rpx;
+    background-color: #5297FC;
+    border-radius: 43rpx;
+    color: #ffffff;
+    font-size: 32rpx;
+}

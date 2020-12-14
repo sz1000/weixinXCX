@@ -1,0 +1,33 @@
+/* pages/main/userInfo/userVerify/index.wxss */
+page{
+    background-color: #F7F7F7;
+}
+
+.must{
+    color: #FF3E24;
+}
+
+input{
+    width: 70vw;
+}
+
+.picture_container{
+    display: flex;
+    justify-content:space-between;
+}
+
+.picture_container_item{
+    border-radius: 10rpx;
+    overflow: hidden;    
+}
+
+.picture_container image{
+    width: 328rpx;
+    height: 220rpx;
+    vertical-align: bottom;
+}
+
+.picture_container button{
+    border-radius: 0px;
+    padding: 16rpx 0;
+}
